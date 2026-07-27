@@ -1,96 +1,125 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>Bryan's Recipe Import Site</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bryan's Recipe Box</title>
+<style>
+  :root{
+    --pine:#2E5B45;
+    --pine-deep:#1F3E30;
+    --ink:#22291F;
+    --bg:#EDF1EC;
+    --panel:#FFFFFF;
+    --line:#D4DCD3;
+    --chive:#E3EEE4;
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+    --serif:Georgia,"Times New Roman",serif;
+    --mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.55}
+
+  header{background:var(--pine-deep);color:#F2F6F1;padding:38px 24px 30px;text-align:center}
+  header h1{font-family:var(--serif);font-weight:normal;font-size:34px;letter-spacing:.3px}
+  header p{margin-top:8px;font-size:15px;opacity:.8;max-width:520px;margin-left:auto;margin-right:auto}
+
+  main{max-width:760px;margin:0 auto;padding:28px 20px 60px}
+
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:22px 24px;margin-bottom:18px}
+  .card h2{font-family:var(--serif);font-weight:normal;font-size:23px;margin-bottom:2px}
+  .card h2 a{color:var(--ink);text-decoration:none}
+  .card h2 a:hover{color:var(--pine)}
+  .meta{font-size:13px;color:#5B6657;margin-bottom:8px}
+  .desc{font-size:15px;color:#3E4A3C;margin-bottom:14px}
+  .tags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:16px}
+  .tag{font-size:11.5px;background:var(--chive);color:var(--pine-deep);border-radius:99px;padding:3px 10px;letter-spacing:.02em}
+  .row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+  .btn{display:inline-block;border-radius:6px;padding:8px 16px;font-size:13.5px;font-weight:600;text-decoration:none;cursor:pointer;border:none;font-family:var(--sans)}
+  .btn.view{background:var(--pine);color:#fff}
+  .btn.view:hover{background:var(--pine-deep)}
+  .btn.copy{background:var(--panel);border:1px solid var(--line);color:var(--ink)}
+  .btn.copy:hover{background:var(--chive)}
+  .btn:focus-visible{outline:2px solid var(--pine-deep);outline-offset:2px}
+  .copied{font-size:13px;color:var(--pine);font-weight:600}
+
+  .howto{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:20px 24px;margin-top:30px}
+  .howto h2{font-size:12px;text-transform:uppercase;letter-spacing:.14em;color:var(--pine);margin-bottom:10px}
+  .howto ol{padding-left:22px;font-size:14.5px}
+  .howto li{margin-bottom:6px}
+
+  footer{text-align:center;font-size:12.5px;color:#77816F;padding:0 20px 40px}
+</style>
 </head>
 <body>
-  <h1>Bryan's Recipe Import Site</h1>
 
-  <p>This is a simple recipe site for WW recipe import testing.</p>
+<header>
+  <h1>Bryan&rsquo;s Recipe Box</h1>
+  <p>Browse and cook straight from the page, or copy a recipe&rsquo;s link into the WeightWatchers app to import it with points.</p>
+</header>
 
-<h2>Recipes</h2>
-<ul>
-  <li>
-    <a href="crispy-air-fried-chicken-rice-bowls.html">
-      Crispy Air-Fried Chicken Rice Bowls with Yuzu Sesame Soy Dressing
-    </a>
-  </li>
-  <li>
-    <a href="crispy-sushi-tacos-spicy-tuna.html">
-      Crispy Sushi Tacos With Spicy Tuna
-    </a>
-  </li>
-  <li>
-  <a href="crispy-garlic-parmesan-chicken-wraps.html">
-    Crispy Garlic Parmesan Chicken Wraps
-  </a>
-</li>
-<li>
-  <a href="crispy-rice-paper-dumplings.html">
-    Crispy Rice Paper Dumplings
-  </a>
-</li>
-<li>
-  <a href="crispy-rice-paper-cuban-sandwich-spiral.html">
-    Crispy Rice Paper Cuban Sandwich Spiral
-  </a>
-</li>
-<li>
-  <a href="everything-bagel-protein-biscuits.html">
-    Everything Bagel Protein Biscuits
-  </a>
-</li>
-<li>
-  <a href="healthy-rice-paper-dumpling-rolls.html">
-    Healthy Rice Paper Dumpling Rolls
-  </a>
-</li>
-<li>
-  <a href="air-fryer-pesto-parmesan-rice-paper-rings.html">
-    Air Fryer Pesto Parmesan Rice Paper Rings
-  </a>
-</li>
-  <li>
-    <a href="cheese-crusted-flying-dutchman.html">
-      Cheese Crusted Flying Dutchman
-    </a>
-  </li>
-  <li>
-    <a href="chicken-corn-salad-feta-yogurt-sauce.html">
-      Chicken and Corn Salad with Feta and Yogurt Sauce
-    </a>
-  </li>
-  <li>
-    <a href="bacon-egg-cheese-rice-paper-spiral.html">
-      Bacon Egg and Cheese Rice Paper Spiral
-    </a>
-  </li>
-  <li>
-    <a href="crispy-chicken-rice-paper-dumplings.html">
-      Crispy Chicken Rice Paper Dumplings
-    </a>
-  </li>
-  <li>
-    <a href="nacho-pinwheel-chips.html">
-      Nacho Pinwheel Chips
-    </a>
-  </li>
-  <li>
-    <a href="viral-beef-tortilla-kabobs.html">
-      Viral Beef Tortilla Kabobs
-    </a>
-  </li>
-  <li>
-    <a href="crispy-kebab-wraps.html">
-      Crispy Kebab Wraps
-    </a>
-  </li>
-  <li>
-    <a href="caramelized-onion-chicken-pasta.html">
-      Caramelized Onion Chicken Pasta
-    </a>
-  </li>
-</ul>
+<main>
+  <div id="recipes"></div>
+
+  <section class="howto">
+    <h2>Importing into WeightWatchers</h2>
+    <ol>
+      <li>Tap <strong>Copy import link</strong> on any recipe below (or just copy the recipe page&rsquo;s URL from your browser).</li>
+      <li>In the WW app, go to <strong>Recipes &rarr; Create &rarr; Import from web</strong>.</li>
+      <li>Paste the link. The name, ingredients, and steps come in automatically; adjust servings if you like, and WW calculates the points.</li>
+    </ol>
+  </section>
+</main>
+
+<footer>Built with a homemade Obsidian-to-web converter. New recipes appear here as they&rsquo;re added.</footer>
+
+<script>
+/* To add a recipe: convert the note, drop the HTML file in this folder,
+   and add one entry here. */
+const recipes = [
+  {
+    file: "sweet-and-salty-london-broil.html",
+    title: "Sweet and Salty London Broil",
+    desc: "Smoky grilled beef with a salty-sweet, garlicky marinade, crisp cucumber-herb salad and jasmine rice.",
+    cuisine: "Vietnamese-inspired",
+    servings: "4 plus leftovers",
+    tags: ["beef", "grilling", "high-protein"]
+  },
+  {
+    file: "steak-green-bean-and-potato-salad.html",
+    title: "Steak, Green Bean and Potato Salad",
+    desc: "A substantial leftover-steak salad with crisp green beans, creamy potatoes and a bright shallot–herb vinaigrette.",
+    cuisine: "French-inspired",
+    servings: "4",
+    tags: ["beef", "leftovers", "high-protein"]
+  }
+];
+
+function esc(s){ return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
+const container = document.getElementById('recipes');
+container.innerHTML = recipes.map((r, i) => `
+  <article class="card">
+    <h2><a href="${esc(r.file)}">${esc(r.title)}</a></h2>
+    <p class="meta">${esc(r.cuisine)} &middot; Serves ${esc(r.servings)}</p>
+    <p class="desc">${esc(r.desc)}</p>
+    <div class="tags">${r.tags.map(t => `<span class="tag">${esc(t)}</span>`).join('')}</div>
+    <div class="row">
+      <a class="btn view" href="${esc(r.file)}">View recipe</a>
+      <button class="btn copy" onclick="copyLink(${i}, this)">Copy import link</button>
+      <span class="copied" aria-live="polite"></span>
+    </div>
+  </article>
+`).join('');
+
+function copyLink(i, btn){
+  const url = new URL(recipes[i].file, window.location.href).href;
+  navigator.clipboard.writeText(url).then(() => {
+    const note = btn.parentElement.querySelector('.copied');
+    note.textContent = 'Link copied — paste it into WW';
+    setTimeout(() => note.textContent = '', 2500);
+  });
+}
+</script>
 </body>
 </html>
