@@ -15,40 +15,55 @@
     --chive:#E3EEE4;
     --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
     --serif:Georgia,"Times New Roman",serif;
-    --mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
   }
   *{box-sizing:border-box;margin:0;padding:0}
-  body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.55}
+  body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.5}
 
-  header{background:var(--pine-deep);color:#F2F6F1;padding:38px 24px 30px;text-align:center}
-  header h1{font-family:var(--serif);font-weight:normal;font-size:34px;letter-spacing:.3px}
-  header p{margin-top:8px;font-size:15px;opacity:.8;max-width:520px;margin-left:auto;margin-right:auto}
+  header{background:var(--pine-deep);color:#F2F6F1;padding:30px 24px 24px;text-align:center}
+  header h1{font-family:var(--serif);font-weight:normal;font-size:30px;letter-spacing:.3px}
+  header p{margin-top:6px;font-size:14px;opacity:.8;max-width:520px;margin-left:auto;margin-right:auto}
 
-  main{max-width:760px;margin:0 auto;padding:28px 20px 60px}
+  main{max-width:760px;margin:0 auto;padding:20px 20px 60px}
 
-  .card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:22px 24px;margin-bottom:18px}
-  .card h2{font-family:var(--serif);font-weight:normal;font-size:23px;margin-bottom:2px}
+  /* controls */
+  .controls{display:flex;gap:10px;margin-bottom:16px;flex-wrap:wrap;align-items:center}
+  .search{flex:1;min-width:220px;position:relative}
+  .search input{width:100%;border:1px solid var(--line);border-radius:8px;padding:9px 12px 9px 34px;font-size:14px;font-family:var(--sans);background:var(--panel);color:var(--ink);outline:none}
+  .search input:focus{border-color:var(--pine)}
+  .search svg{position:absolute;left:11px;top:50%;transform:translateY(-50%);width:15px;height:15px;stroke:#77816F;fill:none;stroke-width:2;pointer-events:none}
+  select{border:1px solid var(--line);border-radius:8px;padding:9px 10px;font-size:13.5px;font-family:var(--sans);background:var(--panel);color:var(--ink);cursor:pointer}
+  select:focus-visible,.search input:focus-visible{outline:2px solid var(--pine);outline-offset:1px}
+  .count{font-size:12.5px;color:#5B6657;margin-bottom:10px;min-height:18px}
+  .count .clear{color:var(--pine);cursor:pointer;text-decoration:underline;background:none;border:none;font-size:12.5px;font-family:var(--sans)}
+
+  /* compact cards */
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:12px 16px;margin-bottom:10px;display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+  .card .info{flex:1;min-width:230px}
+  .card h2{font-family:var(--serif);font-weight:normal;font-size:18px;line-height:1.25}
   .card h2 a{color:var(--ink);text-decoration:none}
   .card h2 a:hover{color:var(--pine)}
-  .meta{font-size:13px;color:#5B6657;margin-bottom:8px}
-  .desc{font-size:15px;color:#3E4A3C;margin-bottom:14px}
-  .tags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:16px}
-  .tag{font-size:11.5px;background:var(--chive);color:var(--pine-deep);border-radius:99px;padding:3px 10px;letter-spacing:.02em}
-  .row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
-  .btn{display:inline-block;border-radius:6px;padding:8px 16px;font-size:13.5px;font-weight:600;text-decoration:none;cursor:pointer;border:none;font-family:var(--sans)}
+  .meta{font-size:12.5px;color:#5B6657;margin-top:2px}
+  .tags{display:flex;gap:5px;flex-wrap:wrap;margin-top:6px}
+  .tag{font-size:10.5px;background:var(--chive);color:var(--pine-deep);border-radius:99px;padding:2px 8px;cursor:pointer;border:none;font-family:var(--sans)}
+  .tag:hover{background:var(--pine);color:#fff}
+  .actions{display:flex;gap:8px;align-items:center;flex:none}
+  .btn{display:inline-block;border-radius:6px;padding:7px 13px;font-size:12.5px;font-weight:600;text-decoration:none;cursor:pointer;border:none;font-family:var(--sans);white-space:nowrap}
   .btn.view{background:var(--pine);color:#fff}
   .btn.view:hover{background:var(--pine-deep)}
   .btn.copy{background:var(--panel);border:1px solid var(--line);color:var(--ink)}
   .btn.copy:hover{background:var(--chive)}
   .btn:focus-visible{outline:2px solid var(--pine-deep);outline-offset:2px}
-  .copied{font-size:13px;color:var(--pine);font-weight:600}
+  .empty{text-align:center;color:#5B6657;font-size:14px;padding:30px 0}
 
-  .howto{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:20px 24px;margin-top:30px}
-  .howto h2{font-size:12px;text-transform:uppercase;letter-spacing:.14em;color:var(--pine);margin-bottom:10px}
-  .howto ol{padding-left:22px;font-size:14.5px}
-  .howto li{margin-bottom:6px}
+  .toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:var(--pine-deep);color:#fff;font-size:13px;padding:9px 18px;border-radius:99px;opacity:0;transition:opacity .25s;pointer-events:none}
+  .toast.show{opacity:1}
 
-  footer{text-align:center;font-size:12.5px;color:#77816F;padding:0 20px 40px}
+  .howto{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:18px 22px;margin-top:26px}
+  .howto h2{font-size:11.5px;text-transform:uppercase;letter-spacing:.14em;color:var(--pine);margin-bottom:8px}
+  .howto ol{padding-left:22px;font-size:13.5px}
+  .howto li{margin-bottom:5px}
+
+  footer{text-align:center;font-size:12px;color:#77816F;padding:0 20px 36px}
 </style>
 </head>
 <body>
@@ -59,23 +74,37 @@
 </header>
 
 <main>
+  <div class="controls">
+    <div class="search">
+      <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="21" y2="21"/></svg>
+      <input id="q" type="search" placeholder="Search by name, tag, or cuisine… e.g. chicken, grilling, salad" aria-label="Search recipes">
+    </div>
+    <select id="sort" aria-label="Sort recipes">
+      <option value="newest">Newest first</option>
+      <option value="title">Title A–Z</option>
+      <option value="cuisine">Cuisine</option>
+      <option value="protein">Tag: high-protein first</option>
+    </select>
+  </div>
+  <div class="count" id="count"></div>
   <div id="recipes"></div>
 
   <section class="howto">
     <h2>Importing into WeightWatchers</h2>
     <ol>
-      <li>Tap <strong>Copy import link</strong> on any recipe below (or just copy the recipe page&rsquo;s URL from your browser).</li>
+      <li>Tap <strong>Copy import link</strong> on any recipe (or copy the recipe page&rsquo;s URL from your browser).</li>
       <li>In the WW app, go to <strong>Recipes &rarr; Create &rarr; Import from web</strong>.</li>
-      <li>Paste the link. The name, ingredients, and steps come in automatically; adjust servings if you like, and WW calculates the points.</li>
+      <li>Paste the link. Name, ingredients, and steps come in automatically, and WW calculates the points.</li>
     </ol>
   </section>
 </main>
 
+<div class="toast" id="toast" aria-live="polite"></div>
 <footer>Built with a homemade Obsidian-to-web converter. New recipes appear here as they&rsquo;re added.</footer>
 
 <script>
 /* To add a recipe: convert the note, drop the HTML file in this folder,
-   and add one entry here. */
+   and add one entry here. Newest entries go at the END of the array. */
 const recipes = [
   {
     file: "sweet-and-salty-london-broil.html",
@@ -92,34 +121,76 @@ const recipes = [
     cuisine: "French-inspired",
     servings: "4",
     tags: ["beef", "leftovers", "high-protein"]
+  },
+  {
+    file: "jerk-chicken-with-mango-avocado-salsa.html",
+    title: "Jerk Chicken with Mango-Avocado Salsa",
+    desc: "Bold jerk-seasoned chicken balanced by a cool fruit salsa, served with coconut cauliflower rice.",
+    cuisine: "Jamaican-inspired",
+    servings: "4",
+    tags: ["chicken", "grilling", "high-protein"]
   }
 ];
 
-function esc(s){ return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+function esc(s){ return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
 
+const q = document.getElementById('q');
+const sortSel = document.getElementById('sort');
 const container = document.getElementById('recipes');
-container.innerHTML = recipes.map((r, i) => `
-  <article class="card">
-    <h2><a href="${esc(r.file)}">${esc(r.title)}</a></h2>
-    <p class="meta">${esc(r.cuisine)} &middot; Serves ${esc(r.servings)}</p>
-    <p class="desc">${esc(r.desc)}</p>
-    <div class="tags">${r.tags.map(t => `<span class="tag">${esc(t)}</span>`).join('')}</div>
-    <div class="row">
-      <a class="btn view" href="${esc(r.file)}">View recipe</a>
-      <button class="btn copy" onclick="copyLink(${i}, this)">Copy import link</button>
-      <span class="copied" aria-live="polite"></span>
-    </div>
-  </article>
-`).join('');
+const countEl = document.getElementById('count');
 
-function copyLink(i, btn){
+function haystack(r){
+  return [r.title, r.desc, r.cuisine, r.tags.join(' ')].join(' ').toLowerCase();
+}
+
+function render(){
+  const term = q.value.trim().toLowerCase();
+  let list = recipes.map((r, i) => ({ ...r, i }));
+
+  if (term) list = list.filter(r => haystack(r).includes(term));
+
+  switch (sortSel.value){
+    case 'title':   list.sort((a,b) => a.title.localeCompare(b.title)); break;
+    case 'cuisine': list.sort((a,b) => a.cuisine.localeCompare(b.cuisine) || a.title.localeCompare(b.title)); break;
+    case 'protein': list.sort((a,b) => b.tags.includes('high-protein') - a.tags.includes('high-protein') || a.title.localeCompare(b.title)); break;
+    default:        list.sort((a,b) => b.i - a.i); // newest = last added first
+  }
+
+  countEl.innerHTML = term
+    ? `${list.length} of ${recipes.length} recipes match &ldquo;${esc(q.value.trim())}&rdquo; <button class="clear" onclick="clearSearch()">clear</button>`
+    : `${recipes.length} recipes`;
+
+  container.innerHTML = list.length ? list.map(r => `
+    <article class="card">
+      <div class="info">
+        <h2><a href="${esc(r.file)}">${esc(r.title)}</a></h2>
+        <p class="meta">${esc(r.cuisine)} &middot; Serves ${esc(r.servings)}</p>
+        <div class="tags">${r.tags.map(t => `<button class="tag" onclick="searchTag('${esc(t)}')">${esc(t)}</button>`).join('')}</div>
+      </div>
+      <div class="actions">
+        <a class="btn view" href="${esc(r.file)}">View</a>
+        <button class="btn copy" onclick="copyLink(${r.i})">Copy import link</button>
+      </div>
+    </article>
+  `).join('') : `<p class="empty">No recipes match. Try a different search, or clear it to see everything.</p>`;
+}
+
+function searchTag(t){ q.value = t; render(); }
+function clearSearch(){ q.value = ''; render(); q.focus(); }
+
+function copyLink(i){
   const url = new URL(recipes[i].file, window.location.href).href;
   navigator.clipboard.writeText(url).then(() => {
-    const note = btn.parentElement.querySelector('.copied');
-    note.textContent = 'Link copied — paste it into WW';
-    setTimeout(() => note.textContent = '', 2500);
+    const toast = document.getElementById('toast');
+    toast.textContent = 'Link copied — paste it into WW';
+    toast.classList.add('show');
+    setTimeout(() => toast.classList.remove('show'), 2200);
   });
 }
+
+q.addEventListener('input', render);
+sortSel.addEventListener('change', render);
+render();
 </script>
 </body>
 </html>
