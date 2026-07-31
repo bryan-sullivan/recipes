@@ -77,5 +77,32 @@
       "high-protein"
     ],
     "added": "2026-07-31T07:56:42-04:00"
+  },
+  {
+    "file": "blackstone-grilled-peaches-with-cheesecake-cream.html",
+    "title": "Blackstone Grilled Peaches with Cheesecake Cream",
+    "desc": "Warm, caramelized peaches topped with cool vanilla cheesecake cream and graham-cracker crumbs.",
+    "cuisine": "American",
+    "servings": "8",
+    "tags": [],
+    "added": "2026-07-31T09:28:41-04:00"
+  },
+  {
+    "file": "chocolate-peanut-butter-protein-mousse.html",
+    "title": "Chocolate–Peanut Butter Protein Mousse",
+    "desc": "A thick, creamy, no-cook dessert that tastes like chocolate-peanut-butter pudding and takes only a few minutes to mix.",
+    "cuisine": "American",
+    "servings": "8",
+    "tags": [],
+    "added": "2026-07-31T09:28:41-04:00"
+  },
+  {
+    "file": "kamado-berry-cheesecake-cups.html",
+    "title": "Kamado Berry Cheesecake Cups",
+    "desc": "Creamy individual cheesecakes with fresh berries and a light graham-cracker crust. Use little or no smoking wood so the delicate filling does not become overly smoky.",
+    "cuisine": "American",
+    "servings": "8",
+    "tags": [],
+    "added": "2026-07-31T09:28:41-04:00"
   }
 ]
