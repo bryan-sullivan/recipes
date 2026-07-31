@@ -84,7 +84,11 @@
     "desc": "Warm, caramelized peaches topped with cool vanilla cheesecake cream and graham-cracker crumbs.",
     "cuisine": "American",
     "servings": "8",
-    "tags": [],
+    "tags": [
+      "peaches",
+      "dessert",
+      "high-protein"
+    ],
     "added": "2026-07-31T09:28:41-04:00"
   },
   {
