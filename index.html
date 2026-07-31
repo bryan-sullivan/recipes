@@ -103,50 +103,10 @@
 <footer>Built with a homemade Obsidian-to-web converter. New recipes appear here as they&rsquo;re added.</footer>
 
 <script>
-/* To add a recipe: convert the note, drop the HTML file in this folder,
-   and add one entry here. Newest entries go at the END of the array. */
-const recipes = [
-  {
-    file: "sweet-and-salty-london-broil.html",
-    title: "Sweet and Salty London Broil",
-    desc: "Smoky grilled beef with a salty-sweet, garlicky marinade, crisp cucumber-herb salad and jasmine rice.",
-    cuisine: "Vietnamese-inspired",
-    servings: "4 plus leftovers",
-    tags: ["beef", "grilling", "high-protein"]
-  },
-  {
-    file: "steak-green-bean-and-potato-salad.html",
-    title: "Steak, Green Bean and Potato Salad",
-    desc: "A substantial leftover-steak salad with crisp green beans, creamy potatoes and a bright shallot–herb vinaigrette.",
-    cuisine: "French-inspired",
-    servings: "4",
-    tags: ["beef", "leftovers", "high-protein"]
-  },
-  {
-    file: "jerk-chicken-with-mango-avocado-salsa.html",
-    title: "Jerk Chicken with Mango-Avocado Salsa",
-    desc: "Bold jerk-seasoned chicken balanced by a cool fruit salsa, served with coconut cauliflower rice.",
-    cuisine: "Jamaican-inspired",
-    servings: "4",
-    tags: ["chicken", "grilling", "high-protein"]
-  },
-  {
-    file: "mediterranean-sheet-pan-salmon.html",
-    title: "Mediterranean Sheet-Pan Salmon",
-    desc: "Salmon roasted with zucchini, pepper, onion, potatoes, olives, oregano and lemon.",
-    cuisine: "Mediterranean",
-    servings: "4",
-    tags: ["salmon", "sheet-pan", "high-protein"]
-  },
-  {
-    file: "blackstone-hibachi-shrimp-and-chicken.html",
-    title: "Blackstone Hibachi Shrimp and Chicken",
-    desc: "Two separately cooked proteins with garlic-ginger vegetables and cauliflower fried rice. Shrimp is optional per plate.",
-    cuisine: "Japanese steakhouse-inspired",
-    servings: "4",
-    tags: ["chicken", "shrimp", "blackstone", "high-protein"]
-  }
-];
+/* The recipe list is loaded from recipes.json, which is rebuilt
+   automatically by the GitHub Action whenever a recipe HTML file
+   is added or changed. Nothing to edit here. */
+let recipes = [];
 
 function esc(s){ return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
 
@@ -169,7 +129,7 @@ function render(){
     case 'title':   list.sort((a,b) => a.title.localeCompare(b.title)); break;
     case 'cuisine': list.sort((a,b) => a.cuisine.localeCompare(b.cuisine) || a.title.localeCompare(b.title)); break;
     case 'protein': list.sort((a,b) => b.tags.includes('high-protein') - a.tags.includes('high-protein') || a.title.localeCompare(b.title)); break;
-    default:        list.sort((a,b) => b.i - a.i); // newest = last added first
+    default:        list.sort((a,b) => (b.added||'').localeCompare(a.added||'') || b.i - a.i); // newest first
   }
 
   countEl.innerHTML = term
@@ -206,7 +166,14 @@ function copyLink(i){
 
 q.addEventListener('input', render);
 sortSel.addEventListener('change', render);
-render();
+
+fetch('recipes.json', { cache: 'no-cache' })
+  .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
+  .then(data => { recipes = data; render(); })
+  .catch(() => {
+    countEl.textContent = '';
+    container.innerHTML = '<p class="empty">Couldn\u2019t load the recipe list. If you\u2019re viewing this file locally, it needs to be served from the website \u2014 recipes.json is fetched at load time.</p>';
+  });
 </script>
 </body>
 </html>

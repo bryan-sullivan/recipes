@@ -1,0 +1,81 @@
+[
+  {
+    "file": "sweet-and-salty-london-broil.html",
+    "title": "Sweet and Salty London Broil",
+    "desc": "Smoky grilled beef with a salty-sweet, garlicky marinade, crisp cucumber-herb salad and jasmine rice.",
+    "cuisine": "Vietnamese-inspired",
+    "servings": "4 plus leftovers",
+    "tags": [
+      "beef",
+      "grilling",
+      "high-protein"
+    ],
+    "added": "2026-07-26T12:00:00-04:00"
+  },
+  {
+    "file": "steak-green-bean-and-potato-salad.html",
+    "title": "Steak, Green Bean and Potato Salad",
+    "desc": "A substantial leftover-steak salad with crisp green beans, creamy potatoes and a bright mustard-free shallot–herb vinaigrette.",
+    "cuisine": "French-inspired",
+    "servings": "4",
+    "tags": [
+      "beef",
+      "leftovers",
+      "high-protein"
+    ],
+    "added": "2026-07-27T12:00:00-04:00"
+  },
+  {
+    "file": "jerk-chicken-with-mango-avocado-salsa.html",
+    "title": "Jerk Chicken with Mango-Avocado Salsa",
+    "desc": "Bold jerk-seasoned chicken balanced by a cool fruit salsa, served with coconut cauliflower rice.",
+    "cuisine": "Jamaican-inspired",
+    "servings": "4",
+    "tags": [
+      "chicken",
+      "grilling",
+      "high-protein"
+    ],
+    "added": "2026-07-28T12:00:00-04:00"
+  },
+  {
+    "file": "mediterranean-sheet-pan-salmon.html",
+    "title": "Mediterranean Sheet-Pan Salmon",
+    "desc": "Salmon roasted with zucchini, pepper, onion, potatoes, olives, oregano and lemon.",
+    "cuisine": "Mediterranean",
+    "servings": "4",
+    "tags": [
+      "salmon",
+      "sheet-pan",
+      "high-protein"
+    ],
+    "added": "2026-07-29T12:00:00-04:00"
+  },
+  {
+    "file": "blackstone-hibachi-shrimp-and-chicken.html",
+    "title": "Blackstone Hibachi Shrimp and Chicken",
+    "desc": "Two separately cooked proteins with garlic-ginger vegetables and cauliflower fried rice. Shrimp is optional per plate.",
+    "cuisine": "Japanese steakhouse-inspired",
+    "servings": "4",
+    "tags": [
+      "chicken",
+      "shrimp",
+      "blackstone",
+      "high-protein"
+    ],
+    "added": "2026-07-30T12:00:00-04:00"
+  },
+  {
+    "file": "turkey-smashburgers-with-vinegar-slaw.html",
+    "title": "Turkey Smashburgers with Vinegar Slaw",
+    "desc": "Thin, deeply browned turkey burgers with a mustard-free burger sauce, potato wedges and crisp slaw.",
+    "cuisine": "American",
+    "servings": "4",
+    "tags": [
+      "turkey",
+      "blackstone",
+      "high-protein"
+    ],
+    "added": "2026-07-31T12:00:00-04:00"
+  }
+]
