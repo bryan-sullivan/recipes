@@ -97,7 +97,12 @@
     "desc": "A thick, creamy, no-cook dessert that tastes like chocolate-peanut-butter pudding and takes only a few minutes to mix.",
     "cuisine": "American",
     "servings": "8",
-    "tags": [],
+    "tags": [
+      "chocolate",
+      "peanut-butter",
+      "dessert",
+      "high-protein"
+    ],
     "added": "2026-07-31T09:28:41-04:00"
   },
   {
@@ -106,7 +111,11 @@
     "desc": "Creamy individual cheesecakes with fresh berries and a light graham-cracker crust. Use little or no smoking wood so the delicate filling does not become overly smoky.",
     "cuisine": "American",
     "servings": "8",
-    "tags": [],
+    "tags": [
+      "berries",
+      "dessert",
+      "high-protein"
+    ],
     "added": "2026-07-31T09:28:41-04:00"
   }
 ]
