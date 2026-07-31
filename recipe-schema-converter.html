@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Recipe Schema Converter — Obsidian → Importable URL</title>
+<style>
+  :root{
+    --pine:#2E5B45;
+    --pine-deep:#1F3E30;
+    --ink:#1D2420;
+    --bg:#EDF1EC;
+    --panel:#FFFFFF;
+    --line:#D4DCD3;
+    --chive:#E3EEE4;
+    --amber:#A97A1F;
+    --mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+    --serif:Georgia,"Times New Roman",serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.5;min-height:100vh;display:flex;flex-direction:column}
+
+  header{background:var(--pine-deep);color:#F2F6F1;padding:18px 24px;display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
+  header h1{font-family:var(--serif);font-weight:normal;font-size:22px;letter-spacing:.2px}
+  header p{font-size:13px;opacity:.75}
+
+  /* schema checklist — what the importer will see */
+  .scan{background:var(--pine);color:#F2F6F1;padding:10px 24px;display:flex;gap:8px 22px;flex-wrap:wrap;align-items:center}
+  .scan .lbl{font-size:11px;text-transform:uppercase;letter-spacing:.12em;opacity:.8;margin-right:4px}
+  .scan .item{font-size:13px;display:flex;align-items:center;gap:6px;font-variant-numeric:tabular-nums}
+  .scan .dot{width:8px;height:8px;border-radius:50%;background:#7BC98F;flex:none}
+  .scan .item.miss .dot{background:#E0B45C}
+  .scan .item.miss{opacity:.85}
+
+  main{flex:1;display:grid;grid-template-columns:1fr 1fr;gap:18px;padding:18px 24px;max-width:1400px;width:100%;margin:0 auto}
+  @media(max-width:860px){main{grid-template-columns:1fr}}
+
+  .pane{background:var(--panel);border:1px solid var(--line);border-radius:8px;display:flex;flex-direction:column;overflow:hidden;min-height:480px}
+  .pane-head{display:flex;align-items:center;gap:10px;padding:10px 14px;border-bottom:1px solid var(--line);background:var(--chive)}
+  .pane-head h2{font-size:12px;text-transform:uppercase;letter-spacing:.12em;font-weight:600;color:var(--pine-deep);flex:1}
+
+  textarea{flex:1;border:none;resize:none;padding:14px;font-family:var(--mono);font-size:12.5px;line-height:1.55;color:var(--ink);outline:none;background:var(--panel)}
+
+  .tabs{display:flex;gap:4px}
+  .tabs button{border:1px solid var(--line);background:var(--panel);border-radius:5px;padding:4px 12px;font-size:12px;cursor:pointer;color:var(--ink)}
+  .tabs button[aria-selected="true"]{background:var(--pine);border-color:var(--pine);color:#fff}
+  .tabs button:focus-visible{outline:2px solid var(--pine-deep);outline-offset:1px}
+
+  iframe{flex:1;border:none;width:100%;background:#fff}
+  pre.src{flex:1;overflow:auto;padding:14px;font-family:var(--mono);font-size:11.5px;line-height:1.5;white-space:pre-wrap;word-break:break-word}
+
+  .actions{display:flex;gap:10px;padding:14px 24px 22px;max-width:1400px;width:100%;margin:0 auto;flex-wrap:wrap;align-items:center}
+  .actions button{border:none;border-radius:6px;padding:10px 18px;font-size:14px;font-weight:600;cursor:pointer}
+  .actions button:focus-visible{outline:2px solid var(--pine-deep);outline-offset:2px}
+  #dl{background:var(--pine);color:#fff}
+  #dl:hover{background:var(--pine-deep)}
+  #copy{background:var(--panel);border:1px solid var(--line);color:var(--ink)}
+  #copy:hover{background:var(--chive)}
+  .hint{font-size:12.5px;color:#4A554D;flex:1;min-width:260px}
+  .hint code{font-family:var(--mono);font-size:11.5px;background:var(--chive);padding:1px 5px;border-radius:3px}
+  .flash{font-size:13px;color:var(--pine);font-weight:600}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Recipe Schema Converter</h1>
+  <p>Paste an Obsidian recipe note &rarr; get an HTML page with schema.org markup that recipe importers can read.</p>
+</header>
+
+<div class="scan" id="scan" aria-live="polite">
+  <span class="lbl">Importer will see</span>
+</div>
+
+<main>
+  <section class="pane">
+    <div class="pane-head"><h2>Obsidian markdown</h2></div>
+    <textarea id="input" spellcheck="false" aria-label="Obsidian recipe markdown"></textarea>
+  </section>
+
+  <section class="pane">
+    <div class="pane-head">
+      <h2>Published page</h2>
+      <div class="tabs" role="tablist">
+        <button id="tabPrev" role="tab" aria-selected="true" onclick="setTab('prev')">Preview</button>
+        <button id="tabSrc" role="tab" aria-selected="false" onclick="setTab('src')">HTML</button>
+      </div>
+    </div>
+    <iframe id="preview" title="Generated recipe page preview"></iframe>
+    <pre class="src" id="source" hidden></pre>
+  </section>
+</main>
+
+<div class="actions">
+  <button id="dl" onclick="download()">Download HTML</button>
+  <button id="copy" onclick="copyHtml()">Copy HTML</button>
+  <span class="flash" id="flash" aria-live="polite"></span>
+  <span class="hint">Drop the file in a GitHub Pages repo (or any static host), then paste the page URL into the WeightWatchers recipe importer. The JSON-LD block in the <code>&lt;head&gt;</code> is what the importer reads.</span>
+</div>
+
+<script>
+/* ---------- parsing ---------- */
+
+function cleanText(s){
+  return s
+    .replace(/\[\[([^\]|]*\|)?([^\]]+)\]\]/g, '$2')   // [[wikilink]] / [[x|y]]
+    .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '$1')         // [text](url) -> text
+    .replace(/\*\*([^*]+)\*\*/g, '$1')
+    .replace(/\*([^*]+)\*/g, '$1')
+    .replace(/`([^`]+)`/g, '$1')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+function parseFrontmatter(md){
+  const fm = {};
+  let body = md;
+  if (md.startsWith('---')){
+    const end = md.indexOf('\n---', 3);
+    if (end !== -1){
+      body = md.slice(end + 4);
+      let key = null;
+      md.slice(3, end).split('\n').forEach(line => {
+        const li = line.match(/^\s+-\s+(.*)$/);
+        if (li && key){
+          if (!Array.isArray(fm[key])) fm[key] = [];
+          fm[key].push(li[1].trim());
+          return;
+        }
+        const kv = line.match(/^([\w-]+):\s*(.*)$/);
+        if (kv){
+          key = kv[1];
+          fm[key] = kv[2].trim();
+          if (fm[key] === '') fm[key] = [];
+        }
+      });
+    }
+  }
+  return { fm, body };
+}
+
+function parseRecipe(md){
+  const { fm, body } = parseFrontmatter(md);
+  const lines = body.split('\n');
+
+  let title = '', description = [], sections = [];
+  let cur = null, sub = null, pastTitle = false, inDesc = false;
+
+  for (const raw of lines){
+    const line = raw.replace(/\s+$/,'');
+    const h1 = line.match(/^#\s+(.*)/);
+    const h2 = line.match(/^##\s+(.*)/);
+    const h3 = line.match(/^###\s+(.*)/);
+
+    if (h2 && !h3){
+      cur = { name: cleanText(h2[1]), subs: [], bullets: [], steps: [], prose: [] };
+      sub = null;
+      sections.push(cur);
+      inDesc = false;
+      continue;
+    }
+    if (h3){
+      if (cur){ sub = { name: cleanText(h3[1]), bullets: [] }; cur.subs.push(sub); }
+      continue;
+    }
+    if (h1 && !pastTitle){
+      title = cleanText(h1[1]); pastTitle = true; inDesc = true;
+      continue;
+    }
+    const bullet = line.match(/^\s*[-*]\s+(.*)/);
+    const step = line.match(/^\s*\d+\.\s+(.*)/);
+    const bq = line.match(/^\s*>\s?(.*)/);
+
+    if (cur){
+      if (bq){
+        const inner = bq[1].trim();
+        if (!/^\[!\w+\]/.test(inner) && inner) cur.prose.push('Note: ' + cleanText(inner));
+      } else if (bullet){
+        const t = cleanText(bullet[1]);
+        if (t) (sub ? sub.bullets : cur.bullets).push(t);
+      } else if (step){
+        const t = cleanText(step[1]);
+        if (t) cur.steps.push(t);
+      } else if (line.trim()){
+        cur.prose.push(cleanText(line));
+      }
+    } else if (inDesc && line.trim() && !line.startsWith('#')){
+      description.push(cleanText(line));
+    }
+  }
+
+  const ingSection = sections.find(s => /ingredient/i.test(s.name));
+  const ingredients = [];
+  const ingredientGroups = [];
+  if (ingSection){
+    if (ingSection.bullets.length) ingredientGroups.push({ name: '', items: ingSection.bullets });
+    ingSection.subs.forEach(s => ingredientGroups.push({ name: s.name, items: s.bullets }));
+    ingredientGroups.forEach(g => ingredients.push(...g.items));
+  }
+
+  const stepSections = sections.filter(s => s !== ingSection && s.steps.length);
+  const noteSections = sections.filter(s => s !== ingSection && !s.steps.length && (s.prose.length || s.bullets.length));
+
+  return {
+    title: title || 'Untitled Recipe',
+    description: description.join(' '),
+    yield: typeof fm.servings === 'string' ? fm.servings : '',
+    cuisine: typeof fm.cuisine === 'string' ? fm.cuisine : '',
+    keywords: Array.isArray(fm.tags) ? fm.tags.join(', ') : '',
+    source: typeof fm.source === 'string' ? fm.source : '',
+    ingredients, ingredientGroups, stepSections, noteSections
+  };
+}
+
+/* ---------- generation ---------- */
+
+function esc(s){ return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+
+function buildJsonLd(r){
+  const ld = {
+    '@context': 'https://schema.org',
+    '@type': 'Recipe',
+    name: r.title
+  };
+  if (r.description) ld.description = r.description;
+  if (r.yield) ld.recipeYield = r.yield;
+  if (r.cuisine) ld.recipeCuisine = r.cuisine;
+  if (r.keywords) ld.keywords = r.keywords;
+  if (r.ingredients.length) ld.recipeIngredient = r.ingredients;
+  if (r.stepSections.length === 1){
+    ld.recipeInstructions = r.stepSections[0].steps.map(t => ({ '@type': 'HowToStep', text: t }));
+  } else if (r.stepSections.length > 1){
+    ld.recipeInstructions = r.stepSections.map(s => ({
+      '@type': 'HowToSection',
+      name: s.name,
+      itemListElement: s.steps.map(t => ({ '@type': 'HowToStep', text: t }))
+    }));
+  }
+  return JSON.stringify(ld, null, 2);
+}
+
+function buildPage(r){
+  const groupsHtml = r.ingredientGroups.map(g =>
+    (g.name ? `<h3>${esc(g.name)}</h3>` : '') +
+    `<ul>${g.items.map(i => `<li>${esc(i)}</li>`).join('')}</ul>`
+  ).join('\n');
+
+  const stepsHtml = r.stepSections.map(s =>
+    `<h3>${esc(s.name)}</h3><ol>${s.steps.map(t => `<li>${esc(t)}</li>`).join('')}</ol>` +
+    (s.prose.length ? `<p class="note">${s.prose.map(esc).join('</p><p class="note">')}</p>` : '')
+  ).join('\n');
+
+  const notesHtml = r.noteSections.map(s =>
+    `<h3>${esc(s.name)}</h3>` +
+    (s.prose.length ? `<p>${s.prose.map(esc).join('</p><p>')}</p>` : '') +
+    (s.bullets.length ? `<ul>${s.bullets.map(b => `<li>${esc(b)}</li>`).join('')}</ul>` : '')
+  ).join('\n');
+
+  const metaBits = [r.yield && `Serves: ${esc(r.yield)}`, r.cuisine && esc(r.cuisine)].filter(Boolean).join(' &middot; ');
+
+  return `<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>${esc(r.title)}</title>
+<script type="application/ld+json">
+${buildJsonLd(r)}
+<\/script>
+<style>
+  body{font-family:Georgia,serif;max-width:680px;margin:0 auto;padding:32px 20px;color:#22291F;line-height:1.6}
+  h1{font-size:30px;font-weight:normal;margin-bottom:6px}
+  .meta{font-size:14px;color:#5B6657;margin-bottom:4px;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+  .desc{font-size:17px;font-style:italic;color:#3E4A3C;margin:10px 0 26px}
+  h2{font-size:14px;text-transform:uppercase;letter-spacing:.14em;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;border-bottom:2px solid #2E5B45;padding-bottom:6px;margin:30px 0 12px;color:#2E5B45}
+  h3{font-size:16px;margin:16px 0 6px}
+  ul,ol{padding-left:24px;margin-bottom:10px}
+  li{margin-bottom:5px}
+  .note{font-size:14px;background:#F3EEDF;border-left:3px solid #A97A1F;padding:8px 12px;margin:10px 0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+  .src{font-size:13px;color:#77816F;margin-top:34px;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+</style>
+</head>
+<body>
+<h1>${esc(r.title)}</h1>
+${metaBits ? `<p class="meta">${metaBits}</p>` : ''}
+${r.description ? `<p class="desc">${esc(r.description)}</p>` : ''}
+<h2>Ingredients</h2>
+${groupsHtml}
+<h2>Instructions</h2>
+${stepsHtml}
+${notesHtml ? `<h2>Notes</h2>\n${notesHtml}` : ''}
+${r.source ? `<p class="src">Source: ${esc(r.source)}</p>` : ''}
+</body>
+</html>`;
+}
+
+/* ---------- UI ---------- */
+
+const input = document.getElementById('input');
+const preview = document.getElementById('preview');
+const source = document.getElementById('source');
+const scan = document.getElementById('scan');
+let currentHtml = '', currentTitle = 'recipe';
+
+function slug(s){ return s.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'') || 'recipe'; }
+
+function renderScan(r){
+  const stepCount = r.stepSections.reduce((n,s)=>n+s.steps.length,0);
+  const items = [
+    ['Recipe name', !!r.title && r.title !== 'Untitled Recipe', r.title],
+    ['Ingredients', r.ingredients.length > 0, r.ingredients.length + ' items'],
+    ['Steps', stepCount > 0, stepCount + ' steps'],
+    ['Yield', !!r.yield, r.yield || 'not set'],
+    ['Cuisine', !!r.cuisine, r.cuisine || 'not set'],
+    ['Keywords', !!r.keywords, r.keywords ? 'from tags' : 'not set']
+  ];
+  scan.innerHTML = '<span class="lbl">Importer will see</span>' + items.map(([label, ok, val]) =>
+    `<span class="item${ok ? '' : ' miss'}"><span class="dot"></span>${label}: ${esc(String(val))}</span>`
+  ).join('');
+}
+
+function update(){
+  const r = parseRecipe(input.value);
+  currentTitle = slug(r.title);
+  currentHtml = buildPage(r);
+  preview.srcdoc = currentHtml;
+  source.textContent = currentHtml;
+  renderScan(r);
+}
+
+let t;
+input.addEventListener('input', () => { clearTimeout(t); t = setTimeout(update, 300); });
+
+function setTab(which){
+  const prev = which === 'prev';
+  preview.hidden = !prev;
+  source.hidden = prev;
+  document.getElementById('tabPrev').setAttribute('aria-selected', prev);
+  document.getElementById('tabSrc').setAttribute('aria-selected', !prev);
+}
+
+function flash(msg){
+  const f = document.getElementById('flash');
+  f.textContent = msg;
+  setTimeout(() => f.textContent = '', 2200);
+}
+
+function download(){
+  const blob = new Blob([currentHtml], { type: 'text/html' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = currentTitle + '.html';
+  a.click();
+  URL.revokeObjectURL(a.href);
+  flash('Downloaded ' + currentTitle + '.html');
+}
+
+function copyHtml(){
+  navigator.clipboard.writeText(currentHtml).then(() => flash('Copied to clipboard'));
+}
+
+/* sample content on load */
+input.value = `---
+tags:
+  - recipe
+cuisine: 
+servings: 4
+source: 
+---
+# Paste Your Recipe Here
+
+Replace this with an Obsidian recipe note. Frontmatter fields (tags, cuisine, servings, source) map into the schema automatically.
+
+## Ingredients
+
+### Group name (optional)
+
+- 1 cup example ingredient
+- 2 tablespoons another one
+
+## Cook
+
+1. Numbered lists under any heading become instruction steps.
+2. Multiple headings with steps become named instruction sections.
+3. Wikilinks like [[Other Note]] are flattened to plain text.
+`;
+update();
+</script>
+</body>
+</html>
