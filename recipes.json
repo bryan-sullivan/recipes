@@ -117,5 +117,18 @@
       "high-protein"
     ],
     "added": "2026-07-31T09:28:41-04:00"
+  },
+  {
+    "file": "grilled-chicken-with-spinach-and-mozzarella.html",
+    "title": "Grilled Chicken with Spinach and Mozzarella",
+    "desc": "Thin grilled chicken cutlets topped with garlicky spinach, roasted red peppers and melted mozzarella.",
+    "cuisine": "Italian-inspired",
+    "servings": "6",
+    "tags": [
+      "chicken",
+      "grilling",
+      "high-protein"
+    ],
+    "added": "2026-08-01T16:20:56-04:00"
   }
 ]
