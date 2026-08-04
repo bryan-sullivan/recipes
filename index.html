@@ -1,179 +1,127 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bryan's Recipe Box</title>
-<style>
-  :root{
-    --pine:#2E5B45;
-    --pine-deep:#1F3E30;
-    --ink:#22291F;
-    --bg:#EDF1EC;
-    --panel:#FFFFFF;
-    --line:#D4DCD3;
-    --chive:#E3EEE4;
-    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
-    --serif:Georgia,"Times New Roman",serif;
-  }
-  *{box-sizing:border-box;margin:0;padding:0}
-  body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.5}
-
-  header{background:var(--pine-deep);color:#F2F6F1;padding:30px 24px 24px;text-align:center}
-  header h1{font-family:var(--serif);font-weight:normal;font-size:30px;letter-spacing:.3px}
-  header p{margin-top:6px;font-size:14px;opacity:.8;max-width:520px;margin-left:auto;margin-right:auto}
-
-  main{max-width:760px;margin:0 auto;padding:20px 20px 60px}
-
-  /* controls */
-  .controls{display:flex;gap:10px;margin-bottom:16px;flex-wrap:wrap;align-items:center}
-  .search{flex:1;min-width:220px;position:relative}
-  .search input{width:100%;border:1px solid var(--line);border-radius:8px;padding:9px 12px 9px 34px;font-size:14px;font-family:var(--sans);background:var(--panel);color:var(--ink);outline:none}
-  .search input:focus{border-color:var(--pine)}
-  .search svg{position:absolute;left:11px;top:50%;transform:translateY(-50%);width:15px;height:15px;stroke:#77816F;fill:none;stroke-width:2;pointer-events:none}
-  select{border:1px solid var(--line);border-radius:8px;padding:9px 10px;font-size:13.5px;font-family:var(--sans);background:var(--panel);color:var(--ink);cursor:pointer}
-  select:focus-visible,.search input:focus-visible{outline:2px solid var(--pine);outline-offset:1px}
-  .count{font-size:12.5px;color:#5B6657;margin-bottom:10px;min-height:18px}
-  .count .clear{color:var(--pine);cursor:pointer;text-decoration:underline;background:none;border:none;font-size:12.5px;font-family:var(--sans)}
-
-  /* compact cards */
-  .card{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:12px 16px;margin-bottom:10px;display:flex;gap:14px;align-items:center;flex-wrap:wrap}
-  .card .info{flex:1;min-width:230px}
-  .card h2{font-family:var(--serif);font-weight:normal;font-size:18px;line-height:1.25}
-  .card h2 a{color:var(--ink);text-decoration:none}
-  .card h2 a:hover{color:var(--pine)}
-  .meta{font-size:12.5px;color:#5B6657;margin-top:2px}
-  .tags{display:flex;gap:5px;flex-wrap:wrap;margin-top:6px}
-  .tag{font-size:10.5px;background:var(--chive);color:var(--pine-deep);border-radius:99px;padding:2px 8px;cursor:pointer;border:none;font-family:var(--sans)}
-  .tag:hover{background:var(--pine);color:#fff}
-  .actions{display:flex;gap:8px;align-items:center;flex:none}
-  .btn{display:inline-block;border-radius:6px;padding:7px 13px;font-size:12.5px;font-weight:600;text-decoration:none;cursor:pointer;border:none;font-family:var(--sans);white-space:nowrap}
-  .btn.view{background:var(--pine);color:#fff}
-  .btn.view:hover{background:var(--pine-deep)}
-  .btn.copy{background:var(--panel);border:1px solid var(--line);color:var(--ink)}
-  .btn.copy:hover{background:var(--chive)}
-  .btn:focus-visible{outline:2px solid var(--pine-deep);outline-offset:2px}
-  .empty{text-align:center;color:#5B6657;font-size:14px;padding:30px 0}
-
-  .toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:var(--pine-deep);color:#fff;font-size:13px;padding:9px 18px;border-radius:99px;opacity:0;transition:opacity .25s;pointer-events:none}
-  .toast.show{opacity:1}
-
-  .howto{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:18px 22px;margin-top:26px}
-  .howto h2{font-size:11.5px;text-transform:uppercase;letter-spacing:.14em;color:var(--pine);margin-bottom:8px}
-  .howto ol{padding-left:22px;font-size:13.5px}
-  .howto li{margin-bottom:5px}
-
-  footer{text-align:center;font-size:12px;color:#77816F;padding:0 20px 36px}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A family recipe collection focused on high-protein, lower-calorie meals.">
+  <title>Family Recipe Book</title>
+  <link rel="stylesheet" href="assets/styles.css">
 </head>
 <body>
-
-<header>
-  <h1>Bryan&rsquo;s Recipe Box</h1>
-  <p>Browse and cook straight from the page, or copy a recipe&rsquo;s link into the WeightWatchers app to import it with points.</p>
-</header>
-
-<main>
-  <div class="controls">
-    <div class="search">
-      <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="21" y2="21"/></svg>
-      <input id="q" type="search" placeholder="Search by name, tag, or cuisine… e.g. chicken, grilling, salad" aria-label="Search recipes">
-    </div>
-    <select id="sort" aria-label="Sort recipes">
-      <option value="newest">Newest first</option>
-      <option value="title">Title A–Z</option>
-      <option value="cuisine">Cuisine</option>
-      <option value="protein">Tag: high-protein first</option>
-    </select>
-  </div>
-  <div class="count" id="count"></div>
-  <div id="recipes"></div>
-
-  <section class="howto">
-    <h2>Importing into WeightWatchers</h2>
-    <ol>
-      <li>Tap <strong>Copy import link</strong> on any recipe (or copy the recipe page&rsquo;s URL from your browser).</li>
-      <li>In the WW app, go to <strong>Recipes &rarr; Create &rarr; Import from web</strong>.</li>
-      <li>Paste the link. Name, ingredients, and steps come in automatically, and WW calculates the points.</li>
-    </ol>
-  </section>
-</main>
-
-<div class="toast" id="toast" aria-live="polite"></div>
-<footer>Built with a homemade Obsidian-to-web converter. New recipes appear here as they&rsquo;re added.</footer>
-
-<script>
-/* The recipe list is loaded from recipes.json, which is rebuilt
-   automatically by the GitHub Action whenever a recipe HTML file
-   is added or changed. Nothing to edit here. */
-let recipes = [];
-
-function esc(s){ return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
-
-const q = document.getElementById('q');
-const sortSel = document.getElementById('sort');
-const container = document.getElementById('recipes');
-const countEl = document.getElementById('count');
-
-function haystack(r){
-  return [r.title, r.desc, r.cuisine, r.tags.join(' ')].join(' ').toLowerCase();
-}
-
-function render(){
-  const term = q.value.trim().toLowerCase();
-  let list = recipes.map((r, i) => ({ ...r, i }));
-
-  if (term) list = list.filter(r => haystack(r).includes(term));
-
-  switch (sortSel.value){
-    case 'title':   list.sort((a,b) => a.title.localeCompare(b.title)); break;
-    case 'cuisine': list.sort((a,b) => a.cuisine.localeCompare(b.cuisine) || a.title.localeCompare(b.title)); break;
-    case 'protein': list.sort((a,b) => b.tags.includes('high-protein') - a.tags.includes('high-protein') || a.title.localeCompare(b.title)); break;
-    default:        list.sort((a,b) => (b.added||'').localeCompare(a.added||'') || b.i - a.i); // newest first
-  }
-
-  countEl.innerHTML = term
-    ? `${list.length} of ${recipes.length} recipes match &ldquo;${esc(q.value.trim())}&rdquo; <button class="clear" onclick="clearSearch()">clear</button>`
-    : `${recipes.length} recipes`;
-
-  container.innerHTML = list.length ? list.map(r => `
-    <article class="card">
-      <div class="info">
-        <h2><a href="${esc(r.file)}">${esc(r.title)}</a></h2>
-        <p class="meta">${esc(r.cuisine)} &middot; Serves ${esc(r.servings)}</p>
-        <div class="tags">${r.tags.map(t => `<button class="tag" onclick="searchTag('${esc(t)}')">${esc(t)}</button>`).join('')}</div>
-      </div>
-      <div class="actions">
-        <a class="btn view" href="${esc(r.file)}">View</a>
-        <button class="btn copy" onclick="copyLink(${r.i})">Copy import link</button>
-      </div>
-    </article>
-  `).join('') : `<p class="empty">No recipes match. Try a different search, or clear it to see everything.</p>`;
-}
-
-function searchTag(t){ q.value = t; render(); }
-function clearSearch(){ q.value = ''; render(); q.focus(); }
-
-function copyLink(i){
-  const url = new URL(recipes[i].file, window.location.href).href;
-  navigator.clipboard.writeText(url).then(() => {
-    const toast = document.getElementById('toast');
-    toast.textContent = 'Link copied — paste it into WW';
-    toast.classList.add('show');
-    setTimeout(() => toast.classList.remove('show'), 2200);
-  });
-}
-
-q.addEventListener('input', render);
-sortSel.addEventListener('change', render);
-
-fetch('recipes.json', { cache: 'no-cache' })
-  .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
-  .then(data => { recipes = data; render(); })
-  .catch(() => {
-    countEl.textContent = '';
-    container.innerHTML = '<p class="empty">Couldn\u2019t load the recipe list. If you\u2019re viewing this file locally, it needs to be served from the website \u2014 recipes.json is fetched at load time.</p>';
-  });
-</script>
+  <header class="site-header">
+    <a class="brand" href="index.html">Family Recipe Book</a>
+    <nav><a href="#recipes">Recipes</a><a href="#planning">Meal plans</a></nav>
+  </header>
+  <main>
+    <section class="hero">
+      <p class="eyebrow">Kamado Joe · Blackstone · Weeknight kitchen</p>
+      <h1>High-protein family recipes worth repeating.</h1>
+      <p>Recipe notes, ratings, weekly menus and grocery lists—generated directly from the Obsidian collection.</p>
+    </section>
+    <section class="collection" id="recipes">
+      <div class="section-heading"><p class="eyebrow">Recipe collection</p><h2>15 recipes</h2></div>
+      <div class="card-grid"><article class="card">
+    <p class="eyebrow">American · 36-inch Blackstone</p>
+    <h3><a href="recipes/90-percent-beef-smashburgers-with-broccoli-and-potato-wedges.html">90% Beef Smashburgers with Broccoli and Potato Wedges</a></h3>
+    <p class="rating">Not yet rated</p>
+    <p class="tags"><span>recipe</span><span>beef</span><span>smashburger</span><span>blackstone</span><span>high-protein</span><span>mustard-free</span></p>
+  </article><article class="card">
+    <p class="eyebrow">American · 36-inch Blackstone</p>
+    <h3><a href="recipes/blackstone-grilled-peaches-with-cheesecake-cream.html">Blackstone Grilled Peaches with Cheesecake Cream</a></h3>
+    <p class="rating">Not yet rated</p>
+    <p class="tags"><span>recipe</span><span>dessert</span><span>blackstone</span><span>high-protein</span><span>lower-calorie</span><span>fruit</span></p>
+  </article><article class="card">
+    <p class="eyebrow">Japanese-steakhouse-inspired · 36-inch Blackstone</p>
+    <h3><a href="recipes/blackstone-hibachi-shrimp-and-chicken.html">Blackstone Hibachi Shrimp and Chicken</a></h3>
+    <p class="rating">Not yet rated</p>
+    <p class="tags"><span>recipe</span><span>shrimp</span><span>chicken</span><span>blackstone</span><span>high-protein</span></p>
+  </article><article class="card">
+    <p class="eyebrow">American · oven or Kamado Joe</p>
+    <h3><a href="recipes/cherry-balsamic-pork-tenderloin-with-clean-out-vegetables.html">Cherry-Balsamic Pork Tenderloin with Clean-Out Vegetables</a></h3>
+    <p class="rating">Not yet rated</p>
+    <p class="tags"><span>recipe</span><span>pork</span><span>high-protein</span><span>clean-out-the-fridge</span></p>
+  </article><article class="card">
+    <p class="eyebrow">American · mixing bowl</p>
+    <h3><a href="recipes/chocolate-peanut-butter-protein-mousse.html">Chocolate–Peanut Butter Protein Mousse</a></h3>
+    <p class="rating">Not yet rated</p>
+    <p class="tags"><span>recipe</span><span>dessert</span><span>no-cook</span><span>high-protein</span><span>lower-calorie</span><span>make-ahead</span></p>
+  </article><article class="card">
+    <p class="eyebrow">Mediterranean · Kamado Joe Jr or Blackstone</p>
+    <h3><a href="recipes/feta-brined-chicken-bowls-with-shirazi-salad.html">Feta-Brined Chicken Bowls with Shirazi Salad</a></h3>
+    <p class="rating">Not yet rated</p>
+    <p class="tags"><span>recipe</span><span>chicken</span><span>grilling</span><span>rice-bowl</span><span>high-protein</span></p>
+  </article><article class="card">
+    <p class="eyebrow">Italian-inspired · Kamado Joe</p>
+    <h3><a href="recipes/grilled-chicken-with-spinach-and-mozzarella.html">Grilled Chicken with Spinach and Mozzarella</a></h3>
+    <p class="rating">Not yet rated</p>
+    <p class="tags"><span>recipe</span><span>chicken</span><span>grilling</span><span>high-protein</span></p>
+  </article><article class="card">
+    <p class="eyebrow">Jamaican-inspired · Kamado Joe Jr</p>
+    <h3><a href="recipes/jerk-chicken-with-mango-avocado-salsa.html">Jerk Chicken with Mango-Avocado Salsa</a></h3>
+    <p class="rating">Not yet rated</p>
+    <p class="tags"><span>recipe</span><span>chicken</span><span>grilling</span><span>high-protein</span></p>
+  </article><article class="card">
+    <p class="eyebrow">American · Kamado Joe Classic II or oven</p>
+    <h3><a href="recipes/kamado-berry-cheesecake-cups.html">Kamado Berry Cheesecake Cups</a></h3>
+    <p class="rating">Not yet rated</p>
+    <p class="tags"><span>recipe</span><span>dessert</span><span>kamado-joe</span><span>high-protein</span><span>lower-calorie</span><span>make-ahead</span></p>
+  </article><article class="card">
+    <p class="eyebrow">Argentine-inspired · Kamado Joe Classic II</p>
+    <h3><a href="recipes/kamado-chimichurri-steak-with-potatoes-and-green-beans.html">Kamado Chimichurri Steak with Potatoes and Green Beans</a></h3>
+    <p class="rating">Not yet rated</p>
+    <p class="tags"><span>recipe</span><span>beef</span><span>kamado</span><span>grilling</span><span>high-protein</span><span>planned-leftovers</span></p>
+  </article><article class="card">
+    <p class="eyebrow">Argentine-inspired · none</p>
+    <h3><a href="recipes/leftover-chopped-chimichurri-steak-salad.html">Leftover Chopped Chimichurri Steak Salad</a></h3>
+    <p class="rating">Not yet rated</p>
+    <p class="tags"><span>recipe</span><span>beef</span><span>leftovers</span><span>no-cook</span><span>high-protein</span><span>board-meeting</span></p>
+  </article><article class="card">
+    <p class="eyebrow">Mediterranean · oven</p>
+    <h3><a href="recipes/mediterranean-sheet-pan-salmon.html">Mediterranean Sheet-Pan Salmon</a></h3>
+    <p class="rating">Not yet rated</p>
+    <p class="tags"><span>recipe</span><span>salmon</span><span>sheet-pan</span><span>high-protein</span></p>
+  </article><article class="card">
+    <p class="eyebrow">French-inspired</p>
+    <h3><a href="recipes/steak-green-bean-and-potato-salad.html">Steak, Green Bean and Potato Salad</a></h3>
+    <p class="rating">Not yet rated</p>
+    <p class="tags"><span>recipe</span><span>beef</span><span>leftovers</span><span>high-protein</span></p>
+  </article><article class="card">
+    <p class="eyebrow">Vietnamese-inspired · Kamado Joe Classic II</p>
+    <h3><a href="recipes/sweet-and-salty-london-broil.html">Sweet and Salty London Broil</a></h3>
+    <p class="rating">Not yet rated</p>
+    <p class="tags"><span>recipe</span><span>beef</span><span>grilling</span><span>high-protein</span></p>
+  </article><article class="card">
+    <p class="eyebrow">American · 36-inch Blackstone</p>
+    <h3><a href="recipes/turkey-smashburgers-with-vinegar-slaw.html">Turkey Smashburgers with Vinegar Slaw</a></h3>
+    <p class="rating">Not yet rated</p>
+    <p class="tags"><span>recipe</span><span>turkey</span><span>blackstone</span><span>high-protein</span></p>
+  </article></div>
+    </section>
+    <section class="collection" id="planning">
+      <div class="section-heading"><p class="eyebrow">Planning</p><h2>Menus, ratings and shopping</h2></div>
+      <div class="card-grid planning-grid"><article class="card">
+    <p class="eyebrow">Planning note</p>
+    <h3><a href="recipes/recipe-ratings.html">Recipe Ratings</a></h3>
+    
+    <p class="tags"><span>recipes</span><span>ratings</span><span>index</span></p>
+  </article><article class="card">
+    <p class="eyebrow">Planning note</p>
+    <h3><a href="recipes/weekly-dinner-menu.html">Weekly Dinner Menu</a></h3>
+    
+    <p class="tags"><span>meal-plan</span><span>recipes</span></p>
+  </article><article class="card">
+    <p class="eyebrow">Planning note</p>
+    <h3><a href="recipes/weekly-dinner-menu-2026-08-02.html">Weekly Dinner Menu — August 2–6</a></h3>
+    
+    <p class="tags"><span>meal-plan</span><span>recipes</span></p>
+  </article><article class="card">
+    <p class="eyebrow">Planning note</p>
+    <h3><a href="recipes/wegmans-grocery-list-2026-08-02.html">Wegmans Grocery List — August 2–6</a></h3>
+    
+    <p class="tags"><span>shopping-list</span><span>meal-plan</span><span>Wegmans</span></p>
+  </article></div>
+    </section>
+  </main>
+  <footer>Generated from Obsidian Markdown.</footer>
 </body>
 </html>
