@@ -83,7 +83,14 @@
   </header>
   <main class="page">
     <article>
-      <dl class="metadata"><div><dt>Rating</dt><dd>Not yet rated</dd></div><div><dt>Cuisine</dt><dd>Vietnamese-inspired</dd></div><div><dt>Equipment</dt><dd>Kamado Joe Classic II</dd></div><div><dt>Servings</dt><dd>4 plus leftovers</dd></div></dl>
+      <dl class="metadata"><div><dt>Cuisine</dt><dd>Vietnamese-inspired</dd></div><div><dt>Equipment</dt><dd>Kamado Joe Classic II</dd></div><div><dt>Servings</dt><dd>4 plus leftovers</dd></div></dl>
+      <div class="rating-widget rating-widget-page" data-rating-widget data-recipe-id="sweet-and-salty-london-broil" data-initial-rating="0">
+    <span class="rating-label">Your rating</span>
+    <div class="rating-stars" role="group" aria-label="Rate Sweet and Salty London Broil"><button class="rating-star" type="button" data-rating-star="1" aria-label="Rate 1 star"><span aria-hidden="true">★</span></button><button class="rating-star" type="button" data-rating-star="2" aria-label="Rate 2 stars"><span aria-hidden="true">★</span></button><button class="rating-star" type="button" data-rating-star="3" aria-label="Rate 3 stars"><span aria-hidden="true">★</span></button><button class="rating-star" type="button" data-rating-star="4" aria-label="Rate 4 stars"><span aria-hidden="true">★</span></button><button class="rating-star" type="button" data-rating-star="5" aria-label="Rate 5 stars"><span aria-hidden="true">★</span></button></div>
+    <output class="rating-output" data-rating-output>Not rated</output>
+    <button class="rating-clear" type="button" data-clear-rating hidden>Clear</button>
+    <p class="rating-help">Select the left or right half of a star for half-point ratings. Arrow keys adjust by ½.</p>
+  </div>
       <h1 id="sweet-and-salty-london-broil">Sweet and Salty London Broil</h1>
 <h2 id="ingredients">Ingredients</h2>
 <h3 id="beef">Beef</h3>
@@ -132,5 +139,73 @@
     </article>
   </main>
   <footer>Generated from Obsidian Markdown. Edit the notes, then rebuild the site.</footer>
+  <script>
+    const ratingStoragePrefix = "family-recipe-rating-v1:";
+
+    function readSavedRating(recipeId, fallback) {
+      try {
+        const saved = window.localStorage.getItem(ratingStoragePrefix + recipeId);
+        return saved === null ? fallback : Number(saved);
+      } catch {
+        return fallback;
+      }
+    }
+
+    function ratingLabel(value) {
+      return value > 0 ? value + " / 5" : "Not rated";
+    }
+
+    function paintRating(widget, value) {
+      const normalized = Math.max(0, Math.min(5, Math.round(value * 2) / 2));
+      widget.dataset.currentRating = String(normalized);
+      widget.querySelectorAll("[data-rating-star]").forEach((button) => {
+        const star = Number(button.dataset.ratingStar);
+        button.dataset.fill = normalized >= star ? "full" : normalized >= star - 0.5 ? "half" : "empty";
+        button.setAttribute("aria-pressed", normalized === star || normalized === star - 0.5 ? "true" : "false");
+      });
+      widget.querySelector("[data-rating-output]").textContent = ratingLabel(normalized);
+      widget.querySelector("[data-clear-rating]").hidden = normalized === 0;
+      const card = widget.closest(".card");
+      if (card) card.dataset.rating = String(normalized);
+      return normalized;
+    }
+
+    function saveRating(widget, value) {
+      const normalized = paintRating(widget, value);
+      try {
+        if (normalized > 0) window.localStorage.setItem(ratingStoragePrefix + widget.dataset.recipeId, String(normalized));
+        else window.localStorage.removeItem(ratingStoragePrefix + widget.dataset.recipeId);
+      } catch {}
+      if (typeof applyRecipeFilters === "function") applyRecipeFilters();
+    }
+
+    document.querySelectorAll("[data-rating-widget]").forEach((widget) => {
+      const initial = Number(widget.dataset.initialRating) || 0;
+      paintRating(widget, readSavedRating(widget.dataset.recipeId, initial));
+    });
+
+    document.addEventListener("click", (event) => {
+      const star = event.target.closest("[data-rating-star]");
+      if (star) {
+        const widget = star.closest("[data-rating-widget]");
+        const whole = Number(star.dataset.ratingStar);
+        const rect = star.getBoundingClientRect();
+        const value = event.detail === 0 || event.clientX - rect.left >= rect.width / 2 ? whole : whole - 0.5;
+        saveRating(widget, value);
+        return;
+      }
+      const clear = event.target.closest("[data-clear-rating]");
+      if (clear) saveRating(clear.closest("[data-rating-widget]"), 0);
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key !== "ArrowLeft" && event.key !== "ArrowRight") return;
+      const widget = event.target.closest("[data-rating-widget]");
+      if (!widget) return;
+      event.preventDefault();
+      const direction = event.key === "ArrowRight" ? 0.5 : -0.5;
+      saveRating(widget, Number(widget.dataset.currentRating || 0) + direction);
+    });
+  </script>
 </body>
 </html>
