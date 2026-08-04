@@ -20,172 +20,208 @@
     </section>
     <section class="collection" id="recipes">
       <div class="section-heading"><p class="eyebrow">Recipe collection</p><h2>15 recipes</h2></div>
-      <div class="card-grid"><article class="card">
+      <div class="recipe-controls" aria-label="Recipe search and filters">
+        <label class="search-control">
+          <span>Search</span>
+          <input id="recipe-search" type="search" placeholder="Name, tag, cuisine or equipment" autocomplete="off">
+        </label>
+        <label>
+          <span>Cuisine</span>
+          <select id="cuisine-filter">
+            <option value="all">All cuisines</option>
+            <option value="american">American</option><option value="argentine-inspired">Argentine-inspired</option><option value="french-inspired">French-inspired</option><option value="italian-inspired">Italian-inspired</option><option value="jamaican-inspired">Jamaican-inspired</option><option value="japanese-steakhouse-inspired">Japanese-steakhouse-inspired</option><option value="mediterranean">Mediterranean</option><option value="vietnamese-inspired">Vietnamese-inspired</option>
+          </select>
+        </label>
+        <label>
+          <span>Rating</span>
+          <select id="rating-filter">
+            <option value="all">All ratings</option>
+            <option value="4plus">4 stars and above</option>
+            <option value="rated">Rated recipes</option>
+            <option value="unrated">Not yet rated</option>
+          </select>
+        </label>
+        <label>
+          <span>Sort</span>
+          <select id="recipe-sort">
+            <option value="original">Recipe order</option>
+            <option value="title">Title A–Z</option>
+            <option value="cuisine">Cuisine A–Z</option>
+            <option value="rating">Rating: high to low</option>
+          </select>
+        </label>
+      </div>
+      <div class="results-summary">
+        <p id="recipe-count" aria-live="polite">15 recipes</p>
+        <button id="clear-filters" type="button" hidden>Clear search and filters</button>
+      </div>
+      <div class="card-grid" id="recipe-grid"><article class="card" data-title="90% beef smashburgers with broccoli and potato wedges" data-cuisine="american" data-rating="0" data-order="0" data-search="90% beef smashburgers with broccoli and potato wedges american · 36-inch blackstone beef smashburger blackstone high-protein mustard-free">
     <div class="card-info">
       <p class="eyebrow">American · 36-inch Blackstone</p>
       <h3><a href="recipes/90-percent-beef-smashburgers-with-broccoli-and-potato-wedges.html">90% Beef Smashburgers with Broccoli and Potato Wedges</a></h3>
       <p class="rating">☆☆☆☆☆ (not rated)</p>
-      <p class="tags"><span>beef</span><span>smashburger</span><span>blackstone</span><span>high-protein</span><span>mustard-free</span></p>
+      <p class="tags"><button type="button" data-filter-tag="beef">beef</button><button type="button" data-filter-tag="smashburger">smashburger</button><button type="button" data-filter-tag="blackstone">blackstone</button><button type="button" data-filter-tag="high-protein">high-protein</button><button type="button" data-filter-tag="mustard-free">mustard-free</button></p>
     </div>
     <div class="card-actions">
       <a class="button button-primary" href="recipes/90-percent-beef-smashburgers-with-broccoli-and-potato-wedges.html">View</a>
       <button class="button button-copy" type="button" data-copy-path="recipes/90-percent-beef-smashburgers-with-broccoli-and-potato-wedges.html">Copy import link</button>
     </div>
-  </article><article class="card">
+  </article><article class="card" data-title="blackstone grilled peaches with cheesecake cream" data-cuisine="american" data-rating="0" data-order="1" data-search="blackstone grilled peaches with cheesecake cream american · 36-inch blackstone dessert blackstone high-protein lower-calorie fruit">
     <div class="card-info">
       <p class="eyebrow">American · 36-inch Blackstone</p>
       <h3><a href="recipes/blackstone-grilled-peaches-with-cheesecake-cream.html">Blackstone Grilled Peaches with Cheesecake Cream</a></h3>
       <p class="rating">☆☆☆☆☆ (not rated)</p>
-      <p class="tags"><span>dessert</span><span>blackstone</span><span>high-protein</span><span>lower-calorie</span><span>fruit</span></p>
+      <p class="tags"><button type="button" data-filter-tag="dessert">dessert</button><button type="button" data-filter-tag="blackstone">blackstone</button><button type="button" data-filter-tag="high-protein">high-protein</button><button type="button" data-filter-tag="lower-calorie">lower-calorie</button><button type="button" data-filter-tag="fruit">fruit</button></p>
     </div>
     <div class="card-actions">
       <a class="button button-primary" href="recipes/blackstone-grilled-peaches-with-cheesecake-cream.html">View</a>
       <button class="button button-copy" type="button" data-copy-path="recipes/blackstone-grilled-peaches-with-cheesecake-cream.html">Copy import link</button>
     </div>
-  </article><article class="card">
+  </article><article class="card" data-title="blackstone hibachi shrimp and chicken" data-cuisine="japanese-steakhouse-inspired" data-rating="0" data-order="2" data-search="blackstone hibachi shrimp and chicken japanese-steakhouse-inspired · 36-inch blackstone shrimp chicken blackstone high-protein">
     <div class="card-info">
       <p class="eyebrow">Japanese-steakhouse-inspired · 36-inch Blackstone</p>
       <h3><a href="recipes/blackstone-hibachi-shrimp-and-chicken.html">Blackstone Hibachi Shrimp and Chicken</a></h3>
       <p class="rating">☆☆☆☆☆ (not rated)</p>
-      <p class="tags"><span>shrimp</span><span>chicken</span><span>blackstone</span><span>high-protein</span></p>
+      <p class="tags"><button type="button" data-filter-tag="shrimp">shrimp</button><button type="button" data-filter-tag="chicken">chicken</button><button type="button" data-filter-tag="blackstone">blackstone</button><button type="button" data-filter-tag="high-protein">high-protein</button></p>
     </div>
     <div class="card-actions">
       <a class="button button-primary" href="recipes/blackstone-hibachi-shrimp-and-chicken.html">View</a>
       <button class="button button-copy" type="button" data-copy-path="recipes/blackstone-hibachi-shrimp-and-chicken.html">Copy import link</button>
     </div>
-  </article><article class="card">
+  </article><article class="card" data-title="cherry-balsamic pork tenderloin with clean-out vegetables" data-cuisine="american" data-rating="0" data-order="3" data-search="cherry-balsamic pork tenderloin with clean-out vegetables american · oven or kamado joe pork high-protein clean-out-the-fridge">
     <div class="card-info">
       <p class="eyebrow">American · oven or Kamado Joe</p>
       <h3><a href="recipes/cherry-balsamic-pork-tenderloin-with-clean-out-vegetables.html">Cherry-Balsamic Pork Tenderloin with Clean-Out Vegetables</a></h3>
       <p class="rating">☆☆☆☆☆ (not rated)</p>
-      <p class="tags"><span>pork</span><span>high-protein</span><span>clean-out-the-fridge</span></p>
+      <p class="tags"><button type="button" data-filter-tag="pork">pork</button><button type="button" data-filter-tag="high-protein">high-protein</button><button type="button" data-filter-tag="clean-out-the-fridge">clean-out-the-fridge</button></p>
     </div>
     <div class="card-actions">
       <a class="button button-primary" href="recipes/cherry-balsamic-pork-tenderloin-with-clean-out-vegetables.html">View</a>
       <button class="button button-copy" type="button" data-copy-path="recipes/cherry-balsamic-pork-tenderloin-with-clean-out-vegetables.html">Copy import link</button>
     </div>
-  </article><article class="card">
+  </article><article class="card" data-title="chocolate–peanut butter protein mousse" data-cuisine="american" data-rating="0" data-order="4" data-search="chocolate–peanut butter protein mousse american · mixing bowl dessert no-cook high-protein lower-calorie make-ahead">
     <div class="card-info">
       <p class="eyebrow">American · mixing bowl</p>
       <h3><a href="recipes/chocolate-peanut-butter-protein-mousse.html">Chocolate–Peanut Butter Protein Mousse</a></h3>
       <p class="rating">☆☆☆☆☆ (not rated)</p>
-      <p class="tags"><span>dessert</span><span>no-cook</span><span>high-protein</span><span>lower-calorie</span><span>make-ahead</span></p>
+      <p class="tags"><button type="button" data-filter-tag="dessert">dessert</button><button type="button" data-filter-tag="no-cook">no-cook</button><button type="button" data-filter-tag="high-protein">high-protein</button><button type="button" data-filter-tag="lower-calorie">lower-calorie</button><button type="button" data-filter-tag="make-ahead">make-ahead</button></p>
     </div>
     <div class="card-actions">
       <a class="button button-primary" href="recipes/chocolate-peanut-butter-protein-mousse.html">View</a>
       <button class="button button-copy" type="button" data-copy-path="recipes/chocolate-peanut-butter-protein-mousse.html">Copy import link</button>
     </div>
-  </article><article class="card">
+  </article><article class="card" data-title="feta-brined chicken bowls with shirazi salad" data-cuisine="mediterranean" data-rating="0" data-order="5" data-search="feta-brined chicken bowls with shirazi salad mediterranean · kamado joe jr or blackstone chicken grilling rice-bowl high-protein">
     <div class="card-info">
       <p class="eyebrow">Mediterranean · Kamado Joe Jr or Blackstone</p>
       <h3><a href="recipes/feta-brined-chicken-bowls-with-shirazi-salad.html">Feta-Brined Chicken Bowls with Shirazi Salad</a></h3>
       <p class="rating">☆☆☆☆☆ (not rated)</p>
-      <p class="tags"><span>chicken</span><span>grilling</span><span>rice-bowl</span><span>high-protein</span></p>
+      <p class="tags"><button type="button" data-filter-tag="chicken">chicken</button><button type="button" data-filter-tag="grilling">grilling</button><button type="button" data-filter-tag="rice-bowl">rice-bowl</button><button type="button" data-filter-tag="high-protein">high-protein</button></p>
     </div>
     <div class="card-actions">
       <a class="button button-primary" href="recipes/feta-brined-chicken-bowls-with-shirazi-salad.html">View</a>
       <button class="button button-copy" type="button" data-copy-path="recipes/feta-brined-chicken-bowls-with-shirazi-salad.html">Copy import link</button>
     </div>
-  </article><article class="card">
+  </article><article class="card" data-title="grilled chicken with spinach and mozzarella" data-cuisine="italian-inspired" data-rating="0" data-order="6" data-search="grilled chicken with spinach and mozzarella italian-inspired · kamado joe chicken grilling high-protein">
     <div class="card-info">
       <p class="eyebrow">Italian-inspired · Kamado Joe</p>
       <h3><a href="recipes/grilled-chicken-with-spinach-and-mozzarella.html">Grilled Chicken with Spinach and Mozzarella</a></h3>
       <p class="rating">☆☆☆☆☆ (not rated)</p>
-      <p class="tags"><span>chicken</span><span>grilling</span><span>high-protein</span></p>
+      <p class="tags"><button type="button" data-filter-tag="chicken">chicken</button><button type="button" data-filter-tag="grilling">grilling</button><button type="button" data-filter-tag="high-protein">high-protein</button></p>
     </div>
     <div class="card-actions">
       <a class="button button-primary" href="recipes/grilled-chicken-with-spinach-and-mozzarella.html">View</a>
       <button class="button button-copy" type="button" data-copy-path="recipes/grilled-chicken-with-spinach-and-mozzarella.html">Copy import link</button>
     </div>
-  </article><article class="card">
+  </article><article class="card" data-title="jerk chicken with mango-avocado salsa" data-cuisine="jamaican-inspired" data-rating="0" data-order="7" data-search="jerk chicken with mango-avocado salsa jamaican-inspired · kamado joe jr chicken grilling high-protein">
     <div class="card-info">
       <p class="eyebrow">Jamaican-inspired · Kamado Joe Jr</p>
       <h3><a href="recipes/jerk-chicken-with-mango-avocado-salsa.html">Jerk Chicken with Mango-Avocado Salsa</a></h3>
       <p class="rating">☆☆☆☆☆ (not rated)</p>
-      <p class="tags"><span>chicken</span><span>grilling</span><span>high-protein</span></p>
+      <p class="tags"><button type="button" data-filter-tag="chicken">chicken</button><button type="button" data-filter-tag="grilling">grilling</button><button type="button" data-filter-tag="high-protein">high-protein</button></p>
     </div>
     <div class="card-actions">
       <a class="button button-primary" href="recipes/jerk-chicken-with-mango-avocado-salsa.html">View</a>
       <button class="button button-copy" type="button" data-copy-path="recipes/jerk-chicken-with-mango-avocado-salsa.html">Copy import link</button>
     </div>
-  </article><article class="card">
+  </article><article class="card" data-title="kamado berry cheesecake cups" data-cuisine="american" data-rating="0" data-order="8" data-search="kamado berry cheesecake cups american · kamado joe classic ii or oven dessert kamado-joe high-protein lower-calorie make-ahead">
     <div class="card-info">
       <p class="eyebrow">American · Kamado Joe Classic II or oven</p>
       <h3><a href="recipes/kamado-berry-cheesecake-cups.html">Kamado Berry Cheesecake Cups</a></h3>
       <p class="rating">☆☆☆☆☆ (not rated)</p>
-      <p class="tags"><span>dessert</span><span>kamado-joe</span><span>high-protein</span><span>lower-calorie</span><span>make-ahead</span></p>
+      <p class="tags"><button type="button" data-filter-tag="dessert">dessert</button><button type="button" data-filter-tag="kamado-joe">kamado-joe</button><button type="button" data-filter-tag="high-protein">high-protein</button><button type="button" data-filter-tag="lower-calorie">lower-calorie</button><button type="button" data-filter-tag="make-ahead">make-ahead</button></p>
     </div>
     <div class="card-actions">
       <a class="button button-primary" href="recipes/kamado-berry-cheesecake-cups.html">View</a>
       <button class="button button-copy" type="button" data-copy-path="recipes/kamado-berry-cheesecake-cups.html">Copy import link</button>
     </div>
-  </article><article class="card">
+  </article><article class="card" data-title="kamado chimichurri steak with potatoes and green beans" data-cuisine="argentine-inspired" data-rating="0" data-order="9" data-search="kamado chimichurri steak with potatoes and green beans argentine-inspired · kamado joe classic ii beef kamado grilling high-protein planned-leftovers">
     <div class="card-info">
       <p class="eyebrow">Argentine-inspired · Kamado Joe Classic II</p>
       <h3><a href="recipes/kamado-chimichurri-steak-with-potatoes-and-green-beans.html">Kamado Chimichurri Steak with Potatoes and Green Beans</a></h3>
       <p class="rating">☆☆☆☆☆ (not rated)</p>
-      <p class="tags"><span>beef</span><span>kamado</span><span>grilling</span><span>high-protein</span><span>planned-leftovers</span></p>
+      <p class="tags"><button type="button" data-filter-tag="beef">beef</button><button type="button" data-filter-tag="kamado">kamado</button><button type="button" data-filter-tag="grilling">grilling</button><button type="button" data-filter-tag="high-protein">high-protein</button><button type="button" data-filter-tag="planned-leftovers">planned-leftovers</button></p>
     </div>
     <div class="card-actions">
       <a class="button button-primary" href="recipes/kamado-chimichurri-steak-with-potatoes-and-green-beans.html">View</a>
       <button class="button button-copy" type="button" data-copy-path="recipes/kamado-chimichurri-steak-with-potatoes-and-green-beans.html">Copy import link</button>
     </div>
-  </article><article class="card">
+  </article><article class="card" data-title="leftover chopped chimichurri steak salad" data-cuisine="argentine-inspired" data-rating="0" data-order="10" data-search="leftover chopped chimichurri steak salad argentine-inspired · none beef leftovers no-cook high-protein board-meeting">
     <div class="card-info">
       <p class="eyebrow">Argentine-inspired · none</p>
       <h3><a href="recipes/leftover-chopped-chimichurri-steak-salad.html">Leftover Chopped Chimichurri Steak Salad</a></h3>
       <p class="rating">☆☆☆☆☆ (not rated)</p>
-      <p class="tags"><span>beef</span><span>leftovers</span><span>no-cook</span><span>high-protein</span><span>board-meeting</span></p>
+      <p class="tags"><button type="button" data-filter-tag="beef">beef</button><button type="button" data-filter-tag="leftovers">leftovers</button><button type="button" data-filter-tag="no-cook">no-cook</button><button type="button" data-filter-tag="high-protein">high-protein</button><button type="button" data-filter-tag="board-meeting">board-meeting</button></p>
     </div>
     <div class="card-actions">
       <a class="button button-primary" href="recipes/leftover-chopped-chimichurri-steak-salad.html">View</a>
       <button class="button button-copy" type="button" data-copy-path="recipes/leftover-chopped-chimichurri-steak-salad.html">Copy import link</button>
     </div>
-  </article><article class="card">
+  </article><article class="card" data-title="mediterranean sheet-pan salmon" data-cuisine="mediterranean" data-rating="0" data-order="11" data-search="mediterranean sheet-pan salmon mediterranean · oven salmon sheet-pan high-protein">
     <div class="card-info">
       <p class="eyebrow">Mediterranean · oven</p>
       <h3><a href="recipes/mediterranean-sheet-pan-salmon.html">Mediterranean Sheet-Pan Salmon</a></h3>
       <p class="rating">☆☆☆☆☆ (not rated)</p>
-      <p class="tags"><span>salmon</span><span>sheet-pan</span><span>high-protein</span></p>
+      <p class="tags"><button type="button" data-filter-tag="salmon">salmon</button><button type="button" data-filter-tag="sheet-pan">sheet-pan</button><button type="button" data-filter-tag="high-protein">high-protein</button></p>
     </div>
     <div class="card-actions">
       <a class="button button-primary" href="recipes/mediterranean-sheet-pan-salmon.html">View</a>
       <button class="button button-copy" type="button" data-copy-path="recipes/mediterranean-sheet-pan-salmon.html">Copy import link</button>
     </div>
-  </article><article class="card">
+  </article><article class="card" data-title="steak, green bean and potato salad" data-cuisine="french-inspired" data-rating="0" data-order="12" data-search="steak, green bean and potato salad french-inspired beef leftovers high-protein">
     <div class="card-info">
       <p class="eyebrow">French-inspired</p>
       <h3><a href="recipes/steak-green-bean-and-potato-salad.html">Steak, Green Bean and Potato Salad</a></h3>
       <p class="rating">☆☆☆☆☆ (not rated)</p>
-      <p class="tags"><span>beef</span><span>leftovers</span><span>high-protein</span></p>
+      <p class="tags"><button type="button" data-filter-tag="beef">beef</button><button type="button" data-filter-tag="leftovers">leftovers</button><button type="button" data-filter-tag="high-protein">high-protein</button></p>
     </div>
     <div class="card-actions">
       <a class="button button-primary" href="recipes/steak-green-bean-and-potato-salad.html">View</a>
       <button class="button button-copy" type="button" data-copy-path="recipes/steak-green-bean-and-potato-salad.html">Copy import link</button>
     </div>
-  </article><article class="card">
+  </article><article class="card" data-title="sweet and salty london broil" data-cuisine="vietnamese-inspired" data-rating="0" data-order="13" data-search="sweet and salty london broil vietnamese-inspired · kamado joe classic ii beef grilling high-protein">
     <div class="card-info">
       <p class="eyebrow">Vietnamese-inspired · Kamado Joe Classic II</p>
       <h3><a href="recipes/sweet-and-salty-london-broil.html">Sweet and Salty London Broil</a></h3>
       <p class="rating">☆☆☆☆☆ (not rated)</p>
-      <p class="tags"><span>beef</span><span>grilling</span><span>high-protein</span></p>
+      <p class="tags"><button type="button" data-filter-tag="beef">beef</button><button type="button" data-filter-tag="grilling">grilling</button><button type="button" data-filter-tag="high-protein">high-protein</button></p>
     </div>
     <div class="card-actions">
       <a class="button button-primary" href="recipes/sweet-and-salty-london-broil.html">View</a>
       <button class="button button-copy" type="button" data-copy-path="recipes/sweet-and-salty-london-broil.html">Copy import link</button>
     </div>
-  </article><article class="card">
+  </article><article class="card" data-title="turkey smashburgers with vinegar slaw" data-cuisine="american" data-rating="0" data-order="14" data-search="turkey smashburgers with vinegar slaw american · 36-inch blackstone turkey blackstone high-protein">
     <div class="card-info">
       <p class="eyebrow">American · 36-inch Blackstone</p>
       <h3><a href="recipes/turkey-smashburgers-with-vinegar-slaw.html">Turkey Smashburgers with Vinegar Slaw</a></h3>
       <p class="rating">☆☆☆☆☆ (not rated)</p>
-      <p class="tags"><span>turkey</span><span>blackstone</span><span>high-protein</span></p>
+      <p class="tags"><button type="button" data-filter-tag="turkey">turkey</button><button type="button" data-filter-tag="blackstone">blackstone</button><button type="button" data-filter-tag="high-protein">high-protein</button></p>
     </div>
     <div class="card-actions">
       <a class="button button-primary" href="recipes/turkey-smashburgers-with-vinegar-slaw.html">View</a>
       <button class="button button-copy" type="button" data-copy-path="recipes/turkey-smashburgers-with-vinegar-slaw.html">Copy import link</button>
     </div>
   </article></div>
+      <p class="empty-results" id="empty-results" hidden>No recipes match those filters.</p>
       <aside class="ww-import" aria-labelledby="ww-import-title">
         <p class="eyebrow">WeightWatchers</p>
         <h2 id="ww-import-title">Import a recipe and calculate its points</h2>
@@ -265,6 +301,14 @@
     }
 
     document.addEventListener("click", async (event) => {
+      const tag = event.target.closest("[data-filter-tag]");
+      if (tag) {
+        recipeSearch.value = tag.dataset.filterTag;
+        applyRecipeFilters();
+        recipeSearch.focus();
+        return;
+      }
+
       const button = event.target.closest("[data-copy-path]");
       if (!button) return;
 
@@ -275,6 +319,64 @@
       } catch {
         showToast("Could not copy the link. Open the recipe and copy its address.");
       }
+    });
+
+    const recipeGrid = document.getElementById("recipe-grid");
+    const recipeCards = [...recipeGrid.querySelectorAll(".card")];
+    const recipeSearch = document.getElementById("recipe-search");
+    const cuisineFilter = document.getElementById("cuisine-filter");
+    const ratingFilter = document.getElementById("rating-filter");
+    const recipeSort = document.getElementById("recipe-sort");
+    const recipeCount = document.getElementById("recipe-count");
+    const clearFilters = document.getElementById("clear-filters");
+    const emptyResults = document.getElementById("empty-results");
+
+    function applyRecipeFilters() {
+      const query = recipeSearch.value.trim().toLowerCase();
+      const cuisine = cuisineFilter.value;
+      const ratingChoice = ratingFilter.value;
+      const sortChoice = recipeSort.value;
+
+      const sortedCards = [...recipeCards].sort((a, b) => {
+        if (sortChoice === "title") return a.dataset.title.localeCompare(b.dataset.title);
+        if (sortChoice === "cuisine") return a.dataset.cuisine.localeCompare(b.dataset.cuisine) || a.dataset.title.localeCompare(b.dataset.title);
+        if (sortChoice === "rating") return Number(b.dataset.rating) - Number(a.dataset.rating) || a.dataset.title.localeCompare(b.dataset.title);
+        return Number(a.dataset.order) - Number(b.dataset.order);
+      });
+
+      let visible = 0;
+      sortedCards.forEach((card) => {
+        const rating = Number(card.dataset.rating);
+        const matchesSearch = !query || card.dataset.search.includes(query);
+        const matchesCuisine = cuisine === "all" || card.dataset.cuisine === cuisine;
+        const matchesRating = ratingChoice === "all"
+          || (ratingChoice === "4plus" && rating >= 4)
+          || (ratingChoice === "rated" && rating > 0)
+          || (ratingChoice === "unrated" && rating === 0);
+        const show = matchesSearch && matchesCuisine && matchesRating;
+        card.hidden = !show;
+        recipeGrid.appendChild(card);
+        if (show) visible += 1;
+      });
+
+      recipeCount.textContent = visible === recipeCards.length
+        ? recipeCards.length + " recipes"
+        : visible + " of " + recipeCards.length + " recipes";
+      emptyResults.hidden = visible !== 0;
+      clearFilters.hidden = !query && cuisine === "all" && ratingChoice === "all" && sortChoice === "original";
+    }
+
+    [recipeSearch, cuisineFilter, ratingFilter, recipeSort].forEach((control) => {
+      control.addEventListener(control === recipeSearch ? "input" : "change", applyRecipeFilters);
+    });
+
+    clearFilters.addEventListener("click", () => {
+      recipeSearch.value = "";
+      cuisineFilter.value = "all";
+      ratingFilter.value = "all";
+      recipeSort.value = "original";
+      applyRecipeFilters();
+      recipeSearch.focus();
     });
   </script>
 </body>
