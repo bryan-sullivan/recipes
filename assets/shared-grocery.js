@@ -455,13 +455,14 @@
     membership: null,
     list: null,
     items: [],
-    channel: null
+    channel: null,
+    connecting: false
   };
 
   const ui = {
     auth: document.getElementById("grocery-auth"),
     authForm: document.getElementById("grocery-auth-form"),
-    email: document.getElementById("grocery-email"),
+    authInvite: document.getElementById("grocery-device-invite"),
     authStatus: document.getElementById("grocery-auth-status"),
     setup: document.getElementById("grocery-setup"),
     createHousehold: document.getElementById("create-household"),
@@ -504,7 +505,7 @@
   }
 
   function inviteLink() {
-    const url = new URL(window.location.href);
+    const url = new URL("../grocery-list.html", window.location.href);
     url.hash = "";
     url.search = "";
     url.searchParams.set("invite", state.household.invite_code);
@@ -750,7 +751,9 @@
     show(ui.setup, false);
     show(ui.listPanel, true);
     ui.householdName.textContent = state.household.name;
-    ui.signedInAs.textContent = state.user.email || "Signed in";
+    ui.signedInAs.textContent = state.user.is_anonymous
+      ? "Connected on this device"
+      : state.user.email || "Connected on this device";
     ui.inviteCode.textContent = state.household.invite_code;
 
     await loadItems();
@@ -781,24 +784,38 @@
     }
   }
 
+  async function joinWithCode(code, statusElement) {
+    if (!code) return false;
+
+    state.connecting = true;
+    message(statusElement, "Connecting this device to the family list…", "");
+
+    try {
+      if (!state.user) {
+        const authResult = await db.auth.signInAnonymously();
+        if (authResult.error) throw authResult.error;
+        state.user = authResult.data.user;
+      }
+
+      const result = await db.rpc("join_household", { join_code: code });
+      if (result.error) throw result.error;
+
+      const url = new URL(window.location.href);
+      url.searchParams.delete("invite");
+      window.history.replaceState({}, "", url);
+      await loadContext();
+      return true;
+    } catch (error) {
+      message(statusElement, cleanError(error), "error");
+      return false;
+    } finally {
+      state.connecting = false;
+    }
+  }
+
   ui.authForm.addEventListener("submit", async event => {
     event.preventDefault();
-    const email = ui.email.value.trim();
-    if (!email) return;
-
-    message(ui.authStatus, "Sending your secure sign-in link…", "");
-    const redirectTo = window.location.href.split("#")[0];
-    const result = await db.auth.signInWithOtp({
-      email,
-      options: { emailRedirectTo: redirectTo }
-    });
-
-    if (result.error) {
-      message(ui.authStatus, cleanError(result.error), "error");
-    } else {
-      message(ui.authStatus, "Check your email and open the sign-in link on this device.", "success");
-      ui.authForm.reset();
-    }
+    await joinWithCode(ui.authInvite.value.trim(), ui.authStatus);
   });
 
   ui.createHousehold.addEventListener("click", async () => {
@@ -820,21 +837,7 @@
 
   ui.joinForm.addEventListener("submit", async event => {
     event.preventDefault();
-    const code = ui.inviteInput.value.trim();
-    if (!code) return;
-
-    message(ui.setupStatus, "Joining the family list…", "");
-    const result = await db.rpc("join_household", { join_code: code });
-
-    if (result.error) {
-      message(ui.setupStatus, cleanError(result.error), "error");
-      return;
-    }
-
-    const url = new URL(window.location.href);
-    url.searchParams.delete("invite");
-    window.history.replaceState({}, "", url);
-    await loadContext();
+    await joinWithCode(ui.inviteInput.value.trim(), ui.setupStatus);
   });
 
   ui.copyInvite.addEventListener("click", async () => {
@@ -934,8 +937,13 @@
     const sessionResult = await db.auth.getSession();
     await handleSession(sessionResult.data.session);
 
+    const code = inviteFromUrl();
+    if (code && !state.membership) {
+      await joinWithCode(code, state.user ? ui.setupStatus : ui.authStatus);
+    }
+
     db.auth.onAuthStateChange((event, session) => {
-      if (event !== "INITIAL_SESSION") handleSession(session);
+      if (event !== "INITIAL_SESSION" && !state.connecting) handleSession(session);
     });
 
     root.dataset.ready = "true";
