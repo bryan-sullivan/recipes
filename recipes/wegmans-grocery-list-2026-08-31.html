@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="A private, shared family grocery list for six high-protein dinners, August 31–September 5, 2026.">
-  <title>Shared Wegmans Grocery List — August 31–September 5, 2026 · Family Recipe Book</title>
+  <meta name="description" content="A shared household grocery list that syncs in real time across connected devices.">
+  <title>Shared Grocery List · Family Recipe Book</title>
   <link rel="stylesheet" href="../assets/styles.css">
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.112.4" defer></script>
   <script src="../assets/shared-grocery.js" defer></script>
@@ -12,13 +12,13 @@
 <body>
   <header class="site-header">
     <a class="brand" href="../index.html">Family Recipe Book</a>
-    <nav><a href="../index.html#recipes">Recipes</a><a href="../index.html#planning">Meal plans</a></nav>
+    <nav><a href="../index.html#recipes">Recipes</a><a href="../index.html#planning">Grocery list</a></nav>
   </header>
   <main class="page grocery-page">
     <article>
-      <dl class="metadata"><div><dt>Week</dt><dd>August 31–September 5, 2026</dd></div><div><dt>Dinners</dt><dd>6</dd></div><div><dt>Servings</dt><dd>4</dd></div><div><dt>Sync</dt><dd>Private household</dd></div></dl>
-      <h1>Shared Wegmans Grocery List — August 31–September 5, 2026</h1>
-      <blockquote class="callout info"><p><strong>Shared in real time</strong><br>Add, edit or check off an item and the change appears for every signed-in household member. This list assumes roasted garlic, fresh basil and some green beans are already on hand.</p></blockquote>
+      <dl class="metadata"><div><dt>Use</dt><dd>Ongoing household list</dd></div><div><dt>Access</dt><dd>Private invitation link</dd></div><div><dt>Sync</dt><dd>Live across devices</dd></div></dl>
+      <h1>Shared Grocery List</h1>
+      <blockquote class="callout info"><p><strong>Shared in real time</strong><br>Add, edit or check off an item and the change appears on every connected household device. A private invitation connects each new phone or computer once—no email or password needed.</p></blockquote>
 
       <div id="shared-grocery-app"
            class="shared-grocery-app"
@@ -27,13 +27,13 @@
 
         <section id="grocery-auth" class="grocery-panel" aria-labelledby="grocery-auth-title">
           <p class="eyebrow">Private family access</p>
-          <h2 id="grocery-auth-title">Sign in to the shared list</h2>
-          <p>Enter your email and Supabase will send a secure sign-in link. No password is needed.</p>
+          <h2 id="grocery-auth-title">Connect this device</h2>
+          <p>Open the private invitation link from a connected household device. You can also paste its invitation code below.</p>
           <form id="grocery-auth-form" class="grocery-form grocery-auth-form">
-            <label for="grocery-email">Email address</label>
+            <label for="grocery-device-invite">Private invitation code</label>
             <div class="grocery-form-row">
-              <input id="grocery-email" name="email" type="email" autocomplete="email" required placeholder="you@example.com">
-              <button class="button button-primary" type="submit">Email me a sign-in link</button>
+              <input id="grocery-device-invite" name="invite" type="text" autocomplete="off" required placeholder="Family invitation code">
+              <button class="button button-primary" type="submit">Connect this device</button>
             </div>
           </form>
           <p id="grocery-auth-status" class="grocery-status" aria-live="polite"></p>
@@ -49,8 +49,8 @@
               <button id="create-household" class="button button-primary" type="button">Create our family list</button>
             </div>
             <div>
-              <h3>Join the list</h3>
-              <p>Use the invite code or link sent by an existing household member.</p>
+              <h3>Connect this device</h3>
+              <p>Use the private invitation code or link copied from a connected household device.</p>
               <form id="join-household-form" class="grocery-form">
                 <label for="invite-code">Invite code</label>
                 <div class="grocery-form-row">
@@ -68,7 +68,7 @@
             <div>
               <p class="eyebrow">Live household list</p>
               <h2 id="grocery-list-title"><span id="grocery-household-name">Family grocery list</span></h2>
-              <p class="grocery-account"><span id="grocery-signed-in-as"></span> · <button id="grocery-sign-out" class="link-button" type="button">Sign out</button></p>
+              <p class="grocery-account"><span id="grocery-signed-in-as"></span> · <button id="grocery-sign-out" class="link-button" type="button">Disconnect</button></p>
             </div>
             <div class="grocery-sync">
               <span class="grocery-live-dot" aria-hidden="true"></span>
@@ -78,8 +78,8 @@
 
           <aside class="grocery-invite">
             <div>
-              <strong>Invite your wife</strong>
-              <p>Code: <code id="household-invite-code"></code></p>
+              <strong>Connect another phone or computer</strong>
+              <p>Copy the private link once for each new device. Code: <code id="household-invite-code"></code></p>
             </div>
             <button id="copy-household-invite" class="button" type="button">Copy private invite link</button>
           </aside>
@@ -132,6 +132,6 @@
       </ul>
     </article>
   </main>
-  <footer>Generated from Obsidian Markdown. Shared grocery data is stored privately in Supabase.</footer>
+  <footer>Generated from Obsidian Markdown. Grocery data is shared only with devices connected by the household invitation.</footer>
 </body>
 </html>
