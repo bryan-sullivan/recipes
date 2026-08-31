@@ -3,94 +3,124 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Consolidated grocery list for six high-protein family dinners, August 31–September 5, 2026.">
-  <title>Wegmans Grocery List — August 31–September 5, 2026 · Family Recipe Book</title>
+  <meta name="description" content="A private, shared family grocery list for six high-protein dinners, August 31–September 5, 2026.">
+  <title>Shared Wegmans Grocery List — August 31–September 5, 2026 · Family Recipe Book</title>
   <link rel="stylesheet" href="../assets/styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.112.4" defer></script>
+  <script src="../assets/shared-grocery.js" defer></script>
 </head>
 <body>
   <header class="site-header">
     <a class="brand" href="../index.html">Family Recipe Book</a>
     <nav><a href="../index.html#recipes">Recipes</a><a href="../index.html#planning">Meal plans</a></nav>
   </header>
-  <main class="page">
+  <main class="page grocery-page">
     <article>
-      <dl class="metadata"><div><dt>Week</dt><dd>August 31–September 5, 2026</dd></div><div><dt>Dinners</dt><dd>6</dd></div><div><dt>Servings</dt><dd>4</dd></div><div><dt>Store</dt><dd>Wegmans</dd></div></dl>
-      <h1>Wegmans Grocery List — August 31–September 5, 2026</h1>
-      <blockquote class="callout info"><p><strong>Use what you have first</strong><br>This list assumes roasted garlic, fresh basil and some green beans are already on hand. Check those quantities before shopping and buy only enough green beans to reach about 2 pounds total.</p></blockquote>
-      <h2 id="produce">Produce</h2>
-      <ul class="checklist">
-        <li><label><input type="checkbox"> Baby Yukon Gold potatoes — 1½ pounds</label></li>
-        <li><label><input type="checkbox"> Green beans — enough to bring your total to about 2 pounds</label></li>
-        <li><label><input type="checkbox"> Cilantro — 1 large bunch</label></li>
-        <li><label><input type="checkbox"> Flat-leaf parsley — 1 large bunch</label></li>
-        <li><label><input type="checkbox"> Zucchini — 2</label></li>
-        <li><label><input type="checkbox"> Red bell pepper — 1</label></li>
-        <li><label><input type="checkbox"> Broccoli — 1 large head or about 1 pound</label></li>
-        <li><label><input type="checkbox"> Red onions — 2</label></li>
-        <li><label><input type="checkbox"> Yellow or sweet onion — 1</label></li>
-        <li><label><input type="checkbox"> Cucumbers — 4</label></li>
-        <li><label><input type="checkbox"> Tomatoes — 2–3</label></li>
-        <li><label><input type="checkbox"> Jalapeño — 1</label></li>
-        <li><label><input type="checkbox"> Limes — 4</label></li>
-        <li><label><input type="checkbox"> Lemons — 3</label></li>
-        <li><label><input type="checkbox"> Scallions — 1 bunch</label></li>
-        <li><label><input type="checkbox"> Shredded cabbage or slaw mix — 1 bag</label></li>
-        <li><label><input type="checkbox"> Shredded carrots — 1 bag</label></li>
-        <li><label><input type="checkbox"> Fresh ginger — 1 small hand</label></li>
-      </ul>
-      <h2 id="meat">Meat</h2>
-      <ul class="checklist">
-        <li><label><input type="checkbox"> Ground chicken — 1½ pounds</label></li>
-        <li><label><input type="checkbox"> Lean sirloin steak — 1½ pounds</label></li>
-        <li><label><input type="checkbox"> Boneless, skinless chicken breasts or thighs for Peruvian chicken — 2½ pounds</label></li>
-        <li><label><input type="checkbox"> Boneless, skinless chicken breast for Parmesan bowls — 1½ pounds</label></li>
-        <li><label><input type="checkbox"> Pork tenderloin — 1½–1¾ pounds</label></li>
-        <li><label><input type="checkbox"> 90% lean ground beef — 1½ pounds</label></li>
-      </ul>
-      <h2 id="dairy">Dairy</h2>
-      <ul class="checklist">
-        <li><label><input type="checkbox"> Plain nonfat Greek yogurt — 1 large tub</label></li>
-        <li><label><input type="checkbox"> Part-skim shredded mozzarella — at least ¾ cup</label></li>
-        <li><label><input type="checkbox"> Grated Parmesan — at least ¾ cup</label></li>
-      </ul>
-      <h2 id="canned-and-jarred">Canned and jarred</h2>
-      <ul class="checklist">
-        <li><label><input type="checkbox"> Cannellini beans — 1 can</label></li>
-        <li><label><input type="checkbox"> Marinara sauce — 1 jar</label></li>
-      </ul>
-      <h2 id="bread-pasta-and-rice">Bread, pasta and rice</h2>
-      <ul class="checklist">
-        <li><label><input type="checkbox"> Panko breadcrumbs — at least ½ cup</label></li>
-        <li><label><input type="checkbox"> Protein pasta or regular pasta — 8 ounces</label></li>
-        <li><label><input type="checkbox"> Rice — enough for 2 cups cooked</label></li>
-        <li><label><input type="checkbox"> Small pita bread — 4, optional</label></li>
-      </ul>
-      <h2 id="sauces-and-condiments">Sauces and condiments</h2>
-      <ul class="checklist">
-        <li><label><input type="checkbox"> Gochujang</label></li>
-        <li><label><input type="checkbox"> Low-sodium soy sauce</label></li>
-        <li><label><input type="checkbox"> Rice vinegar</label></li>
-        <li><label><input type="checkbox"> Worcestershire sauce</label></li>
-        <li><label><input type="checkbox"> Toasted sesame oil</label></li>
-        <li><label><input type="checkbox"> Honey</label></li>
-      </ul>
-      <h2 id="pantry-check">Pantry check</h2>
-      <ul class="checklist">
-        <li><label><input type="checkbox"> Olive oil</label></li>
-        <li><label><input type="checkbox"> Butter</label></li>
-        <li><label><input type="checkbox"> Low-sodium chicken broth</label></li>
-        <li><label><input type="checkbox"> Ground cumin</label></li>
-        <li><label><input type="checkbox"> Ground coriander</label></li>
-        <li><label><input type="checkbox"> Smoked paprika</label></li>
-        <li><label><input type="checkbox"> Dried oregano</label></li>
-        <li><label><input type="checkbox"> Italian seasoning</label></li>
-        <li><label><input type="checkbox"> Garlic powder</label></li>
-        <li><label><input type="checkbox"> Ground cinnamon</label></li>
-        <li><label><input type="checkbox"> Red pepper flakes</label></li>
-        <li><label><input type="checkbox"> Sesame seeds, optional</label></li>
-        <li><label><input type="checkbox"> Kosher salt</label></li>
-        <li><label><input type="checkbox"> Black pepper</label></li>
-      </ul>
+      <dl class="metadata"><div><dt>Week</dt><dd>August 31–September 5, 2026</dd></div><div><dt>Dinners</dt><dd>6</dd></div><div><dt>Servings</dt><dd>4</dd></div><div><dt>Sync</dt><dd>Private household</dd></div></dl>
+      <h1>Shared Wegmans Grocery List — August 31–September 5, 2026</h1>
+      <blockquote class="callout info"><p><strong>Shared in real time</strong><br>Add, edit or check off an item and the change appears for every signed-in household member. This list assumes roasted garlic, fresh basil and some green beans are already on hand.</p></blockquote>
+
+      <div id="shared-grocery-app"
+           class="shared-grocery-app"
+           data-supabase-url="https://wjxmozhornzttaegyvxo.supabase.co"
+           data-supabase-key="sb_publishable_rlHOU9-Kqv9yzK-yw2H4SA_qDcog2yC">
+
+        <section id="grocery-auth" class="grocery-panel" aria-labelledby="grocery-auth-title">
+          <p class="eyebrow">Private family access</p>
+          <h2 id="grocery-auth-title">Sign in to the shared list</h2>
+          <p>Enter your email and Supabase will send a secure sign-in link. No password is needed.</p>
+          <form id="grocery-auth-form" class="grocery-form grocery-auth-form">
+            <label for="grocery-email">Email address</label>
+            <div class="grocery-form-row">
+              <input id="grocery-email" name="email" type="email" autocomplete="email" required placeholder="you@example.com">
+              <button class="button button-primary" type="submit">Email me a sign-in link</button>
+            </div>
+          </form>
+          <p id="grocery-auth-status" class="grocery-status" aria-live="polite"></p>
+        </section>
+
+        <section id="grocery-setup" class="grocery-panel" aria-labelledby="grocery-setup-title" hidden>
+          <p class="eyebrow">One-time setup</p>
+          <h2 id="grocery-setup-title">Connect to your family list</h2>
+          <div class="grocery-setup-grid">
+            <div>
+              <h3>Create the list</h3>
+              <p>The first household member creates the shared list and receives a private invite link.</p>
+              <button id="create-household" class="button button-primary" type="button">Create our family list</button>
+            </div>
+            <div>
+              <h3>Join the list</h3>
+              <p>Use the invite code or link sent by an existing household member.</p>
+              <form id="join-household-form" class="grocery-form">
+                <label for="invite-code">Invite code</label>
+                <div class="grocery-form-row">
+                  <input id="invite-code" name="invite" type="text" autocomplete="off" required placeholder="Family invite code">
+                  <button class="button" type="submit">Join</button>
+                </div>
+              </form>
+            </div>
+          </div>
+          <p id="grocery-setup-status" class="grocery-status" aria-live="polite"></p>
+        </section>
+
+        <section id="grocery-list-panel" class="grocery-panel grocery-list-panel" aria-labelledby="grocery-list-title" hidden>
+          <div class="grocery-list-header">
+            <div>
+              <p class="eyebrow">Live household list</p>
+              <h2 id="grocery-list-title"><span id="grocery-household-name">Family grocery list</span></h2>
+              <p class="grocery-account"><span id="grocery-signed-in-as"></span> · <button id="grocery-sign-out" class="link-button" type="button">Sign out</button></p>
+            </div>
+            <div class="grocery-sync">
+              <span class="grocery-live-dot" aria-hidden="true"></span>
+              <span id="grocery-sync-status" aria-live="polite">Connecting…</span>
+            </div>
+          </div>
+
+          <aside class="grocery-invite">
+            <div>
+              <strong>Invite your wife</strong>
+              <p>Code: <code id="household-invite-code"></code></p>
+            </div>
+            <button id="copy-household-invite" class="button" type="button">Copy private invite link</button>
+          </aside>
+          <p id="invite-status" class="grocery-status" aria-live="polite"></p>
+
+          <form id="grocery-add-form" class="grocery-add-form">
+            <div>
+              <label for="grocery-item-name">Item</label>
+              <input id="grocery-item-name" name="name" type="text" maxlength="160" required placeholder="Add something to the list">
+            </div>
+            <div>
+              <label for="grocery-item-quantity">Quantity or note</label>
+              <input id="grocery-item-quantity" name="quantity" type="text" maxlength="100" placeholder="2, large, optional…">
+            </div>
+            <div>
+              <label for="grocery-item-category">Section</label>
+              <select id="grocery-item-category" name="category">
+                <option>Produce</option>
+                <option>Meat</option>
+                <option>Dairy</option>
+                <option>Canned and jarred</option>
+                <option>Bread, pasta and rice</option>
+                <option>Sauces and condiments</option>
+                <option>Pantry check</option>
+                <option selected>Other</option>
+              </select>
+            </div>
+            <button class="button button-primary" type="submit">Add item</button>
+          </form>
+          <p id="grocery-add-status" class="grocery-status" aria-live="polite"></p>
+
+          <div class="grocery-progress-row">
+            <strong id="grocery-progress">Loading items…</strong>
+            <span>Changes save automatically</span>
+          </div>
+          <div id="grocery-items" class="grocery-items" aria-live="polite"></div>
+        </section>
+
+        <noscript><p class="grocery-error">JavaScript is required for the shared grocery list.</p></noscript>
+      </div>
+
       <h2 id="meal-map">Meal map</h2>
       <ul>
         <li><strong>Monday:</strong> <a href="basil-chicken-meatballs-with-white-bean-pesto-and-garlicky-green-beans.html">Basil Chicken Meatballs with White Bean Pesto &amp; Garlicky Green Beans</a></li>
@@ -100,15 +130,8 @@
         <li><strong>Friday:</strong> <a href="blackstone-gochujang-pork-tenderloin-bowls.html">Blackstone Gochujang Pork Tenderloin Bowls</a></li>
         <li><strong>Saturday:</strong> <a href="kamado-90-percent-beef-kofta-plates-with-tzatziki-and-tomato-cucumber-salad.html">Kamado 90% Beef Kofta Plates with Tzatziki &amp; Tomato-Cucumber Salad</a></li>
       </ul>
-      <h2 id="before-checkout">Before checkout</h2>
-      <ul class="checklist">
-        <li><label><input type="checkbox"> Check how much basil and green bean you already have.</label></li>
-        <li><label><input type="checkbox"> Confirm the beef is 90% lean and the sirloin is well trimmed.</label></li>
-        <li><label><input type="checkbox"> Choose nonfat Greek yogurt and part-skim mozzarella.</label></li>
-        <li><label><input type="checkbox"> Check soy sauce, broth and marinara labels for sodium if that matters for your plan.</label></li>
-      </ul>
     </article>
   </main>
-  <footer>Generated from Obsidian Markdown. Edit the notes, then rebuild the site.</footer>
+  <footer>Generated from Obsidian Markdown. Shared grocery data is stored privately in Supabase.</footer>
 </body>
 </html>
