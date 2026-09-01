@@ -456,7 +456,8 @@
     list: null,
     items: [],
     channel: null,
-    connecting: false
+    connecting: false,
+    bulkBusy: false
   };
 
   const ui = {
@@ -482,6 +483,12 @@
     itemCategory: document.getElementById("grocery-item-category"),
     addStatus: document.getElementById("grocery-add-status"),
     progress: document.getElementById("grocery-progress"),
+    bulkActions: document.getElementById("grocery-bulk-actions"),
+    checkAll: document.getElementById("grocery-check-all"),
+    uncheckAll: document.getElementById("grocery-uncheck-all"),
+    deleteChecked: document.getElementById("grocery-delete-checked"),
+    deleteAll: document.getElementById("grocery-delete-all"),
+    bulkStatus: document.getElementById("grocery-bulk-status"),
     items: document.getElementById("grocery-items"),
     syncStatus: document.getElementById("grocery-sync-status")
   };
@@ -577,11 +584,21 @@
     message(ui.syncStatus, "Synced just now", "success");
   }
 
+  function updateBulkControls() {
+    const total = state.items.length;
+    const checked = state.items.filter(item => item.checked).length;
+    ui.checkAll.disabled = state.bulkBusy || total === 0 || checked === total;
+    ui.uncheckAll.disabled = state.bulkBusy || checked === 0;
+    ui.deleteChecked.disabled = state.bulkBusy || checked === 0;
+    ui.deleteAll.disabled = state.bulkBusy || total === 0;
+  }
+
   function renderItems() {
     ui.items.replaceChildren();
 
     const checkedCount = state.items.filter(item => item.checked).length;
     ui.progress.textContent = checkedCount + " of " + state.items.length + " items checked";
+    updateBulkControls();
 
     const grouped = new Map();
     state.items.forEach(item => {
@@ -882,6 +899,61 @@
     ui.itemCategory.value = "Other";
     message(ui.addStatus, name + " added.", "success");
     await loadItems();
+  });
+
+  async function runBulkAction(action) {
+    const total = state.items.length;
+    const checked = state.items.filter(item => item.checked).length;
+    if (!total || state.bulkBusy) return;
+
+    if (action === "delete-checked") {
+      if (!checked || !window.confirm("Delete " + checked + " checked item" + (checked === 1 ? "" : "s") + "? This cannot be undone.")) return;
+    }
+
+    if (action === "delete-all") {
+      if (!window.confirm("Delete all " + total + " items from the grocery list? This cannot be undone.")) return;
+    }
+
+    state.bulkBusy = true;
+    updateBulkControls();
+    message(ui.bulkStatus, "Updating the list…", "");
+
+    try {
+      let result;
+
+      if (action === "check-all") {
+        result = await db.from("grocery_items").update({ checked: true }).eq("list_id", state.list.id);
+      } else if (action === "uncheck-all") {
+        result = await db.from("grocery_items").update({ checked: false }).eq("list_id", state.list.id);
+      } else if (action === "delete-checked") {
+        result = await db.from("grocery_items").delete().eq("list_id", state.list.id).eq("checked", true);
+      } else if (action === "delete-all") {
+        result = await db.from("grocery_items").delete().eq("list_id", state.list.id);
+      } else {
+        return;
+      }
+
+      if (result.error) throw result.error;
+
+      const successMessages = {
+        "check-all": "All items checked.",
+        "uncheck-all": "All items unchecked.",
+        "delete-checked": checked + " checked item" + (checked === 1 ? "" : "s") + " deleted.",
+        "delete-all": "All items deleted."
+      };
+      message(ui.bulkStatus, successMessages[action], "success");
+      await loadItems();
+    } catch (error) {
+      message(ui.bulkStatus, cleanError(error), "error");
+    } finally {
+      state.bulkBusy = false;
+      updateBulkControls();
+    }
+  }
+
+  ui.bulkActions.addEventListener("click", event => {
+    const button = event.target.closest("[data-bulk-action]");
+    if (button) runBulkAction(button.dataset.bulkAction);
   });
 
   ui.items.addEventListener("change", async event => {
