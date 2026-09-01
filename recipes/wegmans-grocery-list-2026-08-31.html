@@ -7,7 +7,7 @@
   <title>Shared Grocery List · Family Recipe Book</title>
   <link rel="stylesheet" href="../assets/styles.css">
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.112.4" defer></script>
-  <script src="../assets/shared-grocery.js?v=2" defer></script>
+  <script src="../assets/shared-grocery.js?v=3" defer></script>
 </head>
 <body>
   <header class="site-header">
@@ -115,6 +115,13 @@
             <strong id="grocery-progress">Loading items…</strong>
             <span>Changes save automatically</span>
           </div>
+          <div id="grocery-bulk-actions" class="grocery-bulk-actions" aria-label="Bulk grocery list controls">
+            <button id="grocery-check-all" class="button" type="button" data-bulk-action="check-all">Check all</button>
+            <button id="grocery-uncheck-all" class="button" type="button" data-bulk-action="uncheck-all">Uncheck all</button>
+            <button id="grocery-delete-checked" class="button grocery-button-warning" type="button" data-bulk-action="delete-checked">Delete checked</button>
+            <button id="grocery-delete-all" class="button grocery-button-danger" type="button" data-bulk-action="delete-all">Delete all</button>
+          </div>
+          <p id="grocery-bulk-status" class="grocery-status grocery-bulk-status" aria-live="polite"></p>
           <div id="grocery-items" class="grocery-items" aria-live="polite"></div>
         </section>
 

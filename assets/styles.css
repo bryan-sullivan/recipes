@@ -391,6 +391,26 @@ footer { padding: 2.5rem 1rem 4rem; color: var(--muted); text-align: center; fon
   border-top: 1px solid var(--line);
 }
 .grocery-progress-row span { color: var(--muted); font-size: .84rem; }
+.grocery-bulk-actions {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: .5rem;
+  margin: -.25rem 0 0;
+}
+.grocery-bulk-actions .button { width: 100%; }
+.grocery-button-warning {
+  border-color: #9a5a1f;
+  color: #7a4316;
+  background: #fff8ed;
+}
+.grocery-button-danger {
+  border-color: #8d2f21;
+  color: white;
+  background: #8d2f21;
+}
+.grocery-button-danger:hover { border-color: #702318; color: white; background: #702318; }
+.button:disabled { opacity: .45; cursor: not-allowed; }
+.grocery-bulk-status { margin-top: .45rem; }
 .grocery-category h2 {
   margin: 1.4rem 0 .5rem;
   padding-top: .55rem;
@@ -465,6 +485,7 @@ footer { padding: 2.5rem 1rem 4rem; color: var(--muted); text-align: center; fon
 @media (max-width: 760px) {
   .grocery-setup-grid,
   .grocery-add-form { grid-template-columns: 1fr; }
+  .grocery-bulk-actions { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .grocery-form-row,
   .grocery-list-header,
   .grocery-invite { align-items: stretch; flex-direction: column; }
