@@ -17,7 +17,7 @@
     auth: { persistSession: true, autoRefreshToken: true, detectSessionInUrl: true }
   });
 
-  const defaultItems = [
+  const fallbackItems = [
   {
     "category": "Produce",
     "name": "Baby Yukon Gold potatoes",
@@ -444,6 +444,30 @@
   }
 ];
 
+  let weeklyPlan = {
+    week_start: "2026-08-31",
+    title: "Wegmans Grocery List — August 31–September 5, 2026",
+    items: fallbackItems
+  };
+
+  async function loadWeeklyPlan() {
+    const planUrl = root.dataset.planUrl;
+    if (!planUrl) return;
+
+    const response = await fetch(planUrl, { cache: "no-store" });
+    if (!response.ok) throw new Error("This week’s grocery plan could not load. Please refresh the page.");
+
+    const plan = await response.json();
+    const validWeek = /^\d{4}-\d{2}-\d{2}$/.test(plan.week_start || "");
+    const validItems = Array.isArray(plan.items) && plan.items.length > 0
+      && plan.items.every(item => item.name && item.category && Number.isFinite(item.sort_order));
+    if (!validWeek || !plan.title || !validItems) {
+      throw new Error("This week’s grocery plan is incomplete.");
+    }
+
+    weeklyPlan = plan;
+  }
+
   const categoryOrder = [
     "Produce", "Meat", "Dairy", "Canned and jarred",
     "Bread, pasta and rice", "Sauces and condiments", "Pantry check", "Other"
@@ -538,7 +562,7 @@
   async function seedList() {
     if (!state.list || state.list.seeded) return;
 
-    const rows = defaultItems.map(item => ({
+    const rows = weeklyPlan.items.map(item => ({
       list_id: state.list.id,
       name: item.name,
       category: item.category,
@@ -738,8 +762,7 @@
       .from("grocery_lists")
       .select("*")
       .eq("household_id", state.household.id)
-      .eq("active", true)
-      .order("week_start", { ascending: false })
+      .eq("week_start", weeklyPlan.week_start)
       .limit(1)
       .maybeSingle();
 
@@ -750,8 +773,8 @@
         .from("grocery_lists")
         .insert({
           household_id: state.household.id,
-          title: "Wegmans Grocery List — August 31–September 5, 2026",
-          week_start: "2026-08-31",
+          title: weeklyPlan.title,
+          week_start: weeklyPlan.week_start,
           created_by: state.user.id
         })
         .select()
@@ -1006,6 +1029,7 @@
   });
 
   async function start() {
+    await loadWeeklyPlan();
     const sessionResult = await db.auth.getSession();
     await handleSession(sessionResult.data.session);
 

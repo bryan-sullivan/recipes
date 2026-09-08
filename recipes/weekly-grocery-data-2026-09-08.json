@@ -1,0 +1,446 @@
+{
+  "week_start": "2026-09-08",
+  "title": "Wegmans Grocery List — September 8–13, 2026",
+  "items": [
+    {
+      "category": "Produce",
+      "name": "Baby Yukon Gold potatoes",
+      "quantity": "3 pounds",
+      "sort_order": 1,
+      "source": "weekly-plan",
+      "seed_key": "Produce:Baby Yukon Gold potatoes"
+    },
+    {
+      "category": "Produce",
+      "name": "Fresh green beans",
+      "quantity": "12–16 ounces",
+      "sort_order": 2,
+      "source": "weekly-plan",
+      "seed_key": "Produce:Fresh green beans"
+    },
+    {
+      "category": "Produce",
+      "name": "English cucumbers",
+      "quantity": "3",
+      "sort_order": 3,
+      "source": "weekly-plan",
+      "seed_key": "Produce:English cucumbers"
+    },
+    {
+      "category": "Produce",
+      "name": "Shredded cabbage or coleslaw mix",
+      "quantity": "1 bag (12 ounces)",
+      "sort_order": 4,
+      "source": "weekly-plan",
+      "seed_key": "Produce:Shredded cabbage or coleslaw mix"
+    },
+    {
+      "category": "Produce",
+      "name": "Carrots",
+      "quantity": "2 medium",
+      "sort_order": 5,
+      "source": "weekly-plan",
+      "seed_key": "Produce:Carrots"
+    },
+    {
+      "category": "Produce",
+      "name": "Baby spinach",
+      "quantity": "1 bag (about 5 ounces)",
+      "sort_order": 6,
+      "source": "weekly-plan",
+      "seed_key": "Produce:Baby spinach"
+    },
+    {
+      "category": "Produce",
+      "name": "Bell peppers",
+      "quantity": "4 large",
+      "sort_order": 7,
+      "source": "weekly-plan",
+      "seed_key": "Produce:Bell peppers"
+    },
+    {
+      "category": "Produce",
+      "name": "Zucchini",
+      "quantity": "1 medium",
+      "sort_order": 8,
+      "source": "weekly-plan",
+      "seed_key": "Produce:Zucchini"
+    },
+    {
+      "category": "Produce",
+      "name": "Grape tomatoes",
+      "quantity": "1 pint",
+      "sort_order": 9,
+      "source": "weekly-plan",
+      "seed_key": "Produce:Grape tomatoes"
+    },
+    {
+      "category": "Produce",
+      "name": "Red onion",
+      "quantity": "1 small",
+      "sort_order": 10,
+      "source": "weekly-plan",
+      "seed_key": "Produce:Red onion"
+    },
+    {
+      "category": "Produce",
+      "name": "Yellow onions",
+      "quantity": "2 small",
+      "sort_order": 11,
+      "source": "weekly-plan",
+      "seed_key": "Produce:Yellow onions"
+    },
+    {
+      "category": "Produce",
+      "name": "Garlic",
+      "quantity": "3 heads",
+      "sort_order": 12,
+      "source": "weekly-plan",
+      "seed_key": "Produce:Garlic"
+    },
+    {
+      "category": "Produce",
+      "name": "Fresh ginger",
+      "quantity": "1 small hand",
+      "sort_order": 13,
+      "source": "weekly-plan",
+      "seed_key": "Produce:Fresh ginger"
+    },
+    {
+      "category": "Produce",
+      "name": "Scallions",
+      "quantity": "1 bunch",
+      "sort_order": 14,
+      "source": "weekly-plan",
+      "seed_key": "Produce:Scallions"
+    },
+    {
+      "category": "Produce",
+      "name": "Fresh basil",
+      "quantity": "1 bunch",
+      "sort_order": 15,
+      "source": "weekly-plan",
+      "seed_key": "Produce:Fresh basil"
+    },
+    {
+      "category": "Produce",
+      "name": "Fresh cilantro",
+      "quantity": "2 bunches",
+      "sort_order": 16,
+      "source": "weekly-plan",
+      "seed_key": "Produce:Fresh cilantro"
+    },
+    {
+      "category": "Produce",
+      "name": "Fresh dill",
+      "quantity": "1 small bunch",
+      "sort_order": 17,
+      "source": "weekly-plan",
+      "seed_key": "Produce:Fresh dill"
+    },
+    {
+      "category": "Produce",
+      "name": "Flat-leaf parsley",
+      "quantity": "1 small bunch",
+      "sort_order": 18,
+      "source": "weekly-plan",
+      "seed_key": "Produce:Flat-leaf parsley"
+    },
+    {
+      "category": "Produce",
+      "name": "Jalapeño",
+      "quantity": "1",
+      "sort_order": 19,
+      "source": "weekly-plan",
+      "seed_key": "Produce:Jalapeño"
+    },
+    {
+      "category": "Produce",
+      "name": "Lemons",
+      "quantity": "4",
+      "sort_order": 20,
+      "source": "weekly-plan",
+      "seed_key": "Produce:Lemons"
+    },
+    {
+      "category": "Produce",
+      "name": "Limes",
+      "quantity": "3",
+      "sort_order": 21,
+      "source": "weekly-plan",
+      "seed_key": "Produce:Limes"
+    },
+    {
+      "category": "Meat",
+      "name": "Boneless, skinless chicken breasts",
+      "quantity": "4½ pounds",
+      "sort_order": 22,
+      "source": "weekly-plan",
+      "seed_key": "Meat:Boneless, skinless chicken breasts"
+    },
+    {
+      "category": "Meat",
+      "name": "90% lean ground beef",
+      "quantity": "2½ pounds",
+      "sort_order": 23,
+      "source": "weekly-plan",
+      "seed_key": "Meat:90% lean ground beef"
+    },
+    {
+      "category": "Meat",
+      "name": "Whole chicken",
+      "quantity": "1 (4–5 pounds)",
+      "sort_order": 24,
+      "source": "weekly-plan",
+      "seed_key": "Meat:Whole chicken"
+    },
+    {
+      "category": "Meat",
+      "name": "Center-cut bacon",
+      "quantity": "4 slices (1 small package)",
+      "sort_order": 25,
+      "source": "weekly-plan",
+      "seed_key": "Meat:Center-cut bacon"
+    },
+    {
+      "category": "Dairy",
+      "name": "Plain nonfat Greek yogurt",
+      "quantity": "32-ounce tub",
+      "sort_order": 26,
+      "source": "weekly-plan",
+      "seed_key": "Dairy:Plain nonfat Greek yogurt"
+    },
+    {
+      "category": "Dairy",
+      "name": "Finely grated Parmesan",
+      "quantity": "at least ¾ cup (about 3 ounces)",
+      "sort_order": 27,
+      "source": "weekly-plan",
+      "seed_key": "Dairy:Finely grated Parmesan"
+    },
+    {
+      "category": "Dairy",
+      "name": "Reduced-fat shredded sharp cheddar",
+      "quantity": "1 cup (about 4 ounces)",
+      "sort_order": 28,
+      "source": "weekly-plan",
+      "seed_key": "Dairy:Reduced-fat shredded sharp cheddar"
+    },
+    {
+      "category": "Dairy",
+      "name": "Reduced-fat feta",
+      "quantity": "½ cup (about 3 ounces)",
+      "sort_order": 29,
+      "source": "weekly-plan",
+      "seed_key": "Dairy:Reduced-fat feta"
+    },
+    {
+      "category": "Frozen",
+      "name": "Shelled edamame",
+      "quantity": "1 bag",
+      "sort_order": 30,
+      "source": "weekly-plan",
+      "seed_key": "Frozen:Shelled edamame"
+    },
+    {
+      "category": "Frozen",
+      "name": "Cauliflower rice",
+      "quantity": "1 bag (at least 2 cups)",
+      "sort_order": 31,
+      "source": "weekly-plan",
+      "seed_key": "Frozen:Cauliflower rice"
+    },
+    {
+      "category": "Canned and jarred",
+      "name": "Fire-roasted diced tomatoes",
+      "quantity": "1 can (14½ ounces)",
+      "sort_order": 32,
+      "source": "weekly-plan",
+      "seed_key": "Canned and jarred:Fire-roasted diced tomatoes"
+    },
+    {
+      "category": "Canned and jarred",
+      "name": "Tomato paste",
+      "quantity": "1 small can or tube",
+      "sort_order": 33,
+      "source": "weekly-plan",
+      "seed_key": "Canned and jarred:Tomato paste"
+    },
+    {
+      "category": "Canned and jarred",
+      "name": "Mustard-free barbecue sauce",
+      "quantity": "1 bottle",
+      "sort_order": 34,
+      "source": "weekly-plan",
+      "seed_key": "Canned and jarred:Mustard-free barbecue sauce"
+    },
+    {
+      "category": "Bread, pasta and rice",
+      "name": "Orzo",
+      "quantity": "at least 1 cup dry (about 7 ounces)",
+      "sort_order": 35,
+      "source": "weekly-plan",
+      "seed_key": "Bread, pasta and rice:Orzo"
+    },
+    {
+      "category": "Bread, pasta and rice",
+      "name": "Jasmine or brown rice",
+      "quantity": "at least 1½ cups dry",
+      "sort_order": 36,
+      "source": "weekly-plan",
+      "seed_key": "Bread, pasta and rice:Jasmine or brown rice"
+    },
+    {
+      "category": "Sauces and condiments",
+      "name": "Low-sodium soy sauce",
+      "quantity": "",
+      "sort_order": 37,
+      "source": "weekly-plan",
+      "seed_key": "Sauces and condiments:Low-sodium soy sauce"
+    },
+    {
+      "category": "Sauces and condiments",
+      "name": "Gochujang",
+      "quantity": "",
+      "sort_order": 38,
+      "source": "weekly-plan",
+      "seed_key": "Sauces and condiments:Gochujang"
+    },
+    {
+      "category": "Sauces and condiments",
+      "name": "Rice vinegar",
+      "quantity": "",
+      "sort_order": 39,
+      "source": "weekly-plan",
+      "seed_key": "Sauces and condiments:Rice vinegar"
+    },
+    {
+      "category": "Sauces and condiments",
+      "name": "Toasted sesame oil",
+      "quantity": "",
+      "sort_order": 40,
+      "source": "weekly-plan",
+      "seed_key": "Sauces and condiments:Toasted sesame oil"
+    },
+    {
+      "category": "Sauces and condiments",
+      "name": "Honey or light brown sugar",
+      "quantity": "",
+      "sort_order": 41,
+      "source": "weekly-plan",
+      "seed_key": "Sauces and condiments:Honey or light brown sugar"
+    },
+    {
+      "category": "Sauces and condiments",
+      "name": "Dill pickles, optional",
+      "quantity": "",
+      "sort_order": 42,
+      "source": "weekly-plan",
+      "seed_key": "Sauces and condiments:Dill pickles, optional"
+    },
+    {
+      "category": "Pantry check",
+      "name": "Olive oil",
+      "quantity": "",
+      "sort_order": 43,
+      "source": "weekly-plan",
+      "seed_key": "Pantry check:Olive oil"
+    },
+    {
+      "category": "Pantry check",
+      "name": "Neutral high-heat oil",
+      "quantity": "",
+      "sort_order": 44,
+      "source": "weekly-plan",
+      "seed_key": "Pantry check:Neutral high-heat oil"
+    },
+    {
+      "category": "Pantry check",
+      "name": "Low-sodium chicken broth",
+      "quantity": "at least 2½ cups",
+      "sort_order": 45,
+      "source": "weekly-plan",
+      "seed_key": "Pantry check:Low-sodium chicken broth"
+    },
+    {
+      "category": "Pantry check",
+      "name": "Italian seasoning",
+      "quantity": "",
+      "sort_order": 46,
+      "source": "weekly-plan",
+      "seed_key": "Pantry check:Italian seasoning"
+    },
+    {
+      "category": "Pantry check",
+      "name": "Dried oregano",
+      "quantity": "",
+      "sort_order": 47,
+      "source": "weekly-plan",
+      "seed_key": "Pantry check:Dried oregano"
+    },
+    {
+      "category": "Pantry check",
+      "name": "Smoked paprika",
+      "quantity": "",
+      "sort_order": 48,
+      "source": "weekly-plan",
+      "seed_key": "Pantry check:Smoked paprika"
+    },
+    {
+      "category": "Pantry check",
+      "name": "Ground cumin",
+      "quantity": "",
+      "sort_order": 49,
+      "source": "weekly-plan",
+      "seed_key": "Pantry check:Ground cumin"
+    },
+    {
+      "category": "Pantry check",
+      "name": "Garlic powder",
+      "quantity": "",
+      "sort_order": 50,
+      "source": "weekly-plan",
+      "seed_key": "Pantry check:Garlic powder"
+    },
+    {
+      "category": "Pantry check",
+      "name": "Onion powder",
+      "quantity": "",
+      "sort_order": 51,
+      "source": "weekly-plan",
+      "seed_key": "Pantry check:Onion powder"
+    },
+    {
+      "category": "Pantry check",
+      "name": "Red pepper flakes, optional",
+      "quantity": "",
+      "sort_order": 52,
+      "source": "weekly-plan",
+      "seed_key": "Pantry check:Red pepper flakes, optional"
+    },
+    {
+      "category": "Pantry check",
+      "name": "Sesame seeds, optional",
+      "quantity": "",
+      "sort_order": 53,
+      "source": "weekly-plan",
+      "seed_key": "Pantry check:Sesame seeds, optional"
+    },
+    {
+      "category": "Pantry check",
+      "name": "Kosher salt",
+      "quantity": "",
+      "sort_order": 54,
+      "source": "weekly-plan",
+      "seed_key": "Pantry check:Kosher salt"
+    },
+    {
+      "category": "Pantry check",
+      "name": "Black pepper",
+      "quantity": "",
+      "sort_order": 55,
+      "source": "weekly-plan",
+      "seed_key": "Pantry check:Black pepper"
+    }
+  ]
+}
