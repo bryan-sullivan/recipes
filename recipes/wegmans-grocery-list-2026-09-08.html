@@ -6,17 +6,131 @@
   <meta name="description" content="Consolidated grocery list for six high-protein family dinners, September 8–13, 2026.">
   <title>Wegmans Grocery List — September 8–13, 2026 · Family Recipe Book</title>
   <link rel="stylesheet" href="../assets/styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.112.4" defer></script>
+  <script src="../assets/shared-grocery.js?v=3" defer></script>
 </head>
 <body>
   <header class="site-header">
     <a class="brand" href="../index.html">Family Recipe Book</a>
     <nav><a href="../index.html#recipes">Recipes</a><a href="../index.html#planning">Grocery list</a></nav>
   </header>
-  <main class="page">
+  <main class="page grocery-page">
     <article>
       <dl class="metadata"><div><dt>Week</dt><dd>September 8–13, 2026</dd></div><div><dt>Dinners</dt><dd>6</dd></div><div><dt>Servings</dt><dd>4</dd></div><div><dt>Store</dt><dd>Wegmans</dd></div></dl>
       <h1>Wegmans Grocery List — September 8–13, 2026</h1>
       <blockquote class="callout info"><p><strong>Six dinners for four</strong><br>Quantities cover the full Tuesday–Sunday menu. Pantry staples are separated so you can check them before shopping. Choose a barbecue sauce labeled without mustard.</p></blockquote>
+      <h2 id="shared-list">Live shared household list</h2>
+      <blockquote class="callout info"><p><strong>Shared in real time</strong><br>Add, edit or check off an item and the change appears on every connected household device. A private invitation connects each new phone or computer once—no email or password needed.</p></blockquote>
+
+      <div id="shared-grocery-app"
+           class="shared-grocery-app"
+           data-supabase-url="https://wjxmozhornzttaegyvxo.supabase.co"
+           data-supabase-key="sb_publishable_rlHOU9-Kqv9yzK-yw2H4SA_qDcog2yC">
+
+        <section id="grocery-auth" class="grocery-panel" aria-labelledby="grocery-auth-title">
+          <p class="eyebrow">Private family access</p>
+          <h2 id="grocery-auth-title">Connect this device</h2>
+          <p>Open the private invitation link from a connected household device. You can also paste its invitation code below.</p>
+          <form id="grocery-auth-form" class="grocery-form grocery-auth-form">
+            <label for="grocery-device-invite">Private invitation code</label>
+            <div class="grocery-form-row">
+              <input id="grocery-device-invite" name="invite" type="text" autocomplete="off" required placeholder="Family invitation code">
+              <button class="button button-primary" type="submit">Connect this device</button>
+            </div>
+          </form>
+          <p id="grocery-auth-status" class="grocery-status" aria-live="polite"></p>
+        </section>
+
+        <section id="grocery-setup" class="grocery-panel" aria-labelledby="grocery-setup-title" hidden>
+          <p class="eyebrow">One-time setup</p>
+          <h2 id="grocery-setup-title">Connect to your family list</h2>
+          <div class="grocery-setup-grid">
+            <div>
+              <h3>Create the list</h3>
+              <p>The first household member creates the shared list and receives a private invite link.</p>
+              <button id="create-household" class="button button-primary" type="button">Create our family list</button>
+            </div>
+            <div>
+              <h3>Connect this device</h3>
+              <p>Use the private invitation code or link copied from a connected household device.</p>
+              <form id="join-household-form" class="grocery-form">
+                <label for="invite-code">Invite code</label>
+                <div class="grocery-form-row">
+                  <input id="invite-code" name="invite" type="text" autocomplete="off" required placeholder="Family invite code">
+                  <button class="button" type="submit">Join</button>
+                </div>
+              </form>
+            </div>
+          </div>
+          <p id="grocery-setup-status" class="grocery-status" aria-live="polite"></p>
+        </section>
+
+        <section id="grocery-list-panel" class="grocery-panel grocery-list-panel" aria-labelledby="grocery-list-title" hidden>
+          <div class="grocery-list-header">
+            <div>
+              <p class="eyebrow">Live household list</p>
+              <h2 id="grocery-list-title"><span id="grocery-household-name">Family grocery list</span></h2>
+              <p class="grocery-account"><span id="grocery-signed-in-as"></span> · <button id="grocery-sign-out" class="link-button" type="button">Disconnect</button></p>
+            </div>
+            <div class="grocery-sync">
+              <span class="grocery-live-dot" aria-hidden="true"></span>
+              <span id="grocery-sync-status" aria-live="polite">Connecting…</span>
+            </div>
+          </div>
+
+          <aside class="grocery-invite">
+            <div>
+              <strong>Connect another phone or computer</strong>
+              <p>Copy the private link once for each new device. Code: <code id="household-invite-code"></code></p>
+            </div>
+            <button id="copy-household-invite" class="button" type="button">Copy private invite link</button>
+          </aside>
+          <p id="invite-status" class="grocery-status" aria-live="polite"></p>
+
+          <form id="grocery-add-form" class="grocery-add-form">
+            <div>
+              <label for="grocery-item-name">Item</label>
+              <input id="grocery-item-name" name="name" type="text" maxlength="160" required placeholder="Add something to the list">
+            </div>
+            <div>
+              <label for="grocery-item-quantity">Quantity or note</label>
+              <input id="grocery-item-quantity" name="quantity" type="text" maxlength="100" placeholder="2, large, optional…">
+            </div>
+            <div>
+              <label for="grocery-item-category">Section</label>
+              <select id="grocery-item-category" name="category">
+                <option>Produce</option>
+                <option>Meat</option>
+                <option>Dairy</option>
+                <option>Canned and jarred</option>
+                <option>Bread, pasta and rice</option>
+                <option>Sauces and condiments</option>
+                <option>Pantry check</option>
+                <option selected>Other</option>
+              </select>
+            </div>
+            <button class="button button-primary" type="submit">Add item</button>
+          </form>
+          <p id="grocery-add-status" class="grocery-status" aria-live="polite"></p>
+
+          <div class="grocery-progress-row">
+            <strong id="grocery-progress">Loading items…</strong>
+            <span>Changes save automatically</span>
+          </div>
+          <div id="grocery-bulk-actions" class="grocery-bulk-actions" aria-label="Bulk grocery list controls">
+            <button id="grocery-check-all" class="button" type="button" data-bulk-action="check-all">Check all</button>
+            <button id="grocery-uncheck-all" class="button" type="button" data-bulk-action="uncheck-all">Uncheck all</button>
+            <button id="grocery-delete-checked" class="button grocery-button-warning" type="button" data-bulk-action="delete-checked">Delete checked</button>
+            <button id="grocery-delete-all" class="button grocery-button-danger" type="button" data-bulk-action="delete-all">Delete all</button>
+          </div>
+          <p id="grocery-bulk-status" class="grocery-status grocery-bulk-status" aria-live="polite"></p>
+          <div id="grocery-items" class="grocery-items" aria-live="polite"></div>
+        </section>
+
+        <noscript><p class="grocery-error">JavaScript is required for the shared grocery list.</p></noscript>
+      </div>
+
+      <h2 id="this-weeks-shopping">This week’s consolidated shopping list</h2>
       <h2 id="produce">Produce</h2>
       <ul class="checklist">
         <li><label><input type="checkbox"> Baby Yukon Gold potatoes — 3 pounds</label></li>
