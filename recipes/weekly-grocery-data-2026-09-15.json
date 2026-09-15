@@ -1,0 +1,438 @@
+{
+  "week_start": "2026-09-15",
+  "title": "Wegmans Grocery List — September 15–19, 2026",
+  "items": [
+    {
+      "category": "Produce",
+      "name": "Bell peppers",
+      "quantity": "4 large",
+      "sort_order": 1,
+      "source": "weekly-plan",
+      "seed_key": "Produce:Bell peppers"
+    },
+    {
+      "category": "Produce",
+      "name": "Zucchini",
+      "quantity": "1 medium (200 g)",
+      "sort_order": 2,
+      "source": "weekly-plan",
+      "seed_key": "Produce:Zucchini"
+    },
+    {
+      "category": "Produce",
+      "name": "Yellow onions",
+      "quantity": "1 small (100 g)",
+      "sort_order": 3,
+      "source": "weekly-plan",
+      "seed_key": "Produce:Yellow onions"
+    },
+    {
+      "category": "Produce",
+      "name": "Butternut squash",
+      "quantity": "1 pound (454 g), peeled and cut into ½-inch cubes",
+      "sort_order": 4,
+      "source": "weekly-plan",
+      "seed_key": "Produce:Butternut squash"
+    },
+    {
+      "category": "Produce",
+      "name": "Brussels sprouts",
+      "quantity": "1 pound (454 g), trimmed and halved",
+      "sort_order": 5,
+      "source": "weekly-plan",
+      "seed_key": "Produce:Brussels sprouts"
+    },
+    {
+      "category": "Produce",
+      "name": "Red onion",
+      "quantity": "2 medium; use 1 Wednesday and ½ small Thursday",
+      "sort_order": 6,
+      "source": "weekly-plan",
+      "seed_key": "Produce:Red onion"
+    },
+    {
+      "category": "Produce",
+      "name": "Broccoli",
+      "quantity": "1 pound (454 g) florets",
+      "sort_order": 7,
+      "source": "weekly-plan",
+      "seed_key": "Produce:Broccoli"
+    },
+    {
+      "category": "Produce",
+      "name": "Carrots",
+      "quantity": "About 1½ pounds (680 g): 1 pound Friday plus 1 cup shredded Thursday",
+      "sort_order": 8,
+      "source": "weekly-plan",
+      "seed_key": "Produce:Carrots"
+    },
+    {
+      "category": "Produce",
+      "name": "Baby spinach",
+      "quantity": "5 ounces (142 g)",
+      "sort_order": 9,
+      "source": "weekly-plan",
+      "seed_key": "Produce:Baby spinach"
+    },
+    {
+      "category": "Produce",
+      "name": "English cucumbers",
+      "quantity": "1 large",
+      "sort_order": 10,
+      "source": "weekly-plan",
+      "seed_key": "Produce:English cucumbers"
+    },
+    {
+      "category": "Produce",
+      "name": "Cherry tomatoes",
+      "quantity": "1 pint",
+      "sort_order": 11,
+      "source": "weekly-plan",
+      "seed_key": "Produce:Cherry tomatoes"
+    },
+    {
+      "category": "Produce",
+      "name": "Romaine",
+      "quantity": "Enough for 8 cups chopped (about 2 hearts)",
+      "sort_order": 12,
+      "source": "weekly-plan",
+      "seed_key": "Produce:Romaine"
+    },
+    {
+      "category": "Produce",
+      "name": "Shredded cabbage or coleslaw mix",
+      "quantity": "12 ounces (340 g), plain",
+      "sort_order": 13,
+      "source": "weekly-plan",
+      "seed_key": "Produce:Shredded cabbage or coleslaw mix"
+    },
+    {
+      "category": "Produce",
+      "name": "Fresh mint",
+      "quantity": "1 bunch, enough for 1 cup leaves",
+      "sort_order": 14,
+      "source": "weekly-plan",
+      "seed_key": "Produce:Fresh mint"
+    },
+    {
+      "category": "Produce",
+      "name": "Fresh cilantro",
+      "quantity": "1 large or 2 small bunches, enough for 1½ cups leaves",
+      "sort_order": 15,
+      "source": "weekly-plan",
+      "seed_key": "Produce:Fresh cilantro"
+    },
+    {
+      "category": "Produce",
+      "name": "Limes",
+      "quantity": "6, for ½ cup juice plus 1 cut into wedges",
+      "sort_order": 16,
+      "source": "weekly-plan",
+      "seed_key": "Produce:Limes"
+    },
+    {
+      "category": "Produce",
+      "name": "Lemons",
+      "quantity": "1",
+      "sort_order": 17,
+      "source": "weekly-plan",
+      "seed_key": "Produce:Lemons"
+    },
+    {
+      "category": "Produce",
+      "name": "Garlic",
+      "quantity": "1 head; 6 cloves required",
+      "sort_order": 18,
+      "source": "weekly-plan",
+      "seed_key": "Produce:Garlic"
+    },
+    {
+      "category": "Produce",
+      "name": "Fresh ginger",
+      "quantity": "1 small piece, enough for 1 tablespoon grated",
+      "sort_order": 19,
+      "source": "weekly-plan",
+      "seed_key": "Produce:Fresh ginger"
+    },
+    {
+      "category": "Produce",
+      "name": "Scallions",
+      "quantity": "1 bunch, optional for peppers",
+      "sort_order": 20,
+      "source": "weekly-plan",
+      "seed_key": "Produce:Scallions"
+    },
+    {
+      "category": "Meat",
+      "name": "90% lean ground beef",
+      "quantity": "2¾ pounds (1,247 g): 567 g Tuesday + 680 g Saturday",
+      "sort_order": 21,
+      "source": "weekly-plan",
+      "seed_key": "Meat:90% lean ground beef"
+    },
+    {
+      "category": "Meat",
+      "name": "Center-cut bacon",
+      "quantity": "4 slices",
+      "sort_order": 22,
+      "source": "weekly-plan",
+      "seed_key": "Meat:Center-cut bacon"
+    },
+    {
+      "category": "Meat",
+      "name": "Boneless, skinless chicken breasts",
+      "quantity": "1½ pounds (680 g)",
+      "sort_order": 23,
+      "source": "weekly-plan",
+      "seed_key": "Meat:Boneless, skinless chicken breasts"
+    },
+    {
+      "category": "Meat",
+      "name": "Flank steak",
+      "quantity": "1½ pounds (680 g), trimmed",
+      "sort_order": 24,
+      "source": "weekly-plan",
+      "seed_key": "Meat:Flank steak"
+    },
+    {
+      "category": "Meat",
+      "name": "Pork tenderloin",
+      "quantity": "1½ pounds (680 g), trimmed",
+      "sort_order": 25,
+      "source": "weekly-plan",
+      "seed_key": "Meat:Pork tenderloin"
+    },
+    {
+      "category": "Meat",
+      "name": "Prosciutto",
+      "quantity": "2 ounces (57 g)",
+      "sort_order": 26,
+      "source": "weekly-plan",
+      "seed_key": "Meat:Prosciutto"
+    },
+    {
+      "category": "Dairy",
+      "name": "Reduced-fat shredded sharp cheddar",
+      "quantity": "4 ounces (113 g) for peppers; add 2 ounces (57 g) if using optional taco cheese",
+      "sort_order": 27,
+      "source": "weekly-plan",
+      "seed_key": "Dairy:Reduced-fat shredded sharp cheddar"
+    },
+    {
+      "category": "Dairy",
+      "name": "Reduced-fat feta",
+      "quantity": "3 ounces (85 g)",
+      "sort_order": 28,
+      "source": "weekly-plan",
+      "seed_key": "Dairy:Reduced-fat feta"
+    },
+    {
+      "category": "Dairy",
+      "name": "Part-skim mozzarella",
+      "quantity": "3 ounces (85 g)",
+      "sort_order": 29,
+      "source": "weekly-plan",
+      "seed_key": "Dairy:Part-skim mozzarella"
+    },
+    {
+      "category": "Dairy",
+      "name": "Light sour cream",
+      "quantity": "½ cup (120 g)",
+      "sort_order": 30,
+      "source": "weekly-plan",
+      "seed_key": "Dairy:Light sour cream"
+    },
+    {
+      "category": "Frozen",
+      "name": "Cauliflower rice",
+      "quantity": "At least 2 cups (about 200 g)",
+      "sort_order": 31,
+      "source": "weekly-plan",
+      "seed_key": "Frozen:Cauliflower rice"
+    },
+    {
+      "category": "Canned and jarred",
+      "name": "Mustard-free barbecue sauce",
+      "quantity": "⅓ cup plus 2 tablespoons",
+      "sort_order": 32,
+      "source": "weekly-plan",
+      "seed_key": "Canned and jarred:Mustard-free barbecue sauce"
+    },
+    {
+      "category": "Canned and jarred",
+      "name": "Pickled jalapeños",
+      "quantity": "2 tablespoons (30 g), drained",
+      "sort_order": 33,
+      "source": "weekly-plan",
+      "seed_key": "Canned and jarred:Pickled jalapeños"
+    },
+    {
+      "category": "Bread, pasta and rice",
+      "name": "Small corn tortillas",
+      "quantity": "12 (about 25 g each)",
+      "sort_order": 34,
+      "source": "weekly-plan",
+      "seed_key": "Bread, pasta and rice:Small corn tortillas"
+    },
+    {
+      "category": "Sauces and condiments",
+      "name": "Light mayonnaise, mustard-free",
+      "quantity": "1 tablespoon (15 g)",
+      "sort_order": 35,
+      "source": "weekly-plan",
+      "seed_key": "Sauces and condiments:Light mayonnaise, mustard-free"
+    },
+    {
+      "category": "Sauces and condiments",
+      "name": "Low-sodium soy sauce",
+      "quantity": "2 tablespoons",
+      "sort_order": 36,
+      "source": "weekly-plan",
+      "seed_key": "Sauces and condiments:Low-sodium soy sauce"
+    },
+    {
+      "category": "Sauces and condiments",
+      "name": "Fish sauce",
+      "quantity": "1½ tablespoons",
+      "sort_order": 37,
+      "source": "weekly-plan",
+      "seed_key": "Sauces and condiments:Fish sauce"
+    },
+    {
+      "category": "Sauces and condiments",
+      "name": "Toasted sesame oil",
+      "quantity": "1 teaspoon",
+      "sort_order": 38,
+      "source": "weekly-plan",
+      "seed_key": "Sauces and condiments:Toasted sesame oil"
+    },
+    {
+      "category": "Sauces and condiments",
+      "name": "Sambal oelek or sriracha",
+      "quantity": "1 teaspoon",
+      "sort_order": 39,
+      "source": "weekly-plan",
+      "seed_key": "Sauces and condiments:Sambal oelek or sriracha"
+    },
+    {
+      "category": "Sauces and condiments",
+      "name": "Honey",
+      "quantity": "1 teaspoon",
+      "sort_order": 40,
+      "source": "weekly-plan",
+      "seed_key": "Sauces and condiments:Honey"
+    },
+    {
+      "category": "Sauces and condiments",
+      "name": "Dill pickles, optional",
+      "quantity": "For serving with peppers",
+      "sort_order": 41,
+      "source": "weekly-plan",
+      "seed_key": "Sauces and condiments:Dill pickles, optional"
+    },
+    {
+      "category": "Pantry check",
+      "name": "Powdered peanut butter",
+      "quantity": "¼ cup (26 g)",
+      "sort_order": 42,
+      "source": "weekly-plan",
+      "seed_key": "Pantry check:Powdered peanut butter"
+    },
+    {
+      "category": "Pantry check",
+      "name": "Light brown sugar",
+      "quantity": "1 tablespoon",
+      "sort_order": 43,
+      "source": "weekly-plan",
+      "seed_key": "Pantry check:Light brown sugar"
+    },
+    {
+      "category": "Pantry check",
+      "name": "Olive oil",
+      "quantity": "2 tablespoons plus 2½ teaspoons, plus a little to grease the pepper pan",
+      "sort_order": 44,
+      "source": "weekly-plan",
+      "seed_key": "Pantry check:Olive oil"
+    },
+    {
+      "category": "Pantry check",
+      "name": "Neutral high-heat oil",
+      "quantity": "1 teaspoon",
+      "sort_order": 45,
+      "source": "weekly-plan",
+      "seed_key": "Pantry check:Neutral high-heat oil"
+    },
+    {
+      "category": "Pantry check",
+      "name": "Smoked paprika",
+      "quantity": "1 tablespoon total",
+      "sort_order": 46,
+      "source": "weekly-plan",
+      "seed_key": "Pantry check:Smoked paprika"
+    },
+    {
+      "category": "Pantry check",
+      "name": "Garlic powder",
+      "quantity": "1½ teaspoons total",
+      "sort_order": 47,
+      "source": "weekly-plan",
+      "seed_key": "Pantry check:Garlic powder"
+    },
+    {
+      "category": "Pantry check",
+      "name": "Onion powder",
+      "quantity": "½ teaspoon",
+      "sort_order": 48,
+      "source": "weekly-plan",
+      "seed_key": "Pantry check:Onion powder"
+    },
+    {
+      "category": "Pantry check",
+      "name": "Dried oregano",
+      "quantity": "½ teaspoon",
+      "sort_order": 49,
+      "source": "weekly-plan",
+      "seed_key": "Pantry check:Dried oregano"
+    },
+    {
+      "category": "Pantry check",
+      "name": "Italian seasoning",
+      "quantity": "1 teaspoon",
+      "sort_order": 50,
+      "source": "weekly-plan",
+      "seed_key": "Pantry check:Italian seasoning"
+    },
+    {
+      "category": "Pantry check",
+      "name": "Ground cumin",
+      "quantity": "1 teaspoon",
+      "sort_order": 51,
+      "source": "weekly-plan",
+      "seed_key": "Pantry check:Ground cumin"
+    },
+    {
+      "category": "Pantry check",
+      "name": "Kosher salt",
+      "quantity": "About 1 tablespoon total",
+      "sort_order": 52,
+      "source": "weekly-plan",
+      "seed_key": "Pantry check:Kosher salt"
+    },
+    {
+      "category": "Pantry check",
+      "name": "Black pepper",
+      "quantity": "2¼ teaspoons total",
+      "sort_order": 53,
+      "source": "weekly-plan",
+      "seed_key": "Pantry check:Black pepper"
+    },
+    {
+      "category": "Pantry check",
+      "name": "Kitchen twine",
+      "quantity": "For stuffed pork",
+      "sort_order": 54,
+      "source": "weekly-plan",
+      "seed_key": "Pantry check:Kitchen twine"
+    }
+  ]
+}
