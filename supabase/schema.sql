@@ -44,6 +44,17 @@ create table if not exists public.grocery_items (
   updated_at timestamptz not null default now()
 );
 
+create table if not exists public.recipe_preferences (
+  household_id uuid not null references public.households(id) on delete cascade,
+  recipe_id text not null check (char_length(trim(recipe_id)) between 1 and 160),
+  rating numeric(2,1) check (rating is null or rating between 0.5 and 5.0),
+  status text not null default 'active' check (status in ('active', 'retired')),
+  updated_by uuid not null references auth.users(id) on delete cascade,
+  created_at timestamptz not null default now(),
+  updated_at timestamptz not null default now(),
+  primary key (household_id, recipe_id)
+);
+
 alter table public.grocery_items add column if not exists seed_key text;
 
 create index if not exists household_members_user_idx on public.household_members(user_id);
@@ -55,7 +66,9 @@ alter table public.households enable row level security;
 alter table public.household_members enable row level security;
 alter table public.grocery_lists enable row level security;
 alter table public.grocery_items enable row level security;
+alter table public.recipe_preferences enable row level security;
 alter table public.grocery_items replica identity full;
+alter table public.recipe_preferences replica identity full;
 
 create or replace function public.is_household_member(target_household uuid)
 returns boolean language sql stable security definer set search_path = public
@@ -127,6 +140,25 @@ with check (public.is_list_member(list_id));
 drop policy if exists "members can delete items" on public.grocery_items;
 create policy "members can delete items" on public.grocery_items
 for delete to authenticated using (public.is_list_member(list_id));
+
+drop policy if exists "members can view recipe preferences" on public.recipe_preferences;
+create policy "members can view recipe preferences" on public.recipe_preferences
+for select to authenticated using (public.is_household_member(household_id));
+
+drop policy if exists "members can add recipe preferences" on public.recipe_preferences;
+create policy "members can add recipe preferences" on public.recipe_preferences
+for insert to authenticated
+with check (public.is_household_member(household_id) and updated_by = auth.uid());
+
+drop policy if exists "members can update recipe preferences" on public.recipe_preferences;
+create policy "members can update recipe preferences" on public.recipe_preferences
+for update to authenticated
+using (public.is_household_member(household_id))
+with check (public.is_household_member(household_id) and updated_by = auth.uid());
+
+drop policy if exists "members can delete recipe preferences" on public.recipe_preferences;
+create policy "members can delete recipe preferences" on public.recipe_preferences
+for delete to authenticated using (public.is_household_member(household_id));
 
 create or replace function public.create_household(household_name text default 'Family Grocery List')
 returns table (household_id uuid, invite_code text, list_id uuid)
@@ -213,11 +245,17 @@ create trigger grocery_items_touch
 before update on public.grocery_items
 for each row execute function public.touch_grocery_item();
 
-revoke all on public.households, public.household_members, public.grocery_lists, public.grocery_items from anon;
+drop trigger if exists recipe_preferences_touch on public.recipe_preferences;
+create trigger recipe_preferences_touch
+before update on public.recipe_preferences
+for each row execute function public.touch_grocery_item();
+
+revoke all on public.households, public.household_members, public.grocery_lists, public.grocery_items, public.recipe_preferences from anon;
 grant select, update on public.households to authenticated;
 grant select on public.household_members to authenticated;
 grant select, insert, update, delete on public.grocery_lists to authenticated;
 grant select, insert, update, delete on public.grocery_items to authenticated;
+grant select, insert, update, delete on public.recipe_preferences to authenticated;
 grant execute on function public.create_household(text) to authenticated;
 grant execute on function public.join_household(text) to authenticated;
 grant execute on function public.rotate_household_invite(uuid) to authenticated;
@@ -233,6 +271,14 @@ begin
       and tablename = 'grocery_items'
   ) then
     alter publication supabase_realtime add table public.grocery_items;
+  end if;
+  if not exists (
+    select 1 from pg_publication_tables
+    where pubname = 'supabase_realtime'
+      and schemaname = 'public'
+      and tablename = 'recipe_preferences'
+  ) then
+    alter publication supabase_realtime add table public.recipe_preferences;
   end if;
 end
 $$;

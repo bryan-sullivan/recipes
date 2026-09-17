@@ -125,6 +125,16 @@ main { width: min(820px, calc(100% - 2rem)); margin: 0 auto; }
 .rating-widget { display: flex; align-items: center; flex-wrap: wrap; gap: .3rem; color: var(--muted); }
 .rating-widget-compact { margin-top: .12rem; }
 .rating-widget-page { margin: 0 0 1.25rem; padding: .75rem; border-radius: 8px; background: #f1ecdf; }
+.recipe-preference-status { min-height: 1.4em; margin: .6rem 0 1rem; color: var(--muted); font-size: .92rem; }
+.recipe-preference-status[data-tone="success"] { color: #315f3d; }
+.recipe-preference-status[data-tone="warning"] { color: #7a5a18; }
+.recipe-preference-status[data-tone="error"] { color: #8a2e22; }
+.recipe-remove-button { color: #7a352c; }
+.recipe-page-action { margin: 0 0 1.25rem; }
+body[data-recipe-retired="true"] .recipe-page-action { color: #315f3d; }
+.card[data-retired="true"] { opacity: .72; }
+.show-removed-control { align-self: end; display: flex; align-items: center; gap: .45rem; min-height: 42px; }
+.show-removed-control input { width: auto; }
 .rating-label { font-size: .7rem; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; }
 .rating-stars { display: inline-flex; gap: 0; }
 .rating-star {

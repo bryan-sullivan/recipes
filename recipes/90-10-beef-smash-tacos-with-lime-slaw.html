@@ -1,5 +1,7 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>90/10 Beef Smash Tacos with Lime Slaw &amp; Creamy Jalapeño-Cilantro Sauce · Family Recipe Book</title><link rel="stylesheet" href="../assets/styles.css"><script type="application/ld+json">
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>90/10 Beef Smash Tacos with Lime Slaw &amp; Creamy Jalapeño-Cilantro Sauce · Family Recipe Book</title><link rel="stylesheet" href="../assets/styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.112.4" defer></script>
+  <script src="../assets/shared-recipe-preferences.js?v=1" defer></script><script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Recipe",
@@ -106,74 +108,7 @@
 <li>If using cheese, sprinkle it on after flipping. Work in batches with room between tacos. Top with drained slaw and sauce; serve three tacos per person immediately.</li>
 </ol>
 <blockquote class="callout tip"><p>Keep the flavor beef-forward. Start the sauce with 1 tablespoon pickled jalapeños for a milder family batch, then add more to taste. No Ranch or mustard. Optional cheese adds about 40 calories and 4 g protein per serving.</p></blockquote><h2 id="nutrition">Nutrition</h2><p>Approximately 510 calories and 38 g protein per serving, for one quarter of the complete recipe including sides and sauce. Family adaptation estimate; brands and portion sizes vary. Optional toppings are excluded.</p><h2 id="weightwatchers-note">WeightWatchers note</h2><p>Import this page into the WW app to calculate points for your brands and plan.</p><h2 id="source">Source and adaptation</h2><p>Original family recipe developed for this menu.</p>
-</article></main><footer>Generated from Obsidian Markdown. Edit the notes, then rebuild the site.</footer>  <script>
-    const ratingStoragePrefix = "family-recipe-rating-v1:";
-
-    function readSavedRating(recipeId, fallback) {
-      try {
-        const saved = window.localStorage.getItem(ratingStoragePrefix + recipeId);
-        return saved === null ? fallback : Number(saved);
-      } catch {
-        return fallback;
-      }
-    }
-
-    function ratingLabel(value) {
-      return value > 0 ? value + " / 5" : "Not rated";
-    }
-
-    function paintRating(widget, value) {
-      const normalized = Math.max(0, Math.min(5, Math.round(value * 2) / 2));
-      widget.dataset.currentRating = String(normalized);
-      widget.querySelectorAll("[data-rating-star]").forEach((button) => {
-        const star = Number(button.dataset.ratingStar);
-        button.dataset.fill = normalized >= star ? "full" : normalized >= star - 0.5 ? "half" : "empty";
-        button.setAttribute("aria-pressed", normalized === star || normalized === star - 0.5 ? "true" : "false");
-      });
-      widget.querySelector("[data-rating-output]").textContent = ratingLabel(normalized);
-      widget.querySelector("[data-clear-rating]").hidden = normalized === 0;
-      const card = widget.closest(".card");
-      if (card) card.dataset.rating = String(normalized);
-      return normalized;
-    }
-
-    function saveRating(widget, value) {
-      const normalized = paintRating(widget, value);
-      try {
-        if (normalized > 0) window.localStorage.setItem(ratingStoragePrefix + widget.dataset.recipeId, String(normalized));
-        else window.localStorage.removeItem(ratingStoragePrefix + widget.dataset.recipeId);
-      } catch {}
-      if (typeof applyRecipeFilters === "function") applyRecipeFilters();
-    }
-
-    document.querySelectorAll("[data-rating-widget]").forEach((widget) => {
-      const initial = Number(widget.dataset.initialRating) || 0;
-      paintRating(widget, readSavedRating(widget.dataset.recipeId, initial));
-    });
-
-    document.addEventListener("click", (event) => {
-      const star = event.target.closest("[data-rating-star]");
-      if (star) {
-        const widget = star.closest("[data-rating-widget]");
-        const whole = Number(star.dataset.ratingStar);
-        const rect = star.getBoundingClientRect();
-        const value = event.detail === 0 || event.clientX - rect.left >= rect.width / 2 ? whole : whole - 0.5;
-        saveRating(widget, value);
-        return;
-      }
-      const clear = event.target.closest("[data-clear-rating]");
-      if (clear) saveRating(clear.closest("[data-rating-widget]"), 0);
-    });
-
-    document.addEventListener("keydown", (event) => {
-      if (event.key !== "ArrowLeft" && event.key !== "ArrowRight") return;
-      const widget = event.target.closest("[data-rating-widget]");
-      if (!widget) return;
-      event.preventDefault();
-      const direction = event.key === "ArrowRight" ? 0.5 : -0.5;
-      saveRating(widget, Number(widget.dataset.currentRating || 0) + direction);
-    });
-  </script>
+</article></main><footer>Generated from Obsidian Markdown. Edit the notes, then rebuild the site.</footer>
 </body>
 </html>
 
