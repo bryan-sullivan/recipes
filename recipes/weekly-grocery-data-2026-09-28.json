@@ -1,0 +1,470 @@
+{
+  "week_start": "2026-09-28",
+  "title": "Wegmans Grocery List — September 28–October 4, 2026",
+  "items": [
+    {
+      "category": "Meat",
+      "name": "boneless skinless chicken breast",
+      "quantity": "4½ lb",
+      "sort_order": 1,
+      "source": "weekly-plan",
+      "seed_key": "Meat:boneless skinless chicken breast"
+    },
+    {
+      "category": "Bread, pasta and rice",
+      "name": "plain breadcrumbs",
+      "quantity": "½ cup",
+      "sort_order": 2,
+      "source": "weekly-plan",
+      "seed_key": "Bread, pasta and rice:plain breadcrumbs"
+    },
+    {
+      "category": "Dairy",
+      "name": "grated Parmesan",
+      "quantity": "⅜ cup",
+      "sort_order": 3,
+      "source": "weekly-plan",
+      "seed_key": "Dairy:grated Parmesan"
+    },
+    {
+      "category": "Dairy",
+      "name": "part-skim mozzarella",
+      "quantity": "3 oz",
+      "sort_order": 4,
+      "source": "weekly-plan",
+      "seed_key": "Dairy:part-skim mozzarella"
+    },
+    {
+      "category": "Canned and jarred",
+      "name": "marinara sauce",
+      "quantity": "1½ cups",
+      "sort_order": 5,
+      "source": "weekly-plan",
+      "seed_key": "Canned and jarred:marinara sauce"
+    },
+    {
+      "category": "Pantry check",
+      "name": "olive oil",
+      "quantity": "19 tsp (6 tbsp + 1 tsp)",
+      "sort_order": 6,
+      "source": "weekly-plan",
+      "seed_key": "Pantry check:olive oil"
+    },
+    {
+      "category": "Pantry check",
+      "name": "Italian seasoning",
+      "quantity": "2 tsp",
+      "sort_order": 7,
+      "source": "weekly-plan",
+      "seed_key": "Pantry check:Italian seasoning"
+    },
+    {
+      "category": "Pantry check",
+      "name": "kosher salt",
+      "quantity": "4½ tsp",
+      "sort_order": 8,
+      "source": "weekly-plan",
+      "seed_key": "Pantry check:kosher salt"
+    },
+    {
+      "category": "Pantry check",
+      "name": "black pepper",
+      "quantity": "3¼ tsp",
+      "sort_order": 9,
+      "source": "weekly-plan",
+      "seed_key": "Pantry check:black pepper"
+    },
+    {
+      "category": "Produce",
+      "name": "green beans",
+      "quantity": "3 lb",
+      "sort_order": 10,
+      "source": "weekly-plan",
+      "seed_key": "Produce:green beans"
+    },
+    {
+      "category": "Produce",
+      "name": "garlic",
+      "quantity": "13 cloves",
+      "sort_order": 11,
+      "source": "weekly-plan",
+      "seed_key": "Produce:garlic"
+    },
+    {
+      "category": "Bread, pasta and rice",
+      "name": "pasta",
+      "quantity": "4 oz dry",
+      "sort_order": 12,
+      "source": "weekly-plan",
+      "seed_key": "Bread, pasta and rice:pasta"
+    },
+    {
+      "category": "Meat",
+      "name": "pork tenderloin",
+      "quantity": "1½ lb",
+      "sort_order": 13,
+      "source": "weekly-plan",
+      "seed_key": "Meat:pork tenderloin"
+    },
+    {
+      "category": "Pantry check",
+      "name": "garlic powder",
+      "quantity": "3½ tsp",
+      "sort_order": 14,
+      "source": "weekly-plan",
+      "seed_key": "Pantry check:garlic powder"
+    },
+    {
+      "category": "Sauces and condiments",
+      "name": "balsamic vinegar",
+      "quantity": "¼ cup",
+      "sort_order": 15,
+      "source": "weekly-plan",
+      "seed_key": "Sauces and condiments:balsamic vinegar"
+    },
+    {
+      "category": "Canned and jarred",
+      "name": "reduced-sugar cherry preserves",
+      "quantity": "¼ cup",
+      "sort_order": 16,
+      "source": "weekly-plan",
+      "seed_key": "Canned and jarred:reduced-sugar cherry preserves"
+    },
+    {
+      "category": "Canned and jarred",
+      "name": "low-sodium chicken broth",
+      "quantity": "6¼ cup; buy two 32 fl oz cartons",
+      "sort_order": 17,
+      "source": "weekly-plan",
+      "seed_key": "Canned and jarred:low-sodium chicken broth"
+    },
+    {
+      "category": "Pantry check",
+      "name": "dried thyme",
+      "quantity": "1 tsp",
+      "sort_order": 18,
+      "source": "weekly-plan",
+      "seed_key": "Pantry check:dried thyme"
+    },
+    {
+      "category": "Produce",
+      "name": "Yukon Gold or russet potatoes",
+      "quantity": "4 lb",
+      "sort_order": 19,
+      "source": "weekly-plan",
+      "seed_key": "Produce:Yukon Gold or russet potatoes"
+    },
+    {
+      "category": "Produce",
+      "name": "broccoli florets",
+      "quantity": "1½ lb",
+      "sort_order": 20,
+      "source": "weekly-plan",
+      "seed_key": "Produce:broccoli florets"
+    },
+    {
+      "category": "Meat",
+      "name": "fully cooked chicken sausage",
+      "quantity": "24 oz",
+      "sort_order": 21,
+      "source": "weekly-plan",
+      "seed_key": "Meat:fully cooked chicken sausage"
+    },
+    {
+      "category": "Produce",
+      "name": "bell peppers",
+      "quantity": "3 medium",
+      "sort_order": 22,
+      "source": "weekly-plan",
+      "seed_key": "Produce:bell peppers"
+    },
+    {
+      "category": "Produce",
+      "name": "yellow onions",
+      "quantity": "3 medium",
+      "sort_order": 23,
+      "source": "weekly-plan",
+      "seed_key": "Produce:yellow onions"
+    },
+    {
+      "category": "Produce",
+      "name": "carrots",
+      "quantity": "2 medium",
+      "sort_order": 24,
+      "source": "weekly-plan",
+      "seed_key": "Produce:carrots"
+    },
+    {
+      "category": "Produce",
+      "name": "celery",
+      "quantity": "2 stalks",
+      "sort_order": 25,
+      "source": "weekly-plan",
+      "seed_key": "Produce:celery"
+    },
+    {
+      "category": "Pantry check",
+      "name": "bay leaves",
+      "quantity": "2 leaves",
+      "sort_order": 26,
+      "source": "weekly-plan",
+      "seed_key": "Pantry check:bay leaves"
+    },
+    {
+      "category": "Bread, pasta and rice",
+      "name": "acini di pepe",
+      "quantity": "4 oz dry",
+      "sort_order": 27,
+      "source": "weekly-plan",
+      "seed_key": "Bread, pasta and rice:acini di pepe"
+    },
+    {
+      "category": "Produce",
+      "name": "baby spinach",
+      "quantity": "5 oz",
+      "sort_order": 28,
+      "source": "weekly-plan",
+      "seed_key": "Produce:baby spinach"
+    },
+    {
+      "category": "Produce",
+      "name": "lemon",
+      "quantity": "2 whole",
+      "sort_order": 29,
+      "source": "weekly-plan",
+      "seed_key": "Produce:lemon"
+    },
+    {
+      "category": "Bread, pasta and rice",
+      "name": "crusty bread",
+      "quantity": "4 oz",
+      "sort_order": 30,
+      "source": "weekly-plan",
+      "seed_key": "Bread, pasta and rice:crusty bread"
+    },
+    {
+      "category": "Meat",
+      "name": "bone-in chicken thighs, skin removed",
+      "quantity": "3 lb trimmed; buy 3–3½ lb, about 8 small thighs",
+      "sort_order": 31,
+      "source": "weekly-plan",
+      "seed_key": "Meat:bone-in chicken thighs, skin removed"
+    },
+    {
+      "category": "Pantry check",
+      "name": "smoked paprika",
+      "quantity": "2½ tsp",
+      "sort_order": 32,
+      "source": "weekly-plan",
+      "seed_key": "Pantry check:smoked paprika"
+    },
+    {
+      "category": "Sauces and condiments",
+      "name": "mustard-free lower-sugar BBQ sauce",
+      "quantity": "½ cup",
+      "sort_order": 33,
+      "source": "weekly-plan",
+      "seed_key": "Sauces and condiments:mustard-free lower-sugar BBQ sauce"
+    },
+    {
+      "category": "Sauces and condiments",
+      "name": "apple cider vinegar",
+      "quantity": "1 tbsp",
+      "sort_order": 34,
+      "source": "weekly-plan",
+      "seed_key": "Sauces and condiments:apple cider vinegar"
+    },
+    {
+      "category": "Produce",
+      "name": "corn on the cob",
+      "quantity": "4 ears",
+      "sort_order": 35,
+      "source": "weekly-plan",
+      "seed_key": "Produce:corn on the cob"
+    },
+    {
+      "category": "Meat",
+      "name": "90/10 ground beef",
+      "quantity": "1½ lb",
+      "sort_order": 36,
+      "source": "weekly-plan",
+      "seed_key": "Meat:90/10 ground beef"
+    },
+    {
+      "category": "Dairy",
+      "name": "reduced-fat American cheese",
+      "quantity": "4 slices",
+      "sort_order": 37,
+      "source": "weekly-plan",
+      "seed_key": "Dairy:reduced-fat American cheese"
+    },
+    {
+      "category": "Bread, pasta and rice",
+      "name": "hamburger buns",
+      "quantity": "4 buns",
+      "sort_order": 38,
+      "source": "weekly-plan",
+      "seed_key": "Bread, pasta and rice:hamburger buns"
+    },
+    {
+      "category": "Pantry check",
+      "name": "neutral high-heat oil",
+      "quantity": "1 tsp",
+      "sort_order": 39,
+      "source": "weekly-plan",
+      "seed_key": "Pantry check:neutral high-heat oil"
+    },
+    {
+      "category": "Canned and jarred",
+      "name": "dill pickle chips",
+      "quantity": "½ cup",
+      "sort_order": 40,
+      "source": "weekly-plan",
+      "seed_key": "Canned and jarred:dill pickle chips"
+    },
+    {
+      "category": "Produce",
+      "name": "tomatoes",
+      "quantity": "3 medium",
+      "sort_order": 41,
+      "source": "weekly-plan",
+      "seed_key": "Produce:tomatoes"
+    },
+    {
+      "category": "Produce",
+      "name": "lettuce",
+      "quantity": "4 leaves",
+      "sort_order": 42,
+      "source": "weekly-plan",
+      "seed_key": "Produce:lettuce"
+    },
+    {
+      "category": "Sauces and condiments",
+      "name": "ketchup",
+      "quantity": "4 tbsp",
+      "sort_order": 43,
+      "source": "weekly-plan",
+      "seed_key": "Sauces and condiments:ketchup"
+    },
+    {
+      "category": "Sauces and condiments",
+      "name": "mustard-free light mayonnaise",
+      "quantity": "1 tbsp (optional)",
+      "sort_order": 44,
+      "source": "weekly-plan",
+      "seed_key": "Sauces and condiments:mustard-free light mayonnaise"
+    },
+    {
+      "category": "Dairy",
+      "name": "plain nonfat Greek yogurt",
+      "quantity": "½ cup",
+      "sort_order": 45,
+      "source": "weekly-plan",
+      "seed_key": "Dairy:plain nonfat Greek yogurt"
+    },
+    {
+      "category": "Produce",
+      "name": "fresh ginger",
+      "quantity": "2 tbsp grated",
+      "sort_order": 46,
+      "source": "weekly-plan",
+      "seed_key": "Produce:fresh ginger"
+    },
+    {
+      "category": "Pantry check",
+      "name": "garam masala",
+      "quantity": "2½ tsp",
+      "sort_order": 47,
+      "source": "weekly-plan",
+      "seed_key": "Pantry check:garam masala"
+    },
+    {
+      "category": "Pantry check",
+      "name": "sweet paprika",
+      "quantity": "2 tsp",
+      "sort_order": 48,
+      "source": "weekly-plan",
+      "seed_key": "Pantry check:sweet paprika"
+    },
+    {
+      "category": "Pantry check",
+      "name": "ground cumin",
+      "quantity": "1 tsp",
+      "sort_order": 49,
+      "source": "weekly-plan",
+      "seed_key": "Pantry check:ground cumin"
+    },
+    {
+      "category": "Pantry check",
+      "name": "turmeric",
+      "quantity": "½ tsp",
+      "sort_order": 50,
+      "source": "weekly-plan",
+      "seed_key": "Pantry check:turmeric"
+    },
+    {
+      "category": "Pantry check",
+      "name": "ground coriander",
+      "quantity": "1½ tsp",
+      "sort_order": 51,
+      "source": "weekly-plan",
+      "seed_key": "Pantry check:ground coriander"
+    },
+    {
+      "category": "Canned and jarred",
+      "name": "crushed tomatoes",
+      "quantity": "14½ oz",
+      "sort_order": 52,
+      "source": "weekly-plan",
+      "seed_key": "Canned and jarred:crushed tomatoes"
+    },
+    {
+      "category": "Dairy",
+      "name": "heavy cream",
+      "quantity": "¼ cup",
+      "sort_order": 53,
+      "source": "weekly-plan",
+      "seed_key": "Dairy:heavy cream"
+    },
+    {
+      "category": "Pantry check",
+      "name": "dried fenugreek leaves (kasuri methi)",
+      "quantity": "1 tsp (optional)",
+      "sort_order": 54,
+      "source": "weekly-plan",
+      "seed_key": "Pantry check:dried fenugreek leaves (kasuri methi)"
+    },
+    {
+      "category": "Bread, pasta and rice",
+      "name": "basmati rice",
+      "quantity": "¾ cup dry",
+      "sort_order": 55,
+      "source": "weekly-plan",
+      "seed_key": "Bread, pasta and rice:basmati rice"
+    },
+    {
+      "category": "Produce",
+      "name": "English cucumber",
+      "quantity": "1 large",
+      "sort_order": 56,
+      "source": "weekly-plan",
+      "seed_key": "Produce:English cucumber"
+    },
+    {
+      "category": "Produce",
+      "name": "red onion",
+      "quantity": "¼ medium",
+      "sort_order": 57,
+      "source": "weekly-plan",
+      "seed_key": "Produce:red onion"
+    },
+    {
+      "category": "Produce",
+      "name": "cilantro",
+      "quantity": "¼ cup chopped",
+      "sort_order": 58,
+      "source": "weekly-plan",
+      "seed_key": "Produce:cilantro"
+    }
+  ]
+}
