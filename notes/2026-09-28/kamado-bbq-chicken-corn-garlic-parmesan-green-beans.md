@@ -1,6 +1,6 @@
 ---
 title: "Kamado BBQ Chicken with Corn & Garlic-Parmesan Green Beans"
-date: 2026-10-02
+date: 2026-10-04
 servings: 4
 cuisine: American
 equipment: Kamado Joe Classic II + oven
@@ -11,7 +11,7 @@ tags: [recipe, high-protein, mustard-free, weekly-menu]
 
 # Kamado BBQ Chicken with Corn & Garlic-Parmesan Green Beans
 
-[[Weekly Dinner Menu - 2026-09-28]] · **Friday** · Serves **4** · About **65 minutes** (Sunday adds marinating).
+[[Weekly Dinner Menu - 2026-09-28]] · **Sunday** · Serves **4** · About **65 minutes** (Sunday adds marinating).
 
 Meat weights are raw unless specified; pasta and rice amounts are dry.
 

@@ -1,6 +1,6 @@
 ---
 title: "Baked Chicken Parmesan with Roasted Green Beans & Small Pasta"
-date: 2026-09-28
+date: 2026-09-30
 servings: 4
 cuisine: Italian-inspired
 equipment: Double oven + electric stovetop
@@ -11,7 +11,7 @@ tags: [recipe, high-protein, mustard-free, weekly-menu]
 
 # Baked Chicken Parmesan with Roasted Green Beans & Small Pasta
 
-[[Weekly Dinner Menu - 2026-09-28]] · **Monday** · Serves **4** · About **40 minutes** (Sunday adds marinating).
+[[Weekly Dinner Menu - 2026-09-28]] · **Wednesday** · Serves **4** · About **40 minutes** (Sunday adds marinating).
 
 Meat weights are raw unless specified; pasta and rice amounts are dry.
 

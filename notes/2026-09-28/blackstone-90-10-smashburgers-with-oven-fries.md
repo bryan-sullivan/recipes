@@ -1,6 +1,6 @@
 ---
 title: "Blackstone 90/10 Smashburgers with Oven Fries & Pickles"
-date: 2026-10-03
+date: 2026-10-05
 servings: 4
 cuisine: American
 equipment: 36-inch Blackstone + oven
@@ -11,7 +11,7 @@ tags: [recipe, high-protein, mustard-free, weekly-menu]
 
 # Blackstone 90/10 Smashburgers with Oven Fries & Pickles
 
-[[Weekly Dinner Menu - 2026-09-28]] · **Saturday** · Serves **4** · About **45 minutes** (Sunday adds marinating).
+[[Weekly Dinner Menu - 2026-09-28]] · **Monday** · Serves **4** · About **45 minutes** (Sunday adds marinating).
 
 Meat weights are raw unless specified; pasta and rice amounts are dry.
 

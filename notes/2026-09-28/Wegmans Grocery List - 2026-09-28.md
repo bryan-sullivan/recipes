@@ -1,12 +1,12 @@
 ---
-title: Wegmans Grocery List — September 28–October 4, 2026
-week: 2026-09-28
+title: Wegmans Grocery List — September 30–October 6, 2026
+week: 2026-09-30
 servings: 4
 avoid: [mustard, slaw, turkey-burgers, salmon]
 tags: [grocery-list, meal-plan, Wegmans]
 ---
 
-# Wegmans Grocery List — September 28–October 4, 2026
+# Wegmans Grocery List — September 30–October 6, 2026
 
 [[Weekly Dinner Menu - 2026-09-28]]
 
@@ -15,16 +15,16 @@ tags: [grocery-list, meal-plan, Wegmans]
 
 ## Produce
 
-- [ ] **green beans** — 3 lb — Buy 3 lb trimmed: 1½ lb Monday + 1½ lb Friday.
+- [ ] **green beans** — 3 lb — Buy 3 lb trimmed: 1½ lb Wednesday + 1½ lb Sunday.
 - [ ] **garlic** — 13 cloves — 13 cloves needed; buy 2 large heads.
-- [ ] **Yukon Gold or russet potatoes** — 4 lb — Buy one 5 lb bag; 4 lb needed: 1½ Tue + 1 Wed + 1½ Sat.
+- [ ] **Yukon Gold or russet potatoes** — 4 lb — Buy one 5 lb bag; 4 lb needed: 1½ Thu + 1 Fri + 1½ Mon.
 - [ ] **broccoli florets** — 1½ lb
 - [ ] **bell peppers** — 3 medium
 - [ ] **yellow onions** — 3 medium
 - [ ] **carrots** — 2 medium
 - [ ] **celery** — 2 stalks — 2 stalks; buy a small bunch or use what is on hand.
 - [ ] **baby spinach** — 5 oz
-- [ ] **lemon** — 2 whole — 2 lemons total: 1 Thursday + 1 Sunday.
+- [ ] **lemon** — 2 whole — 2 lemons total: 1 Saturday + 1 Tuesday.
 - [ ] **corn on the cob** — 4 ears
 - [ ] **tomatoes** — 3 medium
 - [ ] **lettuce** — 4 leaves — 4 leaves; buy 1 small head or use what is on hand.
@@ -35,7 +35,7 @@ tags: [grocery-list, meal-plan, Wegmans]
 
 ## Meat
 
-- [ ] **boneless skinless chicken breast** — 4½ lb — Buy 4½ lb total: 1½ lb each Monday, Thursday and Sunday.
+- [ ] **boneless skinless chicken breast** — 4½ lb — Buy 4½ lb total: 1½ lb each Wednesday, Saturday and Tuesday.
 - [ ] **pork tenderloin** — 1½ lb
 - [ ] **fully cooked chicken sausage** — 24 oz — 24 oz total; mild, mustard-free; compare protein and calories on label.
 - [ ] **bone-in chicken thighs, skin removed** — 3 lb trimmed; buy 3–3½ lb, about 8 small thighs — 3 lb after skin removal; buy about 3–3½ lb, roughly 8 small thighs.
@@ -94,16 +94,16 @@ tags: [grocery-list, meal-plan, Wegmans]
 
 ## Meal map
 
-- **Monday:** [[baked-chicken-parmesan-with-green-beans-and-pasta|Baked Chicken Parmesan with Roasted Green Beans & Small Pasta]]
-- **Tuesday:** [[cherry-balsamic-pork-with-roasted-potatoes-and-broccoli|Cherry-Balsamic Pork Tenderloin with Roasted Potatoes & Broccoli]]
-- **Wednesday:** [[easy-sheet-pan-chicken-sausage-potatoes-and-peppers|Easy Sheet-Pan Chicken Sausage, Potatoes & Peppers]]
-- **Thursday:** [[chicken-acini-di-pepe-spinach-soup|Chicken Soup with Acini di Pepe & Spinach + Crusty Bread]]
-- **Friday:** [[kamado-bbq-chicken-corn-garlic-parmesan-green-beans|Kamado BBQ Chicken with Corn & Garlic-Parmesan Green Beans]]
-- **Saturday:** [[blackstone-90-10-smashburgers-with-oven-fries|Blackstone 90/10 Smashburgers with Oven Fries & Pickles]]
-- **Sunday:** [[kamado-chicken-tikka-masala-with-rice-and-salad|Chicken Tikka Masala with Basmati Rice & Cucumber-Tomato Salad]]
+- **Wednesday:** [[baked-chicken-parmesan-with-green-beans-and-pasta|Baked Chicken Parmesan with Roasted Green Beans & Small Pasta]]
+- **Thursday:** [[cherry-balsamic-pork-with-roasted-potatoes-and-broccoli|Cherry-Balsamic Pork Tenderloin with Roasted Potatoes & Broccoli]]
+- **Friday:** [[easy-sheet-pan-chicken-sausage-potatoes-and-peppers|Easy Sheet-Pan Chicken Sausage, Potatoes & Peppers]]
+- **Saturday:** [[chicken-acini-di-pepe-spinach-soup|Chicken Soup with Acini di Pepe & Spinach + Crusty Bread]]
+- **Sunday:** [[kamado-bbq-chicken-corn-garlic-parmesan-green-beans|Kamado BBQ Chicken with Corn & Garlic-Parmesan Green Beans]]
+- **Monday:** [[blackstone-90-10-smashburgers-with-oven-fries|Blackstone 90/10 Smashburgers with Oven Fries & Pickles]]
+- **Tuesday:** [[kamado-chicken-tikka-masala-with-rice-and-salad|Chicken Tikka Masala with Basmati Rice & Cucumber-Tomato Salad]]
 
 ## Before checkout
 
 - [ ] Check charcoal, metal skewers, parchment, foil and thermometer.
-- [ ] Check packaged foods for mustard; Wednesday sausage is fully cooked.
+- [ ] Check packaged foods for mustard; Friday sausage is fully cooked.
 - [ ] Add optional naan or extra starches only if wanted.

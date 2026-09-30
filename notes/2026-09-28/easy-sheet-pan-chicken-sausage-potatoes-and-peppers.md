@@ -1,6 +1,6 @@
 ---
 title: "Easy Sheet-Pan Chicken Sausage, Potatoes & Peppers"
-date: 2026-09-30
+date: 2026-10-02
 servings: 4
 cuisine: American
 equipment: Oven
@@ -11,7 +11,7 @@ tags: [recipe, high-protein, mustard-free, weekly-menu]
 
 # Easy Sheet-Pan Chicken Sausage, Potatoes & Peppers
 
-[[Weekly Dinner Menu - 2026-09-28]] · **Wednesday** · Serves **4** · About **45 minutes** (Sunday adds marinating).
+[[Weekly Dinner Menu - 2026-09-28]] · **Friday** · Serves **4** · About **45 minutes** (Sunday adds marinating).
 
 Meat weights are raw unless specified; pasta and rice amounts are dry.
 

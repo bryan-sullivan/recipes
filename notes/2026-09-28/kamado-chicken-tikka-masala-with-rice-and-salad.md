@@ -1,6 +1,6 @@
 ---
 title: "Chicken Tikka Masala with Basmati Rice & Cucumber-Tomato Salad"
-date: 2026-10-04
+date: 2026-10-06
 servings: 4
 cuisine: Indian-inspired
 equipment: Kamado Joe Classic II + electric stovetop
@@ -11,7 +11,7 @@ tags: [recipe, high-protein, mustard-free, weekly-menu]
 
 # Chicken Tikka Masala with Basmati Rice & Cucumber-Tomato Salad
 
-[[Weekly Dinner Menu - 2026-09-28]] · **Sunday** · Serves **4** · About **50 minutes** (Sunday adds marinating).
+[[Weekly Dinner Menu - 2026-09-28]] · **Tuesday** · Serves **4** · About **50 minutes** (Sunday adds marinating).
 
 Meat weights are raw unless specified; pasta and rice amounts are dry.
 

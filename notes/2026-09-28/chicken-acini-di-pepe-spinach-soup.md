@@ -1,6 +1,6 @@
 ---
 title: "Chicken Soup with Acini di Pepe & Spinach + Crusty Bread"
-date: 2026-10-01
+date: 2026-10-03
 servings: 4
 cuisine: American
 equipment: Electric stovetop
@@ -11,7 +11,7 @@ tags: [recipe, high-protein, mustard-free, weekly-menu]
 
 # Chicken Soup with Acini di Pepe & Spinach + Crusty Bread
 
-[[Weekly Dinner Menu - 2026-09-28]] · **Thursday** · Serves **4** · About **45 minutes** (Sunday adds marinating).
+[[Weekly Dinner Menu - 2026-09-28]] · **Saturday** · Serves **4** · About **45 minutes** (Sunday adds marinating).
 
 Meat weights are raw unless specified; pasta and rice amounts are dry.
 
