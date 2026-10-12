@@ -1,0 +1,430 @@
+{
+  "week_start": "2026-10-13",
+  "title": "Wegmans Grocery List — October 13–17, 2026",
+  "items": [
+    {
+      "category": "Produce",
+      "name": "Brussels sprouts",
+      "quantity": "1½ lb",
+      "sort_order": 1,
+      "source": "weekly-plan",
+      "seed_key": "Produce:Brussels sprouts"
+    },
+    {
+      "category": "Produce",
+      "name": "baby potatoes",
+      "quantity": "1½ lb",
+      "sort_order": 2,
+      "source": "weekly-plan",
+      "seed_key": "Produce:baby potatoes"
+    },
+    {
+      "category": "Produce",
+      "name": "garlic",
+      "quantity": "12 cloves (buy 2 bulbs)",
+      "sort_order": 3,
+      "source": "weekly-plan",
+      "seed_key": "Produce:garlic"
+    },
+    {
+      "category": "Produce",
+      "name": "yellow onions",
+      "quantity": "2 medium (½ Wed, 1 Fri)",
+      "sort_order": 4,
+      "source": "weekly-plan",
+      "seed_key": "Produce:yellow onions"
+    },
+    {
+      "category": "Produce",
+      "name": "fresh ginger",
+      "quantity": "2 tbsp grated",
+      "sort_order": 5,
+      "source": "weekly-plan",
+      "seed_key": "Produce:fresh ginger"
+    },
+    {
+      "category": "Produce",
+      "name": "English cucumbers",
+      "quantity": "2 (1 Wed + ½ Fri)",
+      "sort_order": 6,
+      "source": "weekly-plan",
+      "seed_key": "Produce:English cucumbers"
+    },
+    {
+      "category": "Produce",
+      "name": "pre-shredded carrots",
+      "quantity": "8 oz bag",
+      "sort_order": 7,
+      "source": "weekly-plan",
+      "seed_key": "Produce:pre-shredded carrots"
+    },
+    {
+      "category": "Produce",
+      "name": "scallions",
+      "quantity": "4 (buy 1 bunch)",
+      "sort_order": 8,
+      "source": "weekly-plan",
+      "seed_key": "Produce:scallions"
+    },
+    {
+      "category": "Produce",
+      "name": "zucchini",
+      "quantity": "1 medium",
+      "sort_order": 9,
+      "source": "weekly-plan",
+      "seed_key": "Produce:zucchini"
+    },
+    {
+      "category": "Produce",
+      "name": "Roma tomatoes",
+      "quantity": "2",
+      "sort_order": 10,
+      "source": "weekly-plan",
+      "seed_key": "Produce:Roma tomatoes"
+    },
+    {
+      "category": "Produce",
+      "name": "red onion",
+      "quantity": "½ medium",
+      "sort_order": 11,
+      "source": "weekly-plan",
+      "seed_key": "Produce:red onion"
+    },
+    {
+      "category": "Produce",
+      "name": "fresh basil",
+      "quantity": "¼ cup (buy 1 bunch)",
+      "sort_order": 12,
+      "source": "weekly-plan",
+      "seed_key": "Produce:fresh basil"
+    },
+    {
+      "category": "Produce",
+      "name": "lemon",
+      "quantity": "2",
+      "sort_order": 13,
+      "source": "weekly-plan",
+      "seed_key": "Produce:lemon"
+    },
+    {
+      "category": "Produce",
+      "name": "cauliflower",
+      "quantity": "1 large head (~1½ lb)",
+      "sort_order": 14,
+      "source": "weekly-plan",
+      "seed_key": "Produce:cauliflower"
+    },
+    {
+      "category": "Produce",
+      "name": "cilantro",
+      "quantity": "¼ cup (buy 1 bunch)",
+      "sort_order": 15,
+      "source": "weekly-plan",
+      "seed_key": "Produce:cilantro"
+    },
+    {
+      "category": "Produce",
+      "name": "carrots",
+      "quantity": "1½ lb",
+      "sort_order": 16,
+      "source": "weekly-plan",
+      "seed_key": "Produce:carrots"
+    },
+    {
+      "category": "Produce",
+      "name": "corn on the cob",
+      "quantity": "4 ears",
+      "sort_order": 17,
+      "source": "weekly-plan",
+      "seed_key": "Produce:corn on the cob"
+    },
+    {
+      "category": "Produce",
+      "name": "fresh mint (optional)",
+      "quantity": "2 tbsp",
+      "sort_order": 18,
+      "source": "weekly-plan",
+      "seed_key": "Produce:fresh mint (optional)"
+    },
+    {
+      "category": "Produce",
+      "name": "fresh rosemary (optional)",
+      "quantity": "1 tbsp; otherwise dried",
+      "sort_order": 19,
+      "source": "weekly-plan",
+      "seed_key": "Produce:fresh rosemary (optional)"
+    },
+    {
+      "category": "Meat",
+      "name": "pork tenderloin",
+      "quantity": "2 lb",
+      "sort_order": 20,
+      "source": "weekly-plan",
+      "seed_key": "Meat:pork tenderloin"
+    },
+    {
+      "category": "Meat",
+      "name": "90/10 lean ground beef",
+      "quantity": "3 lb total (1½ lb Wed + 1½ lb Fri)",
+      "sort_order": 21,
+      "source": "weekly-plan",
+      "seed_key": "Meat:90/10 lean ground beef"
+    },
+    {
+      "category": "Meat",
+      "name": "boneless skinless chicken breast",
+      "quantity": "2 lb (4 breasts)",
+      "sort_order": 22,
+      "source": "weekly-plan",
+      "seed_key": "Meat:boneless skinless chicken breast"
+    },
+    {
+      "category": "Meat",
+      "name": "bone-in skin-on chicken thighs",
+      "quantity": "8 thighs, about 3½–4 lb",
+      "sort_order": 23,
+      "source": "weekly-plan",
+      "seed_key": "Meat:bone-in skin-on chicken thighs"
+    },
+    {
+      "category": "Dairy",
+      "name": "grated Parmesan",
+      "quantity": "½ cup total",
+      "sort_order": 24,
+      "source": "weekly-plan",
+      "seed_key": "Dairy:grated Parmesan"
+    },
+    {
+      "category": "Dairy",
+      "name": "part-skim mozzarella",
+      "quantity": "4 oz",
+      "sort_order": 25,
+      "source": "weekly-plan",
+      "seed_key": "Dairy:part-skim mozzarella"
+    },
+    {
+      "category": "Dairy",
+      "name": "plain nonfat Greek yogurt",
+      "quantity": "1 cup",
+      "sort_order": 26,
+      "source": "weekly-plan",
+      "seed_key": "Dairy:plain nonfat Greek yogurt"
+    },
+    {
+      "category": "Bread, pasta and rice",
+      "name": "microwaveable brown rice",
+      "quantity": "2 pouches (~8.8 oz each)",
+      "sort_order": 27,
+      "source": "weekly-plan",
+      "seed_key": "Bread, pasta and rice:microwaveable brown rice"
+    },
+    {
+      "category": "Bread, pasta and rice",
+      "name": "dry orzo",
+      "quantity": "6 oz",
+      "sort_order": 28,
+      "source": "weekly-plan",
+      "seed_key": "Bread, pasta and rice:dry orzo"
+    },
+    {
+      "category": "Bread, pasta and rice",
+      "name": "dry basmati rice",
+      "quantity": "¾ cup",
+      "sort_order": 29,
+      "source": "weekly-plan",
+      "seed_key": "Bread, pasta and rice:dry basmati rice"
+    },
+    {
+      "category": "Canned and jarred",
+      "name": "diced tomatoes",
+      "quantity": "1 can (14.5 oz)",
+      "sort_order": 30,
+      "source": "weekly-plan",
+      "seed_key": "Canned and jarred:diced tomatoes"
+    },
+    {
+      "category": "Canned and jarred",
+      "name": "frozen green peas",
+      "quantity": "1 cup",
+      "sort_order": 31,
+      "source": "weekly-plan",
+      "seed_key": "Canned and jarred:frozen green peas"
+    },
+    {
+      "category": "Sauces and condiments",
+      "name": "fig butter or fig spread",
+      "quantity": "3 tbsp",
+      "sort_order": 32,
+      "source": "weekly-plan",
+      "seed_key": "Sauces and condiments:fig butter or fig spread"
+    },
+    {
+      "category": "Sauces and condiments",
+      "name": "balsamic vinegar",
+      "quantity": "2 tbsp",
+      "sort_order": 33,
+      "source": "weekly-plan",
+      "seed_key": "Sauces and condiments:balsamic vinegar"
+    },
+    {
+      "category": "Sauces and condiments",
+      "name": "low-sodium soy sauce",
+      "quantity": "¼ cup",
+      "sort_order": 34,
+      "source": "weekly-plan",
+      "seed_key": "Sauces and condiments:low-sodium soy sauce"
+    },
+    {
+      "category": "Sauces and condiments",
+      "name": "light brown sugar",
+      "quantity": "2 tsp",
+      "sort_order": 35,
+      "source": "weekly-plan",
+      "seed_key": "Sauces and condiments:light brown sugar"
+    },
+    {
+      "category": "Sauces and condiments",
+      "name": "toasted sesame oil",
+      "quantity": "2 tsp",
+      "sort_order": 36,
+      "source": "weekly-plan",
+      "seed_key": "Sauces and condiments:toasted sesame oil"
+    },
+    {
+      "category": "Sauces and condiments",
+      "name": "rice vinegar",
+      "quantity": "1 tbsp",
+      "sort_order": 37,
+      "source": "weekly-plan",
+      "seed_key": "Sauces and condiments:rice vinegar"
+    },
+    {
+      "category": "Sauces and condiments",
+      "name": "BBQ sauce (prefer reduced sugar)",
+      "quantity": "½ cup",
+      "sort_order": 38,
+      "source": "weekly-plan",
+      "seed_key": "Sauces and condiments:BBQ sauce (prefer reduced sugar)"
+    },
+    {
+      "category": "Sauces and condiments",
+      "name": "gochujang (optional)",
+      "quantity": "to taste",
+      "sort_order": 39,
+      "source": "weekly-plan",
+      "seed_key": "Sauces and condiments:gochujang (optional)"
+    },
+    {
+      "category": "Sauces and condiments",
+      "name": "toasted sesame seeds (optional)",
+      "quantity": "1 tsp",
+      "sort_order": 40,
+      "source": "weekly-plan",
+      "seed_key": "Sauces and condiments:toasted sesame seeds (optional)"
+    },
+    {
+      "category": "Pantry check",
+      "name": "olive oil",
+      "quantity": "15 tsp (5 tbsp)",
+      "sort_order": 41,
+      "source": "weekly-plan",
+      "seed_key": "Pantry check:olive oil"
+    },
+    {
+      "category": "Pantry check",
+      "name": "garlic powder",
+      "quantity": "2½ tsp",
+      "sort_order": 42,
+      "source": "weekly-plan",
+      "seed_key": "Pantry check:garlic powder"
+    },
+    {
+      "category": "Pantry check",
+      "name": "dried rosemary",
+      "quantity": "1 tsp, if not using fresh",
+      "sort_order": 43,
+      "source": "weekly-plan",
+      "seed_key": "Pantry check:dried rosemary"
+    },
+    {
+      "category": "Pantry check",
+      "name": "Italian seasoning",
+      "quantity": "1 tsp",
+      "sort_order": 44,
+      "source": "weekly-plan",
+      "seed_key": "Pantry check:Italian seasoning"
+    },
+    {
+      "category": "Pantry check",
+      "name": "garam masala",
+      "quantity": "2 tsp",
+      "sort_order": 45,
+      "source": "weekly-plan",
+      "seed_key": "Pantry check:garam masala"
+    },
+    {
+      "category": "Pantry check",
+      "name": "ground cumin",
+      "quantity": "1¼ tsp",
+      "sort_order": 46,
+      "source": "weekly-plan",
+      "seed_key": "Pantry check:ground cumin"
+    },
+    {
+      "category": "Pantry check",
+      "name": "ground turmeric",
+      "quantity": "1 tsp",
+      "sort_order": 47,
+      "source": "weekly-plan",
+      "seed_key": "Pantry check:ground turmeric"
+    },
+    {
+      "category": "Pantry check",
+      "name": "ground coriander",
+      "quantity": "1 tsp",
+      "sort_order": 48,
+      "source": "weekly-plan",
+      "seed_key": "Pantry check:ground coriander"
+    },
+    {
+      "category": "Pantry check",
+      "name": "smoked paprika",
+      "quantity": "2½ tsp",
+      "sort_order": 49,
+      "source": "weekly-plan",
+      "seed_key": "Pantry check:smoked paprika"
+    },
+    {
+      "category": "Pantry check",
+      "name": "Kashmiri chili powder (optional)",
+      "quantity": "½ tsp",
+      "sort_order": 50,
+      "source": "weekly-plan",
+      "seed_key": "Pantry check:Kashmiri chili powder (optional)"
+    },
+    {
+      "category": "Pantry check",
+      "name": "kosher salt",
+      "quantity": "to taste; ~3–4 tsp across week",
+      "sort_order": 51,
+      "source": "weekly-plan",
+      "seed_key": "Pantry check:kosher salt"
+    },
+    {
+      "category": "Pantry check",
+      "name": "black pepper",
+      "quantity": "to taste",
+      "sort_order": 52,
+      "source": "weekly-plan",
+      "seed_key": "Pantry check:black pepper"
+    },
+    {
+      "category": "Pantry check",
+      "name": "red pepper flakes (optional)",
+      "quantity": "pinch",
+      "sort_order": 53,
+      "source": "weekly-plan",
+      "seed_key": "Pantry check:red pepper flakes (optional)"
+    }
+  ]
+}
