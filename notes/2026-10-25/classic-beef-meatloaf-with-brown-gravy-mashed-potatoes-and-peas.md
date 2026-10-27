@@ -1,6 +1,6 @@
 ---
 title: "Classic Beef Meatloaf with Brown Gravy, Garlic Mashed Potatoes & Peas"
-date: 2026-10-26
+date: 2026-10-27
 servings: 8 (meatloaf); 4 (sides)
 tags: [recipe, high-protein, weekly-menu]
 ---
@@ -11,7 +11,7 @@ tags: [recipe, high-protein, weekly-menu]
 
 A traditional all-beef 90/10 meatloaf with comforting brown gravy, mashed potatoes and sweet green peas.
 
-Makes 6–8 meatloaf portions with sides for 4 · Oven + electric stovetop · 90 min. Meat weights raw, rice dry.
+Scheduled Tuesday, October 27. Makes 6–8 meatloaf portions with sides for 4 · Oven + electric stovetop · 90 min. Meat weights raw, rice dry.
 
 ## Ingredients
 
