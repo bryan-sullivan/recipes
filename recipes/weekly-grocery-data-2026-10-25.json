@@ -85,7 +85,7 @@
     {
       "category": "Produce",
       "name": "yellow onions",
-      "quantity": "4 total (Sun 1, Mon small 1, Thu large 1, plus reserve 1)",
+      "quantity": "4 total (Sun 1, Mon medium 1, Thu large 1, plus reserve 1)",
       "sort_order": 11,
       "source": "weekly-plan",
       "seed_key": "Produce:yellow onions"
@@ -93,7 +93,7 @@
     {
       "category": "Produce",
       "name": "celery",
-      "quantity": "2 stalks (Monday)",
+      "quantity": "3 stalks (Mon meatloaf)",
       "sort_order": 12,
       "source": "weekly-plan",
       "seed_key": "Produce:celery"
@@ -189,7 +189,7 @@
     {
       "category": "Meat",
       "name": "90/10 lean ground beef",
-      "quantity": "3½ lb (Mon 2 lb; Tue 1½ lb)",
+      "quantity": "4½ lb total (Mon 3 lb meatloaf; Tue 1½ lb bibimbap)",
       "sort_order": 24,
       "source": "weekly-plan",
       "seed_key": "Meat:90/10 lean ground beef"
@@ -229,7 +229,7 @@
     {
       "category": "Dairy",
       "name": "large eggs",
-      "quantity": "7 (Mon 1, Tue 4, Sat 2)",
+      "quantity": "8 (Mon 2, Tue 4, Sat 2)",
       "sort_order": 29,
       "source": "weekly-plan",
       "seed_key": "Dairy:large eggs"
@@ -237,7 +237,7 @@
     {
       "category": "Dairy",
       "name": "low-fat milk",
-      "quantity": "1 cup (Monday)",
+      "quantity": "1¼ cups (Mon ¾ cup meatloaf + ⅓ cup potatoes)",
       "sort_order": 30,
       "source": "weekly-plan",
       "seed_key": "Dairy:low-fat milk"
@@ -301,7 +301,7 @@
     {
       "category": "Bread, pasta and rice",
       "name": "panko breadcrumbs or quick oats",
-      "quantity": "1½ cups total (Mon ½ cup, Sat 1 cup panko)",
+      "quantity": "1¾ cups total (Mon ¾ cup oats or panko; Sat 1 cup panko)",
       "sort_order": 38,
       "source": "weekly-plan",
       "seed_key": "Bread, pasta and rice:panko breadcrumbs or quick oats"
@@ -317,7 +317,7 @@
     {
       "category": "Sauces and condiments",
       "name": "low-sodium beef broth",
-      "quantity": "1½ cups (Monday)",
+      "quantity": "2¼ cups (Mon gravy)",
       "sort_order": 40,
       "source": "weekly-plan",
       "seed_key": "Sauces and condiments:low-sodium beef broth"
@@ -357,7 +357,7 @@
     {
       "category": "Sauces and condiments",
       "name": "Worcestershire sauce",
-      "quantity": "1 tbsp (Monday)",
+      "quantity": "1½ tbsp (Mon meatloaf)",
       "sort_order": 45,
       "source": "weekly-plan",
       "seed_key": "Sauces and condiments:Worcestershire sauce"
@@ -413,7 +413,7 @@
     {
       "category": "Pantry check",
       "name": "all-purpose flour",
-      "quantity": "~½ cup (Sun 2 tbsp, Mon 1½ tbsp, Sat ¼ cup)",
+      "quantity": "⅔ cup across week (Sun 2 tbsp, Mon 2¼ tbsp, Sat ¼ cup)",
       "sort_order": 52,
       "source": "weekly-plan",
       "seed_key": "Pantry check:all-purpose flour"
