@@ -1,7 +1,7 @@
 ---
 title: "Classic Beef Meatloaf with Brown Gravy, Garlic Mashed Potatoes & Peas"
 date: 2026-10-26
-servings: 4
+servings: 8 (meatloaf); 4 (sides)
 tags: [recipe, high-protein, weekly-menu]
 ---
 
@@ -11,44 +11,44 @@ tags: [recipe, high-protein, weekly-menu]
 
 A traditional all-beef 90/10 meatloaf with comforting brown gravy, mashed potatoes and sweet green peas.
 
-Serves 4 · Oven + electric stovetop · 80 min. Meat weights raw, rice dry.
+Makes 6–8 meatloaf portions with sides for 4 · Oven + electric stovetop · 90 min. Meat weights raw, rice dry.
 
 ## Ingredients
 
-- 2 lb 90/10 lean ground beef
-- 1 small yellow onion, finely diced
-- 2 celery stalks, finely diced
-- 3 garlic cloves, minced
-- 1 large egg
-- ½ cup quick oats or plain panko
-- ½ cup low-fat milk for meatloaf
-- 1 tbsp Worcestershire sauce
-- 2 tbsp chopped fresh parsley
-- 1 tsp dried thyme
-- 1 tsp olive oil
+- 3 lb 90/10 lean ground beef
+- 1 medium yellow onion (or 2 small), finely diced
+- 3 celery stalks, finely diced
+- 5 garlic cloves, minced
+- 2 large eggs
+- ¾ cup quick oats or plain panko
+- ¾ cup low-fat milk for meatloaf
+- 1½ tbsp Worcestershire sauce
+- 3 tbsp chopped fresh parsley
+- 1½ tsp dried thyme
+- 1½ tsp olive oil
 - 2 lb Yukon Gold potatoes, peeled and quartered
 - ⅓ cup low-fat milk for mashed potatoes
 - 1 tbsp butter
 - 1 lb frozen green peas
-- 1½ cups low-sodium beef broth
-- 1½ tbsp all-purpose flour
-- 1 tsp kosher salt, plus to taste
-- ½ tsp black pepper
+- 2¼ cups low-sodium beef broth
+- 2¼ tbsp all-purpose flour
+- 1½ tsp kosher salt for meatloaf, plus to taste
+- ¾ tsp black pepper for meatloaf, plus to taste
 
 ## Method
 
-1. Heat oven to 350°F. Cook diced onion and celery in 1 tsp olive oil 6–8 minutes until softened; add garlic for final 30 seconds, then cool briefly.
+1. Heat oven to 350°F. Sauté diced onion and celery in 1½ tsp olive oil for 6–8 minutes until softened; add garlic in the final 30 seconds. Cool briefly.
 
-2. Mix beef, cooled vegetables, egg, oats, ½ cup milk, Worcestershire, parsley, thyme, salt and pepper gently without overworking. Shape into a 9-by-5-inch freeform loaf on a parchment-lined sheet pan.
+2. Mix 3 lb beef, cooled vegetables, 2 eggs, ¾ cup oats or panko, ¾ cup milk, Worcestershire, parsley, thyme, 1½ tsp salt and ¾ tsp pepper gently, just until combined. Divide in half and shape TWO freeform 1½-lb loaves about 9-by-4 inches on a parchment-lined sheet pan, at least 2 inches apart. This is easier to cook evenly than one very thick 3-lb loaf.
 
-3. Bake approximately 50–65 minutes until center registers 160°F; rest 10 minutes before slicing.
+3. Bake at 350°F for approximately 50–70 minutes, checking from 50 minutes, until the centers of BOTH loaves reach 160°F on an instant-read thermometer. Rest 10 minutes before slicing. If choosing ONE large freeform 3-lb loaf instead, expect roughly 75–100 minutes, depending on thickness; go by temperature, not the clock.
 
-4. Meanwhile cover potatoes with cold salted water; simmer 15–20 minutes until tender. Drain and mash with ⅓ cup warmed milk, butter and salt. Heat frozen peas according to package directions.
+4. While meatloaf bakes, cover potatoes in cold salted water and simmer 15–20 minutes until tender. Drain and mash with ⅓ cup warmed milk, butter and salt. Heat peas according to package directions. These sides remain sized for four diners.
 
-5. Whisk flour into cold beef broth in a saucepan, simmer 5–8 minutes until thick; whisk in skimmed meatloaf drippings if desired. Serve meatloaf with brown gravy, mashed potatoes and peas.
+5. Whisk 2¼ tbsp flour into 2¼ cups cold beef broth in a saucepan. Simmer 5–8 minutes until a light brown gravy forms, adding skimmed loaf drippings if available; season to taste. Serve meatloaf with gravy, mashed potatoes and peas. Refrigerate extra meatloaf promptly for leftovers.
 
 > [!tip]
-> Use only 90/10 beef, no ground turkey. Ground beef meatloaf must reach 160°F and rest 10 minutes. Gravy is flour-thickened, not cream-based.
+> Uses all 3 lb of 90/10 beef. Two 1½-lb loaves cook more evenly; both must reach 160°F. Makes about 6–8 meatloaf portions, with mashed potatoes and peas for four. Allow roughly 90 minutes total; one large loaf may take longer.
 
 ## Nutrition
 
