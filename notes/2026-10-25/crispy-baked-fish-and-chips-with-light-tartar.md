@@ -7,9 +7,9 @@ tags: [recipe, high-protein, weekly-menu]
 
 # Crispy Baked Cod Fish & Chips with Oven Potato Wedges and Light Tartar Sauce
 
-[[Weekly Dinner Menu - 2026-10-25]]
+[[Weekly Dinner Menu - 2026-10-25]] · [[Weekly Dinner Menu - 2026-11-03]]
 
-A family-friendly baked fish-and-chips dinner with golden panko cod, crisp oven fries and tangy mustard-free tartar.
+A family-friendly baked fish-and-chips dinner with golden panko cod, crisp oven fries and tangy mustard-free tartar. Carried over to Thursday, November 5, with steamed peas.
 
 Serves 4 · Double oven · 45 min. Meat weights raw, rice dry.
 
@@ -28,6 +28,7 @@ Serves 4 · Double oven · 45 min. Meat weights raw, rice dry.
 - ¼ cup finely chopped dill pickles
 - 1 tbsp fresh dill, chopped
 - 1 lemon, divided (juice and wedges)
+- 1 lb frozen green peas (November 5 side)
 - ½ tsp kosher salt, plus to taste
 - ¼ tsp black pepper
 
@@ -42,6 +43,8 @@ Serves 4 · Double oven · 45 min. Meat weights raw, rice dry.
 4. After potatoes have cooked about 18 minutes, bake cod at 450°F for 12–16 minutes until golden and fish reaches 145°F. Avoid overcooking.
 
 5. Mix Greek yogurt, light mayo, chopped pickles, fresh dill and 1 tbsp lemon juice. Serve fish, potato wedges, tartar sauce and remaining lemon wedges.
+
+6. Steam frozen peas 3–5 minutes according to package directions; drain and add a squeeze of lemon. Serve with the fish and wedges.
 
 > [!tip]
 > Use two oven racks or double ovens: the potatoes need a head start. This variation deliberately omits Dijon mustard from Skinnytaste's original. Fish should reach 145°F and flake easily.
