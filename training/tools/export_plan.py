@@ -19,6 +19,7 @@ import json
 from pathlib import Path
 import re
 import sys
+from zoneinfo import ZoneInfo
 
 DAY_ORDER = ("Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday", "Monday")
 SESSION_IDS = {
@@ -66,28 +67,45 @@ def extract_checklists(markdown: str) -> dict[str, list[str]]:
 
 
 def extract_weeks(markdown: str, block_start: dt.date, block_end: dt.date) -> list[dict]:
+    """Read a reviewed Tuesday–Monday table; fail if labels disagree with YAML dates.
+
+    Supports labels such as "Dec 29–Jan 4 (9)". Week numbers may continue
+    across blocks, but dates must agree with the frontmatter.
+    """
     match = re.search(r"(?ms)^### Week-by-week Tread prescription\s*\n(.*?)(?=^## |\Z)", markdown)
     if not match:
         raise ValueError("Missing Plan.md week-by-week Tread prescription")
+    if block_start.weekday() != 1 or block_end.weekday() != 0:
+        raise ValueError("Training block must run Tuesday–Monday")
+    days = (block_end - block_start).days + 1
+    if days < 7 or days > 112 or days % 7:
+        raise ValueError("Training block must contain 1–16 complete Tuesday–Monday weeks")
+    expected_count = days // 7
     result = []
     for line in match.group(1).splitlines():
-        if not line.startswith("| Nov "):
+        if not line.lstrip().startswith("|"):
             continue
         parts = [p.strip() for p in line.strip().strip("|").split("|")]
+        if not parts or parts[0].lower().startswith("ww week") or parts[0].startswith("---"):
+            continue
         if len(parts) != 5:
             raise ValueError("Weekly table has changed; inspect before publishing")
-        row = re.match(r"^Nov\s+(\d+)[–-](\d+)\s+\((\d+)\)$", parts[0])
+        row = re.fullmatch(r"([A-Za-z]{3})\s+(\d{1,2})\s*[–-]\s*(?:([A-Za-z]{3})\s+)?(\d{1,2})\s+\((\d+)\)", parts[0])
         if not row:
             raise ValueError(f"Unrecognized weekly date range: {parts[0]}")
-        a, b, number = map(int, row.groups())
-        begin, end = dt.date(2026, 11, a), dt.date(2026, 11, b)
-        if begin.weekday() != 1 or end.weekday() != 0 or (end-begin).days != 6:
-            raise ValueError("WeightWatchers weeks must be Tuesday to Monday")
+        month_a, day_a, month_b, day_b, number = row.groups()
+        begin = block_start + dt.timedelta(days=len(result)*7)
+        end = begin + dt.timedelta(days=6)
+        if (month_a.lower(), int(day_a), (month_b or month_a).lower(), int(day_b)) != \
+           (begin.strftime("%b").lower(), begin.day, end.strftime("%b").lower(), end.day):
+            raise ValueError(f"Weekly label {parts[0]!r} does not match {begin} through {end}")
+        if result and int(number) != result[-1]["number"] + 1:
+            raise ValueError("Weekly numbers must increment by one")
         duration = re.sub(r"(?<=\d)[–-]min\b", " min", parts[3])
-        if not re.search(r"\d+", duration):
-            raise ValueError(f"Missing Sunday duration: {duration}")
+        if not re.search(r"\d+", duration) or not all(parts[i] for i in (1, 2, 4)):
+            raise ValueError(f"Incomplete training prescription for {parts[0]}")
         result.append({
-            "number": number,
+            "number": int(number),
             "start": iso_date(begin),
             "end": iso_date(end),
             "tuesday_intervals": parts[1],
@@ -95,10 +113,9 @@ def extract_weeks(markdown: str, block_start: dt.date, block_end: dt.date) -> li
             "long_outing": duration,
             "focus": parts[4],
         })
-    if len(result) != 4 or [x["number"] for x in result] != [1, 2, 3, 4] or result[0]["start"] != iso_date(block_start) or result[-1]["end"] != iso_date(block_end):
-        raise ValueError("Weekly block length or dates changed; update parser before publishing")
+    if len(result) != expected_count:
+        raise ValueError(f"Expected {expected_count} weekly rows, found {len(result)}")
     return result
-
 
 def checkbox_title(line: str) -> str:
     title = line.split(" — ", 1)[0].strip()
@@ -112,8 +129,6 @@ def make_plan(markdown: str) -> dict:
     if not start_match or not end_match:
         raise ValueError("Missing block_start or block_end in Plan.md frontmatter")
     start, end = dt.date.fromisoformat(start_match.group(1)), dt.date.fromisoformat(end_match.group(1))
-    if (start.year, start.month, end.year, end.month) != (2026, 11, 2026, 11):
-        raise ValueError("Current exporter is scoped to November 2026; revise and review for a new training block")
     checklists = extract_checklists(markdown)
     weeks = extract_weeks(markdown, start, end)
     days = {}
@@ -149,7 +164,7 @@ def make_plan(markdown: str) -> dict:
         "source": {
             "file": "Health Journey/Plan.md",
             "source_sha256": hashlib.sha256(markdown.encode("utf-8")).hexdigest(),
-            "source_snapshot": "2026-11-01",
+            "source_snapshot": dt.datetime.now(ZoneInfo("America/New_York")).date().isoformat(),
             "status": "reviewed Obsidian export; not a live connection",
         },
         "block_start": iso_date(start),
@@ -166,26 +181,102 @@ def make_plan(markdown: str) -> dict:
     }
 
 
+PUBLIC_TOP_LEVEL = {"schema_version", "program", "source", "source_history", "block_start", "block_end", "timezone", "week_start", "goals", "weeks", "days", "notice"}
+PUBLIC_SESSION_KEYS = {"key", "title", "type", "duration", "detail", "minimum", "optional", "source_checklist"}
+
+
+def validate_public_plan(plan: dict) -> None:
+    """Fail closed on unknown fields, so private daily values cannot leak by mistake."""
+    extra = set(plan) - PUBLIC_TOP_LEVEL
+    if extra:
+        raise ValueError(f"Unexpected public plan fields: {sorted(extra)}")
+    if plan.get("schema_version") != 2 or plan.get("timezone") != "America/New_York":
+        raise ValueError("Unsupported public plan schema or timezone")
+    if not isinstance(plan.get("days"), dict) or not plan["days"]:
+        raise ValueError("Missing dated workout sessions")
+    first, last = min(plan["days"]), max(plan["days"])
+    if (first, last) != (plan.get("block_start"), plan.get("block_end")):
+        raise ValueError("Published date range does not match sessions")
+    if not isinstance(plan.get("weeks"), list):
+        raise ValueError("Missing Tuesday–Monday week definitions")
+    for date, sessions in plan["days"].items():
+        dt.date.fromisoformat(date)
+        if not isinstance(sessions, list):
+            raise ValueError(f"Invalid sessions for {date}")
+        keys = []
+        for session in sessions:
+            if set(session) != PUBLIC_SESSION_KEYS:
+                raise ValueError(f"Missing or unexpected session fields on {date}: {set(session) ^ PUBLIC_SESSION_KEYS}")
+            if any(not isinstance(session[k], str) or not session[k].strip() for k in PUBLIC_SESSION_KEYS - {"optional"}):
+                raise ValueError(f"Empty session field on {date}")
+            if not isinstance(session["optional"], bool):
+                raise ValueError(f"Invalid optional flag on {date}")
+            keys.append(session["key"])
+        if len(keys) != len(set(keys)):
+            raise ValueError(f"Duplicate workout IDs on {date}")
+
+
+def merge_preserving_history(new: dict, prior: dict) -> dict:
+    """Never delete previously approved dates or silently revise past sessions."""
+    validate_public_plan(new)
+    validate_public_plan(prior)
+    if new["program"] != prior["program"] or new["timezone"] != prior["timezone"]:
+        raise ValueError("Cannot merge distinct training programs")
+    if new["block_end"] < prior["block_end"] and new["source"]["source_sha256"] != prior["source"]["source_sha256"]:
+        raise ValueError("The supplied Plan.md is older than the already published block; refusing to roll back")
+    today = dt.datetime.now(ZoneInfo("America/New_York")).date().isoformat()
+    previous_days = prior["days"]
+    for date in set(previous_days) & set(new["days"]):
+        if date <= today and previous_days[date] != new["days"][date]:
+            raise ValueError(f"Historical workout changed for {date}; protect past X checkoffs and review explicitly")
+    history = list(prior.get("source_history", []))
+    if prior["source"]["source_sha256"] == new["source"]["source_sha256"]:
+        # A re-export of an unchanged vault plan should not alter its publication date.
+        new["source"] = prior["source"]
+    elif prior["source"] not in history:
+        history.append(prior["source"])
+    if history:
+        new["source_history"] = history
+    new["days"] = dict(sorted({**previous_days, **new["days"]}.items()))
+    new["weeks"] = sorted({x["start"]: x for x in [*prior["weeks"], *new["weeks"]]}.values(), key=lambda x: x["start"])
+    new["block_start"] = min(new["block_start"], prior["block_start"])
+    new["block_end"] = max(new["block_end"], prior["block_end"])
+    validate_public_plan(new)
+    return new
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("source", type=Path, help="Path to Obsidian Health Journey/Plan.md")
     actions = parser.add_mutually_exclusive_group(required=True)
-    actions.add_argument("--output", type=Path, help="Write the reviewed JSON snapshot")
-    actions.add_argument("--check", type=Path, help="Compare the reviewed JSON against a published snapshot")
+    actions.add_argument("--output", type=Path, help="Generate a public workout-only JSON file for review")
+    actions.add_argument("--check", type=Path, help="Check source against the existing published plan")
     args = parser.parse_args()
     source = args.source.read_text(encoding="utf-8")
     obj = make_plan(source)
-    encoded = json.dumps(obj, ensure_ascii=False, indent=2) + "\n"
     target = args.output or args.check
+    if target.exists():
+        try:
+            existing = json.loads(target.read_text(encoding="utf-8"))
+        except json.JSONDecodeError as exc:
+            raise ValueError(f"Existing published JSON is invalid: {exc}") from exc
+        obj = merge_preserving_history(obj, existing)
+    else:
+        validate_public_plan(obj)
+    encoded = json.dumps(obj, ensure_ascii=False, indent=2) + "\n"
     if args.check:
         if not target.exists() or target.read_text(encoding="utf-8") != encoded:
-            print("TRAINING PLAN OUT OF SYNC. Review & publish the newly exported plan; no files changed.", file=sys.stderr)
+            print("TRAINING PLAN OUT OF SYNC. Review exported changes before publishing; no files changed.", file=sys.stderr)
             return 1
         print("Training plan is in sync with the supplied Obsidian Plan.md.")
         return 0
     target.parent.mkdir(parents=True, exist_ok=True)
+    if target.exists() and target.read_text(encoding="utf-8") == encoded:
+        print("No changes: published training plan already matches Plan.md.")
+        return 0
     target.write_text(encoded, encoding="utf-8")
-    print(f"Exported {len(obj['days'])} dated training days to {target}; only public workout prescriptions were included.")
+    print(f"Staged {len(obj['days'])} dated training days to {target}; prior dates and checkoff IDs preserved.")
+    print("REVIEW git diff and approve any GitHub publication separately. Nothing has been pushed.")
     return 0
 
 if __name__ == "__main__":
