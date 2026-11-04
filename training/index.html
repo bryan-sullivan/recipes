@@ -85,7 +85,7 @@ async function loadOfficialPlan(){
   state.plan=plan;
   state.officialDays=plan.days;
   const dates=Object.keys(plan.days).sort();
-  $("plan-status").textContent="Verified Health Journey plan published for "+shortDate(dates[0])+" – "+shortDate(dates[dates.length-1])+". This is a versioned snapshot of Obsidian Plan.md, not a live connection. Other dates are not yet prescribed. Personal recovery modifications in Obsidian take priority.";
+  $("plan-status").textContent="Health Journey Plan.md snapshot ("+esc(plan.source.source_snapshot||"source date unavailable")+") published for "+shortDate(dates[0])+" – "+shortDate(dates[dates.length-1])+". This is not a live Obsidian connection; other dates are pending. Individual recovery modifications in Obsidian take priority.";
  }catch(error){
   $("plan-status").textContent="Training schedule unavailable ("+(error.message||"network error")+"). No substitute workouts are generated; refresh to retry.";
  }
