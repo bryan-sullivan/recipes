@@ -2,7 +2,9 @@
 
 - Live website: https://bryan-sullivan.github.io/recipes/training/
 - Published workout schedule: [plan.json](plan.json)
-- Obsidian publisher: [tools/export_plan.py](tools/export_plan.py)
+- Obsidian exporter: [tools/export_plan.py](tools/export_plan.py)
+- One-step local review command: [tools/stage_plan.sh](tools/stage_plan.sh)
+- Automated GitHub validation: [Validate public training plan](../../.github/workflows/validate-training-plan.yml)
 - ChatGPT project instructions: [PROJECT_INSTRUCTIONS.md](PROJECT_INSTRUCTIONS.md)
 - Main recipes website: https://bryan-sullivan.github.io/recipes/
 
@@ -31,26 +33,32 @@ The website reads **only** `plan.json`, a published November 1, 2026 snapshot of
 
 1. Work out the next week's progression in your existing Health Journey ChatGPT project, using feedback and the actual Obsidian plan. Proposals must be individualized for both people.
 2. Approve changes and update **Obsidian `Health Journey/Plan.md`** (not old daily notes). Preserve its date structure and historic entries.
-3. Export workout-only JSON with the tool below. The current parser supports the **existing November 2026 Plan.md format** and fails closed if block dates or structures change; extending it for December is intentional work, not automatic invention.
+3. Export workout-only JSON using the local staging command below. It supports a **1–16-week Tuesday–Monday block** with the existing `Plan.md` weekly-prescription table and seven weekday checkbox sections, including month/year boundaries. It will **reject altered structures** rather than invent workouts. New workout types/checkbox counts require reviewed exporter updates.
 4. Review generated changes, especially stable session keys. Avoid reusing a key for a different activity on an already-completed date.
 5. Commit `plan.json` to the `main` branch of this repository; GitHub Pages then publishes the updated workouts, with the same shared checkoffs.
 6. Verify GitHub deployment and compare one full Tuesday–Monday week in the website against `Plan.md`.
 
-From a local checkout of the recipes repository:
+From a **local checkout** of the recipes repository on the same Mac as the Obsidian vault:
 
 ```bash
-python3 training/tools/export_plan.py "/path/to/Obsidian vault/Health Journey/Plan.md" --check training/plan.json
-# If --check says out of sync, inspect and publish a deliberately approved update:
-python3 training/tools/export_plan.py "/path/to/Obsidian vault/Health Journey/Plan.md" --output training/plan.json
-git diff -- training/plan.json
+bash training/tools/stage_plan.sh "/path/to/Obsidian vault/Health Journey/Plan.md"
+```
+
+If the plan matches, the command exits without changing anything. If the approved `Plan.md` has new sessions, it runs seven synthetic regression tests, validates the public-only JSON, merges dates into `plan.json`, and displays a `git diff` for review. It does **not** change Obsidian, commit, push, or publish.
+
+After reviewing the diff and deciding to publish:
+
+```bash
 git add training/plan.json
-git commit -m "Publish reviewed Health Journey training plan"
+git commit -m "Publish approved Health Journey training block"
 git push origin main
 ```
 
-**Important:** The tool never reads `Daily/`, medical notes or general tasks and never connects to Supabase. It generates output locally, but **does not publish** until someone explicitly commits and pushes it. A later local automation could handle this after a dry-run and diff review, but it is not configured yet.
+GitHub now also **automatically checks** the public plan schema and seven safety/regression tests for changes under `training/` in [Validate public training plan](../../.github/workflows/validate-training-plan.yml). GitHub Pages publishes the site after the commit.
 
-For December and subsequent blocks, update the exporter to accept the new month and append new dates without deleting approved past sessions. Do not reuse the November-only parser without reviewing those changes.
+**Safeguards:** The exporter keeps approved past workout dates and session IDs, rejects changes to today/earlier completed-plan dates, refuses older plan snapshots that would roll back an extended schedule, rejects unknown public JSON fields, and copies only workout prescriptions. Future weeks can be appended without losing earlier X calendar marks. A change in the number/type of planned daily sessions requires reviewing/updating the exporter instead of silently publishing a guessed plan.
+
+**Not yet automatic:** The local Obsidian vault is not readable by GitHub Actions or the ChatGPT Tuesday task. A local Codex automation may eventually run the nonpublishing staging command after a *locally approved* `Plan.md` update, but would still require explicit review before the commit and push. No such local automation has been installed by these GitHub changes.
 
 ## Existing household synchronization
 
@@ -66,4 +74,4 @@ The daily Obsidian generator is a **local** automation. It must continue protect
 
 The ChatGPT Tuesday task does **not** have automatic access to this local vault or to private Supabase checkoffs. It should read the current published workout schedule if accessible, request individual completion/recovery summaries, and make *proposals* rather than claim to have automatically synchronized anything.
 
-To change the existing ChatGPT project instructions, copy [PROJECT_INSTRUCTIONS.md](PROJECT_INSTRUCTIONS.md) into the project's instruction settings. There is no automatic project-settings update in this GitHub deployment.
+The current local Codex project's **`AGENTS.md`** was updated by the user to include the shared website contract; preserve its stricter daily-note protection. [PROJECT_INSTRUCTIONS.md](PROJECT_INSTRUCTIONS.md) is a reference draft, **not** a second set of instructions to install. The existing Tuesday ChatGPT scheduled check-in has already been updated separately.
