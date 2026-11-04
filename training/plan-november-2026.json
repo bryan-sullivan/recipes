@@ -1,0 +1,578 @@
+{
+  "schema_version": 1,
+  "source": "Health Journey/Plan.md (Health_Journey_Oura_Recovery_Instructions_PATCH.zip)",
+  "source_updated": "2026-11-01",
+  "block_start": "2026-11-03",
+  "block_end": "2026-11-30",
+  "timezone": "America/New_York",
+  "status": "November 2026 authoritative plan; not a live Obsidian connection",
+  "week_pattern": "Tuesday–Monday",
+  "notes": [
+    "Optional activities never reduce progress if skipped.",
+    "Planned workouts may be modified based on individual recovery and actual daily Obsidian notes.",
+    "This file is a published snapshot of the local Plan.md; future edits to the Obsidian file do not automatically update GitHub.",
+    "Session keys retained for matching previous Tuesday, Wednesday, Thursday and Friday checkoffs."
+  ],
+  "days": {
+    "2026-11-03": [
+      {
+        "key": "steady",
+        "title": "Peloton Tread Walk + Run / Walk",
+        "type": "Tread",
+        "duration": "30–35 min",
+        "detail": "Week 1: 30 sec easy jog + 2 min walk × 8. Start with 5 min easy walking, then 8 easy intervals and a 5-min walking cooldown. Conversational effort; brisk walk in place of jogging if uncomfortable.",
+        "minimum": "10–15 min easy Tread walk",
+        "optional": false
+      },
+      {
+        "key": "tue-stretch",
+        "title": "Peloton Stretch",
+        "type": "Mobility",
+        "duration": "5 min",
+        "detail": "Optional on a minimum-workout day.",
+        "minimum": "Optional",
+        "optional": true
+      }
+    ],
+    "2026-11-04": [
+      {
+        "key": "strength-wed",
+        "title": "Peloton Beginner Strength",
+        "type": "Strength",
+        "duration": "20–25 min",
+        "detail": "Beginner full-body / lower-body strength: low step-ups or supported squats, hinge/glutes, calf raises and core as comfortable.",
+        "minimum": "10 min beginner strength",
+        "optional": false
+      },
+      {
+        "key": "wed-mobility",
+        "title": "Peloton Mobility / Stretch",
+        "type": "Mobility",
+        "duration": "5 min",
+        "detail": "Optional on a minimum-workout day.",
+        "minimum": "Optional",
+        "optional": true
+      }
+    ],
+    "2026-11-05": [
+      {
+        "key": "intervals",
+        "title": "Peloton Tread Walk + Run / Walk",
+        "type": "Tread",
+        "duration": "30–35 min",
+        "detail": "Week 1: 30 sec easy jog + 2 min walk × 8. Include 5 min easy walking warm-up and cooldown; don't match a Peloton instructor's faster intervals or hills. Walking instead of jogging is valid.",
+        "minimum": "10–15 min comfortable Tread walk",
+        "optional": false
+      },
+      {
+        "key": "thu-stretch",
+        "title": "Peloton Stretch",
+        "type": "Mobility",
+        "duration": "5 min",
+        "detail": "Optional on a minimum-workout day.",
+        "minimum": "Optional",
+        "optional": true
+      }
+    ],
+    "2026-11-06": [
+      {
+        "key": "bike",
+        "title": "Optional Peloton Bike Low Impact",
+        "type": "Bike",
+        "duration": "15–20 min",
+        "detail": "Easy ride at RPE 2–4/10. Full rest or dog walk is entirely fine.",
+        "minimum": "Dog walk or rest",
+        "optional": true
+      },
+      {
+        "key": "fri-stretch",
+        "title": "Optional Peloton Stretch / Meditation",
+        "type": "Mobility",
+        "duration": "5 min",
+        "detail": "Optional recovery and mindfulness.",
+        "minimum": "Optional",
+        "optional": true
+      }
+    ],
+    "2026-11-07": [
+      {
+        "key": "sat-recovery",
+        "title": "Recovery: easy dog walk or full rest",
+        "type": "Recovery",
+        "duration": "As needed",
+        "detail": "No required extra session. Your existing easy dog walk or full rest both count as following the plan.",
+        "minimum": "Rest",
+        "optional": true
+      },
+      {
+        "key": "sat-mobility",
+        "title": "Optional Peloton Mobility / Meditation",
+        "type": "Mobility",
+        "duration": "5–10 min",
+        "detail": "Only if you feel like moving; no obligation.",
+        "minimum": "Optional",
+        "optional": true
+      }
+    ],
+    "2026-11-08": [
+      {
+        "key": "long-walk-nov",
+        "title": "Outdoor long walk",
+        "type": "Long",
+        "duration": "45 min",
+        "detail": "Week 1: easy outdoor endurance walk at conversational effort. Existing dog walking can count toward this session. Establish comfortable routine.",
+        "minimum": "20–30 min easy walk if needed",
+        "optional": false
+      },
+      {
+        "key": "sun-stretch",
+        "title": "Optional Peloton Stretch / Mobility",
+        "type": "Mobility",
+        "duration": "5–10 min",
+        "detail": "Gentle recovery work after the outing.",
+        "minimum": "Optional",
+        "optional": true
+      }
+    ],
+    "2026-11-09": [
+      {
+        "key": "mon-strength",
+        "title": "Peloton Beginner Full Body / Strength for Runners",
+        "type": "Strength",
+        "duration": "20–25 min",
+        "detail": "Beginner strength; don't force sore legs. Review the Tuesday–Monday week.",
+        "minimum": "10 min light strength or mobility",
+        "optional": false
+      },
+      {
+        "key": "mon-stretch",
+        "title": "Peloton Stretch",
+        "type": "Mobility",
+        "duration": "5 min",
+        "detail": "Optional on a minimum-workout day.",
+        "minimum": "Optional",
+        "optional": true
+      }
+    ],
+    "2026-11-10": [
+      {
+        "key": "steady",
+        "title": "Peloton Tread Walk + Run / Walk",
+        "type": "Tread",
+        "duration": "30–35 min",
+        "detail": "Week 2: 45 sec easy jog + 2 min walk × 8. Start with 5 min easy walking, then 8 easy intervals and a 5-min walking cooldown. Conversational effort; brisk walk in place of jogging if uncomfortable.",
+        "minimum": "10–15 min easy Tread walk",
+        "optional": false
+      },
+      {
+        "key": "tue-stretch",
+        "title": "Peloton Stretch",
+        "type": "Mobility",
+        "duration": "5 min",
+        "detail": "Optional on a minimum-workout day.",
+        "minimum": "Optional",
+        "optional": true
+      }
+    ],
+    "2026-11-11": [
+      {
+        "key": "strength-wed",
+        "title": "Peloton Beginner Strength",
+        "type": "Strength",
+        "duration": "20–25 min",
+        "detail": "Beginner full-body / lower-body strength: low step-ups or supported squats, hinge/glutes, calf raises and core as comfortable.",
+        "minimum": "10 min beginner strength",
+        "optional": false
+      },
+      {
+        "key": "wed-mobility",
+        "title": "Peloton Mobility / Stretch",
+        "type": "Mobility",
+        "duration": "5 min",
+        "detail": "Optional on a minimum-workout day.",
+        "minimum": "Optional",
+        "optional": true
+      }
+    ],
+    "2026-11-12": [
+      {
+        "key": "intervals",
+        "title": "Peloton Tread Walk + Run / Walk",
+        "type": "Tread",
+        "duration": "30–35 min",
+        "detail": "Week 2: 45 sec easy jog + 2 min walk × 8. Include 5 min easy walking warm-up and cooldown; don't match a Peloton instructor's faster intervals or hills. Walking instead of jogging is valid.",
+        "minimum": "10–15 min comfortable Tread walk",
+        "optional": false
+      },
+      {
+        "key": "thu-stretch",
+        "title": "Peloton Stretch",
+        "type": "Mobility",
+        "duration": "5 min",
+        "detail": "Optional on a minimum-workout day.",
+        "minimum": "Optional",
+        "optional": true
+      }
+    ],
+    "2026-11-13": [
+      {
+        "key": "bike",
+        "title": "Optional Peloton Bike Low Impact",
+        "type": "Bike",
+        "duration": "15–20 min",
+        "detail": "Easy ride at RPE 2–4/10. Full rest or dog walk is entirely fine.",
+        "minimum": "Dog walk or rest",
+        "optional": true
+      },
+      {
+        "key": "fri-stretch",
+        "title": "Optional Peloton Stretch / Meditation",
+        "type": "Mobility",
+        "duration": "5 min",
+        "detail": "Optional recovery and mindfulness.",
+        "minimum": "Optional",
+        "optional": true
+      }
+    ],
+    "2026-11-14": [
+      {
+        "key": "sat-recovery",
+        "title": "Recovery: easy dog walk or full rest",
+        "type": "Recovery",
+        "duration": "As needed",
+        "detail": "No required extra session. Your existing easy dog walk or full rest both count as following the plan.",
+        "minimum": "Rest",
+        "optional": true
+      },
+      {
+        "key": "sat-mobility",
+        "title": "Optional Peloton Mobility / Meditation",
+        "type": "Mobility",
+        "duration": "5–10 min",
+        "detail": "Only if you feel like moving; no obligation.",
+        "minimum": "Optional",
+        "optional": true
+      }
+    ],
+    "2026-11-15": [
+      {
+        "key": "long-walk-nov",
+        "title": "Outdoor long walk",
+        "type": "Long",
+        "duration": "50–55 min",
+        "detail": "Week 2: easy outdoor endurance walk at conversational effort. Existing dog walking can count toward this session. Only progress if Week 1 recovered well.",
+        "minimum": "20–30 min easy walk if needed",
+        "optional": false
+      },
+      {
+        "key": "sun-stretch",
+        "title": "Optional Peloton Stretch / Mobility",
+        "type": "Mobility",
+        "duration": "5–10 min",
+        "detail": "Gentle recovery work after the outing.",
+        "minimum": "Optional",
+        "optional": true
+      }
+    ],
+    "2026-11-16": [
+      {
+        "key": "mon-strength",
+        "title": "Peloton Beginner Full Body / Strength for Runners",
+        "type": "Strength",
+        "duration": "20–25 min",
+        "detail": "Beginner strength; don't force sore legs. Review the Tuesday–Monday week.",
+        "minimum": "10 min light strength or mobility",
+        "optional": false
+      },
+      {
+        "key": "mon-stretch",
+        "title": "Peloton Stretch",
+        "type": "Mobility",
+        "duration": "5 min",
+        "detail": "Optional on a minimum-workout day.",
+        "minimum": "Optional",
+        "optional": true
+      }
+    ],
+    "2026-11-17": [
+      {
+        "key": "steady",
+        "title": "Peloton Tread Walk + Run / Walk",
+        "type": "Tread",
+        "duration": "30–35 min",
+        "detail": "Week 3: 1 min easy jog + 2 min walk × 8. Start with 5 min easy walking, then 8 easy intervals and a 5-min walking cooldown. Conversational effort; brisk walk in place of jogging if uncomfortable.",
+        "minimum": "10–15 min easy Tread walk",
+        "optional": false
+      },
+      {
+        "key": "tue-stretch",
+        "title": "Peloton Stretch",
+        "type": "Mobility",
+        "duration": "5 min",
+        "detail": "Optional on a minimum-workout day.",
+        "minimum": "Optional",
+        "optional": true
+      }
+    ],
+    "2026-11-18": [
+      {
+        "key": "strength-wed",
+        "title": "Peloton Beginner Strength",
+        "type": "Strength",
+        "duration": "20–25 min",
+        "detail": "Beginner full-body / lower-body strength: low step-ups or supported squats, hinge/glutes, calf raises and core as comfortable.",
+        "minimum": "10 min beginner strength",
+        "optional": false
+      },
+      {
+        "key": "wed-mobility",
+        "title": "Peloton Mobility / Stretch",
+        "type": "Mobility",
+        "duration": "5 min",
+        "detail": "Optional on a minimum-workout day.",
+        "minimum": "Optional",
+        "optional": true
+      }
+    ],
+    "2026-11-19": [
+      {
+        "key": "intervals",
+        "title": "Peloton Tread Walk + Run / Walk",
+        "type": "Tread",
+        "duration": "30–35 min",
+        "detail": "Week 3: 1 min easy jog + 2 min walk × 8. Include 5 min easy walking warm-up and cooldown; don't match a Peloton instructor's faster intervals or hills. Walking instead of jogging is valid.",
+        "minimum": "10–15 min comfortable Tread walk",
+        "optional": false
+      },
+      {
+        "key": "thu-stretch",
+        "title": "Peloton Stretch",
+        "type": "Mobility",
+        "duration": "5 min",
+        "detail": "Optional on a minimum-workout day.",
+        "minimum": "Optional",
+        "optional": true
+      }
+    ],
+    "2026-11-20": [
+      {
+        "key": "bike",
+        "title": "Optional Peloton Bike Low Impact",
+        "type": "Bike",
+        "duration": "15–20 min",
+        "detail": "Easy ride at RPE 2–4/10. Full rest or dog walk is entirely fine.",
+        "minimum": "Dog walk or rest",
+        "optional": true
+      },
+      {
+        "key": "fri-stretch",
+        "title": "Optional Peloton Stretch / Meditation",
+        "type": "Mobility",
+        "duration": "5 min",
+        "detail": "Optional recovery and mindfulness.",
+        "minimum": "Optional",
+        "optional": true
+      }
+    ],
+    "2026-11-21": [
+      {
+        "key": "sat-recovery",
+        "title": "Recovery: easy dog walk or full rest",
+        "type": "Recovery",
+        "duration": "As needed",
+        "detail": "No required extra session. Your existing easy dog walk or full rest both count as following the plan.",
+        "minimum": "Rest",
+        "optional": true
+      },
+      {
+        "key": "sat-mobility",
+        "title": "Optional Peloton Mobility / Meditation",
+        "type": "Mobility",
+        "duration": "5–10 min",
+        "detail": "Only if you feel like moving; no obligation.",
+        "minimum": "Optional",
+        "optional": true
+      }
+    ],
+    "2026-11-22": [
+      {
+        "key": "long-walk-nov",
+        "title": "Outdoor long walk",
+        "type": "Long",
+        "duration": "60–65 min",
+        "detail": "Week 3: easy outdoor endurance walk at conversational effort. Existing dog walking can count toward this session. Build time on feet, still easy.",
+        "minimum": "20–30 min easy walk if needed",
+        "optional": false
+      },
+      {
+        "key": "sun-stretch",
+        "title": "Optional Peloton Stretch / Mobility",
+        "type": "Mobility",
+        "duration": "5–10 min",
+        "detail": "Gentle recovery work after the outing.",
+        "minimum": "Optional",
+        "optional": true
+      }
+    ],
+    "2026-11-23": [
+      {
+        "key": "mon-strength",
+        "title": "Peloton Beginner Full Body / Strength for Runners",
+        "type": "Strength",
+        "duration": "20–25 min",
+        "detail": "Beginner strength; don't force sore legs. Review the Tuesday–Monday week.",
+        "minimum": "10 min light strength or mobility",
+        "optional": false
+      },
+      {
+        "key": "mon-stretch",
+        "title": "Peloton Stretch",
+        "type": "Mobility",
+        "duration": "5 min",
+        "detail": "Optional on a minimum-workout day.",
+        "minimum": "Optional",
+        "optional": true
+      }
+    ],
+    "2026-11-24": [
+      {
+        "key": "steady",
+        "title": "Peloton Tread Walk + Run / Walk",
+        "type": "Tread",
+        "duration": "30–35 min",
+        "detail": "Week 4: Repeat Week 3 (1-min easy jog / 2-min walk × 8), or shorten / walk only. Start with 5 min easy walking, then 8 easy intervals and a 5-min walking cooldown. Conversational effort; brisk walk in place of jogging if uncomfortable.",
+        "minimum": "10–15 min easy Tread walk",
+        "optional": false
+      },
+      {
+        "key": "tue-stretch",
+        "title": "Peloton Stretch",
+        "type": "Mobility",
+        "duration": "5 min",
+        "detail": "Optional on a minimum-workout day.",
+        "minimum": "Optional",
+        "optional": true
+      }
+    ],
+    "2026-11-25": [
+      {
+        "key": "strength-wed",
+        "title": "Peloton Beginner Strength",
+        "type": "Strength",
+        "duration": "20–25 min",
+        "detail": "Beginner full-body / lower-body strength: low step-ups or supported squats, hinge/glutes, calf raises and core as comfortable.",
+        "minimum": "10 min beginner strength",
+        "optional": false
+      },
+      {
+        "key": "wed-mobility",
+        "title": "Peloton Mobility / Stretch",
+        "type": "Mobility",
+        "duration": "5 min",
+        "detail": "Optional on a minimum-workout day.",
+        "minimum": "Optional",
+        "optional": true
+      }
+    ],
+    "2026-11-26": [
+      {
+        "key": "intervals",
+        "title": "Peloton Tread Walk + Run / Walk",
+        "type": "Tread",
+        "duration": "30–35 min",
+        "detail": "Week 4: Repeat Week 3 (1-min easy jog / 2-min walk × 8), or shorten / walk only. Include 5 min easy walking warm-up and cooldown; don't match a Peloton instructor's faster intervals or hills. Walking instead of jogging is valid.",
+        "minimum": "10–15 min comfortable Tread walk",
+        "optional": false
+      },
+      {
+        "key": "thu-stretch",
+        "title": "Peloton Stretch",
+        "type": "Mobility",
+        "duration": "5 min",
+        "detail": "Optional on a minimum-workout day.",
+        "minimum": "Optional",
+        "optional": true
+      }
+    ],
+    "2026-11-27": [
+      {
+        "key": "bike",
+        "title": "Optional Peloton Bike Low Impact",
+        "type": "Bike",
+        "duration": "15–20 min",
+        "detail": "Easy ride at RPE 2–4/10. Full rest or dog walk is entirely fine.",
+        "minimum": "Dog walk or rest",
+        "optional": true
+      },
+      {
+        "key": "fri-stretch",
+        "title": "Optional Peloton Stretch / Meditation",
+        "type": "Mobility",
+        "duration": "5 min",
+        "detail": "Optional recovery and mindfulness.",
+        "minimum": "Optional",
+        "optional": true
+      }
+    ],
+    "2026-11-28": [
+      {
+        "key": "sat-recovery",
+        "title": "Recovery: easy dog walk or full rest",
+        "type": "Recovery",
+        "duration": "As needed",
+        "detail": "No required extra session. Your existing easy dog walk or full rest both count as following the plan.",
+        "minimum": "Rest",
+        "optional": true
+      },
+      {
+        "key": "sat-mobility",
+        "title": "Optional Peloton Mobility / Meditation",
+        "type": "Mobility",
+        "duration": "5–10 min",
+        "detail": "Only if you feel like moving; no obligation.",
+        "minimum": "Optional",
+        "optional": true
+      }
+    ],
+    "2026-11-29": [
+      {
+        "key": "long-walk-nov",
+        "title": "Outdoor long walk",
+        "type": "Long",
+        "duration": "45–50 min",
+        "detail": "Week 4: easy outdoor endurance walk at conversational effort. Existing dog walking can count toward this session. Recovery; repeat Week 3 intervals or shorten.",
+        "minimum": "20–30 min easy walk if needed",
+        "optional": false
+      },
+      {
+        "key": "sun-stretch",
+        "title": "Optional Peloton Stretch / Mobility",
+        "type": "Mobility",
+        "duration": "5–10 min",
+        "detail": "Gentle recovery work after the outing.",
+        "minimum": "Optional",
+        "optional": true
+      }
+    ],
+    "2026-11-30": [
+      {
+        "key": "mon-strength",
+        "title": "Peloton Beginner Full Body / Strength for Runners",
+        "type": "Strength",
+        "duration": "20–25 min",
+        "detail": "Beginner strength; don't force sore legs. Review the Tuesday–Monday week.",
+        "minimum": "10 min light strength or mobility",
+        "optional": false
+      },
+      {
+        "key": "mon-stretch",
+        "title": "Peloton Stretch",
+        "type": "Mobility",
+        "duration": "5 min",
+        "detail": "Optional on a minimum-workout day.",
+        "minimum": "Optional",
+        "optional": true
+      }
+    ]
+  }
+}
