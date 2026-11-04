@@ -62,7 +62,9 @@ GitHub now also **automatically checks** the public plan schema and seven safety
 
 ## Existing household synchronization
 
-Bryan and Desiree can check off sessions independently. The site reuses the recipes grocery-list Supabase household authentication and row-level security. It stores date/session/person checks with the `training-v1:` prefix inside the existing `recipe_preferences` table. The **same session IDs** were maintained during reconciliation. Optional activities do not lower completion percentages when skipped.
+Bryan and Desiree can check off sessions independently. The site reuses the recipes grocery-list Supabase household authentication and row-level security.
+
+The **Copy weekly check-in** button under the selected Tuesday–Monday training week prepares a plain-text summary of website checkoffs for both people. The button only copies to the local clipboard; it does **not** send completion or health information to ChatGPT or Obsidian. Navigate to the previous week before copying it for the Tuesday Reset review. Unmarked sessions are explicitly described as *unverified*, not necessarily missed. WeightWatchers and recovery information remain separate. It stores date/session/person checks with the `training-v1:` prefix inside the existing `recipe_preferences` table. The **same session IDs** were maintained during reconciliation. Optional activities do not lower completion percentages when skipped.
 
 When disconnected, checkoffs are saved only to local browser storage until the device joins the household. The household invite code grants shared editing access, so keep it private.
 
