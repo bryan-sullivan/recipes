@@ -49,7 +49,7 @@ a{color:inherit}button,input{font:inherit}button{cursor:pointer}button:focus-vis
 <footer class="footer"><span>Made for Bryan &amp; Desiree · Training dates use Eastern Time.</span><span>Checkoffs are private to the household when connected. <a href="../index.html">Back to recipes</a> · <a href="https://github.com/bryan-sullivan/recipes/tree/main/training">View site source</a></span></footer>
 </main>
 <div id="connect-modal" class="modal" hidden><div class="dialog" role="dialog" aria-modal="true" aria-labelledby="dialog-title"><h2 id="dialog-title">Connect your shared household</h2><p>Use the same family invite code as the <a href="../grocery-list.html">shared grocery list</a>. A connected device can check off workouts for either person, and both phones will see updates. No new password is needed.</p><form id="connect-form"><label for="invite-code">Household invite code</label><input id="invite-code" autocomplete="off" required maxlength="32" placeholder="Paste invite code"><p id="connect-message" class="alert" role="alert"></p><div class="dialogactions"><button type="button" class="btn" id="cancel-connect">Not now</button><button type="submit" class="btn primary" id="submit-connect">Connect this device</button></div></form></div></div>
-<script>
+<script type="module">
 (function(){
 "use strict";
 const ROOT="training-v1:";
