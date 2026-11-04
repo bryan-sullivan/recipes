@@ -4,7 +4,7 @@
 - Published workout schedule: [plan.json](plan.json)
 - Obsidian exporter: [tools/export_plan.py](tools/export_plan.py)
 - One-step local review command: [tools/stage_plan.sh](tools/stage_plan.sh)
-- Automated GitHub validation: [Validate public training plan](../../.github/workflows/validate-training-plan.yml)
+- Automated GitHub validation: [Validate public training plan](../.github/workflows/validate-training-plan.yml)
 - ChatGPT project instructions: [PROJECT_INSTRUCTIONS.md](PROJECT_INSTRUCTIONS.md)
 - Main recipes website: https://bryan-sullivan.github.io/recipes/
 
@@ -54,7 +54,7 @@ git commit -m "Publish approved Health Journey training block"
 git push origin main
 ```
 
-GitHub now also **automatically checks** the public plan schema and seven safety/regression tests for changes under `training/` in [Validate public training plan](../../.github/workflows/validate-training-plan.yml). GitHub Pages publishes the site after the commit.
+GitHub now also **automatically checks** the public plan schema and seven safety/regression tests for changes under `training/` in [Validate public training plan](../.github/workflows/validate-training-plan.yml). GitHub Pages publishes the site after the commit.
 
 **Safeguards:** The exporter keeps approved past workout dates and session IDs, rejects changes to today/earlier completed-plan dates, refuses older plan snapshots that would roll back an extended schedule, rejects unknown public JSON fields, and copies only workout prescriptions. Future weeks can be appended without losing earlier X calendar marks. A change in the number/type of planned daily sessions requires reviewing/updating the exporter instead of silently publishing a guessed plan.
 
