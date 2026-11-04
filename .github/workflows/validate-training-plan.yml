@@ -1,0 +1,37 @@
+name: Validate public training plan
+
+on:
+  push:
+    paths:
+      - "training/**"
+      - ".github/workflows/validate-training-plan.yml"
+  pull_request:
+    paths:
+      - "training/**"
+      - ".github/workflows/validate-training-plan.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Unit tests (synthetic workouts only)
+        run: python -m unittest discover -s training/tools -p "test_*.py" -v
+      - name: Validate current published workout-only JSON
+        run: |
+          python - <<'PY'
+          import json
+          import sys
+          sys.path.insert(0, "training/tools")
+          from export_plan import validate_public_plan
+          with open("training/plan.json", encoding="utf-8") as source:
+              data = json.load(source)
+          validate_public_plan(data)
+          print(f"Valid published training plan: {len(data['days'])} dated days")
+          PY
