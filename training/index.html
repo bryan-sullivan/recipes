@@ -46,7 +46,7 @@ a{color:inherit}button,input{font:inherit}button{cursor:pointer}button:focus-vis
 <div class="card stat"><div class="kicker">Bryan</div><div class="value" id="bryan-value">0%</div><div class="sub" id="bryan-sub">0 workouts complete</div><div class="progress"><div id="bryan-bar" style="width:0"></div></div></div>
 <div class="card stat desiree"><div class="kicker">Desiree</div><div class="value" id="desiree-value">0%</div><div class="sub" id="desiree-sub">0 workouts complete</div><div class="progress"><div id="desiree-bar" style="width:0"></div></div></div>
 </div></section>
-<section id="this-week" class="section"><div class="section-top"><div><h2>This week's workouts</h2><p id="week-range">Tuesday–Monday schedule</p></div><div class="controlrow"><button class="btn iconbtn" id="prev-week" aria-label="Previous week">‹</button><button class="btn" id="current-week">Current week</button><button class="btn iconbtn" id="next-week" aria-label="Next week">›</button></div></div><div id="week-grid" class="weekgrid"></div></section>
+<section id="this-week" class="section"><div class="section-top"><div><h2>This week's workouts</h2><p id="week-range">Tuesday–Monday schedule</p></div><div class="controlrow"><button class="btn iconbtn" id="prev-week" aria-label="Previous week">‹</button><button class="btn" id="current-week">Current week</button><button class="btn" id="copy-weekly-summary" type="button">Copy weekly check-in</button><button class="btn iconbtn" id="next-week" aria-label="Next week">›</button></div></div><div id="week-grid" class="weekgrid"></div><p class="muted-note" id="weekly-copy-status" role="status" aria-live="polite">Copy the selected week to share with your Tuesday ChatGPT check-in. Nothing is sent automatically.</p></section>
 <section id="calendar" class="section"><div class="section-top"><div><h2>Training calendar</h2><p>Select a date to mark workouts · blue diagonal = Bryan complete, pink diagonal = Desiree complete, together = X</p></div><div class="controlrow"><button class="btn iconbtn" id="prev-month" aria-label="Previous month">‹</button><strong id="month-title" aria-live="polite"></strong><button class="btn iconbtn" id="next-month" aria-label="Next month">›</button></div></div><div class="calendarwrap"><div class="card calendar"><div class="calhead"><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span></div><div class="calgrid" id="cal-grid"></div></div><div class="card caldetail" id="cal-detail"></div></div></section>
 <section id="goals" class="section"><div class="section-top"><div><h2>The bigger picture</h2><p>Two milestones, one stronger foundation</p></div><div class="controlrow"><button class="btn" id="export-ics">Add plan to calendar (.ics)</button><button class="btn" id="export-csv">Export checkoffs (.csv)</button></div></div><div class="goalgrid"><article class="card goalcard"><div class="color"></div><div class="goalcontent"><span class="eyebrow">March 21, 2027</span><h3>Shamrock Half Marathon</h3><p>Consistency first: conversational aerobic workouts, long-session endurance, strength, and recovery. Weekly structure comes from the prior tread-first reboot and needs alignment with your current running baseline.</p><ul class="goalsteps"><li>Build time on your feet before adding intensity</li><li>Keep the long session sustainable</li><li>Protect recovery days and modify for pain</li></ul></div></article><article class="card goalcard ice"><div class="color"></div><div class="goalcontent"><span class="eyebrow">Summer 2027 · dates TBD</span><h3>Iceland · Laugavegur Trek</h3><p>After the race, shift emphasis to uphill walking, leg strength, uneven terrain, daypacks, and back-to-back hiking. Exact travel and trekking dates are not yet confirmed.</p><ul class="goalsteps"><li>Practice uneven ground and hills</li><li>Progress toward consecutive long hiking days</li><li>Try daypack, wet-weather gear, and recovery</li></ul></div></article></div></section>
 <footer class="footer"><span>Made for Bryan &amp; Desiree · Training dates use Eastern Time.</span><span>Checkoffs are private to the household when connected. <a href="../index.html">Back to recipes</a> · <a href="https://github.com/bryan-sullivan/recipes/tree/main/training">View site source</a></span></footer>
@@ -162,6 +162,59 @@ async function connectContext(){const s=await state.db.auth.getSession();if(s.er
 async function initSync(){if(!window.supabase?.createClient){setStatus("Shared sync could not load · device-only mode",false);return}state.db=window.supabase.createClient(SUPABASE_URL,SUPABASE_KEY,{auth:{persistSession:true,autoRefreshToken:true,detectSessionInUrl:true}});try{await connectContext()}catch(e){setStatus("Sync unavailable · device-only mode. "+(e.message||""),false)}window.addEventListener("focus",()=>{if(state.household)loadRemote().catch(()=>{})})}
 async function connectWithInvite(code){if(!state.db)throw Error("Shared sync is unavailable. Refresh and try again.");let sess=await state.db.auth.getSession();if(!sess.data.session){const a=await state.db.auth.signInAnonymously();if(a.error)throw a.error;state.user=a.data.user}else state.user=sess.data.session.user;const result=await state.db.rpc("join_household",{join_code:code.trim().toUpperCase()});if(result.error)throw result.error;await connectContext()}
 function download(name,content,type){const blob=new Blob([content],{type}),url=URL.createObjectURL(blob),a=document.createElement("a");a.href=url;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),3000)}
+function weeklyCheckinSummary(){
+ const from=state.week,through=add(from,6),dates=allDates(from,through);
+ const lines=[
+  "Our Adventure — Health Journey: workout check-in",
+  "Selected Tuesday–Monday week: "+from+" through "+through,
+  "Source: website checkoffs shown in this browser; review the household sync status above.",
+  "Important: unmarked means not recorded here, NOT proof that an activity was skipped.",
+  ""
+ ];
+ let plannedDays=0;
+ for(const date of dates)if(plannedDate(date))plannedDays++;
+ if(plannedDays===0)lines.push("No approved workout schedule has been published for this week.","");
+ for(const person of PEOPLE){
+  const confirmed=[],unmarked=[],optional=[];
+  let required=0,completed=0;
+  for(const date of dates){
+   for(const session of daySessions(date)){
+    const isDone=state.completed.has(keyFor(date,session.key,person));
+    const line=date+" — "+session.title+" ("+session.duration+")";
+    if(session.optional){
+     if(isDone)optional.push(line);
+    }else{
+     required++;
+     if(isDone){completed++;confirmed.push(line)}else unmarked.push(line);
+    }
+   }
+  }
+  lines.push(NAMES[person]+": "+completed+"/"+required+" required workout checkoffs recorded");
+  lines.push("Confirmed on the website: "+(confirmed.length?confirmed.join("; "):"None recorded"));
+  lines.push("Not marked on the website (status unverified): "+(unmarked.length?unmarked.join("; "):"None"));
+  if(optional.length)lines.push("Optional activities marked complete: "+optional.join("; "));
+  lines.push("");
+ }
+ lines.push("Please review actual workouts, fatigue/pain, sleep/recovery and WW adherence separately for each person; these are not supplied by this website summary.");
+ lines.push("Use the current approved Obsidian Plan.md for future prescriptions; do not infer missing checkoffs as missed workouts.");
+ return lines.join("\n");
+}
+
+async function copyWeeklyCheckin(){
+ const message=$("weekly-copy-status"),summary=weeklyCheckinSummary();
+ try{
+  if(!navigator.clipboard?.writeText)throw Error("Clipboard API unavailable");
+  await navigator.clipboard.writeText(summary);
+  message.textContent="Copied "+shortDate(state.week)+"–"+shortDate(add(state.week,6))+" check-in. Paste it into your Tuesday Health Journey conversation.";
+ }catch(err){
+  const area=document.createElement("textarea");
+  area.value=summary;area.setAttribute("readonly","");area.style.cssText="position:fixed;left:-9999px;top:0";
+  document.body.appendChild(area);area.focus();area.select();
+  const copied=typeof document.execCommand==="function"&&document.execCommand("copy");
+  area.remove();
+  message.textContent=copied?"Weekly check-in copied. Paste it into ChatGPT.":"Clipboard permission unavailable; use the Export checkoffs (.csv) button instead.";
+ }
+}
 function csv(){const rows=[["date","person","session","type","duration","completed"]];for(const d of allDates(START,END)){for(const s of daySessions(d)){for(const p of PEOPLE){rows.push([d,NAMES[p],s.title,s.type,s.duration,state.completed.has(keyFor(d,s.key,p))?"yes":"no"])}}}return rows.map(r=>r.map(x=>'"'+String(x).replace(/"/g,'""')+'"').join(",")).join("\r\n")}
 function ics(){let lines=["BEGIN:VCALENDAR","VERSION:2.0","PRODID:-//Our Adventure//Training Plan//EN","CALSCALE:GREGORIAN","X-WR-CALNAME:Adventure Training"];const clean=s=>String(s).replace(/\\/g,"\\\\").replace(/\n/g,"\\n").replace(/,/g,"\\,").replace(/;/g,"\\;");for(const d of allDates(START,END)){const next=add(d,1);for(const s of daySessions(d)){lines.push("BEGIN:VEVENT","UID:"+d+"-"+s.key+"@adventure-training","DTSTAMP:20261104T120000Z","DTSTART;VALUE=DATE:"+d.replace(/-/g,""),"DTEND;VALUE=DATE:"+next.replace(/-/g,""),"SUMMARY:"+clean(s.title+" · "+s.duration),"DESCRIPTION:"+clean(s.detail+" Easier option: "+s.minimum),"END:VEVENT")}}lines.push("END:VCALENDAR");return lines.join("\r\n")}
 document.addEventListener("change",e=>{const input=e.target.closest("input[data-check]");if(input)toggle(input.dataset.check,input.checked)});
@@ -171,6 +224,7 @@ $("current-week").onclick=()=>{state.week=tueStart(today());renderWeek()};
 $("prev-month").onclick=()=>{const d=utcDate(state.month);d.setUTCMonth(d.getUTCMonth()-1);state.month=iso(d);renderCalendar()};
 $("next-month").onclick=()=>{const d=utcDate(state.month);d.setUTCMonth(d.getUTCMonth()+1);state.month=iso(d);renderCalendar()};
 $("cal-grid").onclick=e=>{const b=e.target.closest("[data-date]");if(b){state.selected=b.dataset.date;state.month=b.dataset.date.slice(0,7)+"-01";renderCalendar()}};
+$("copy-weekly-summary").onclick=copyWeeklyCheckin;
 $("export-csv").onclick=()=>download("adventure-training-checkoffs.csv",csv(),"text/csv;charset=utf-8");
 $("export-ics").onclick=()=>download("adventure-training-calendar.ics",ics(),"text/calendar;charset=utf-8");
 $("connect-btn").onclick=()=>{if(state.household){loadRemote().then(()=>setStatus("Household sync active · checkoffs shared",true)).catch(e=>setStatus("Refresh failed: "+e.message,false))}else{$("connect-modal").hidden=false;$("invite-code").focus()}};
