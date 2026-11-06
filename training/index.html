@@ -25,6 +25,7 @@ a{color:inherit}button,input{font:inherit}button{cursor:pointer}button:focus-vis
 .calendarwrap{display:grid;grid-template-columns:minmax(0,1.32fr) minmax(290px,.68fr);gap:17px}.calendar{padding:16px}.calhead,.calgrid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr))}.calhead span{text-align:center;font-size:.75rem;color:var(--muted);font-weight:750;padding:11px 0}.calday{position:relative;min-width:0;min-height:76px;border:1px solid #e8ede7;margin:-.5px;background:white;text-align:left;padding:8px;display:flex;flex-direction:column;gap:7px;color:var(--ink);border-radius:0}.calday.done-bryan::before,.calday.done-desiree::after{content:"";position:absolute;left:12%;top:50%;width:76%;height:3px;border-radius:3px;pointer-events:none;z-index:1;opacity:.96;box-shadow:0 0 0 1px rgba(255,255,255,.4)}
 .calday.done-bryan::before{background:#277ed3;transform:translateY(-50%) rotate(-37deg)}
 .calday.done-desiree::after{background:#d875a4;transform:translateY(-50%) rotate(37deg)}
+.calday.optional-day.done-bryan::before,.calday.optional-day.done-desiree::after{opacity:.4;box-shadow:none}
 .calday:hover{position:relative;z-index:1;border-color:#79a995;background:#f8fcf8}.calday.out{opacity:.3}.calday.active{background:#e4f2eb;outline:2px solid var(--teal);outline-offset:-2px;z-index:2}.calday.today b{background:var(--forest);color:white;display:inline-grid;place-items:center;border-radius:100px;width:24px;height:24px}.calday b{font-size:.79rem}.caldetail h3{font-size:1.25rem;margin:5px 0 10px;letter-spacing:-.03em}.caldetail .session{margin-bottom:13px;padding-bottom:13px}
 .goalgrid{display:grid;grid-template-columns:1fr 1fr;gap:17px}.goalcard{overflow:hidden;padding:0}.goalcard .color{height:9px;background:linear-gradient(90deg,#f2c264,#ed9e53)}.goalcard.ice .color{background:linear-gradient(90deg,#95c5c5,#4b93a2)}.goalcontent{padding:22px}.goalcard h3{margin:6px 0 7px;font-size:1.36rem;letter-spacing:-.035em}.goalcard p{font-size:.87rem;color:var(--muted);margin:5px 0 12px}.goalsteps{list-style:none;padding:0;margin:14px 0 0;display:grid;gap:9px}.goalsteps li{font-size:.84rem;display:flex;gap:8px;align-items:start}.goalsteps li:before{content:"✓";font-weight:bold;color:#418575}
 .footer{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap;color:var(--muted);font-size:.75rem;margin-top:38px;border-top:1px solid var(--border);padding-top:18px}
@@ -46,7 +47,7 @@ a{color:inherit}button,input{font:inherit}button{cursor:pointer}button:focus-vis
 <div class="card stat"><div class="kicker">Bryan</div><div class="value" id="bryan-value">0%</div><div class="sub" id="bryan-sub">0 workouts complete</div><div class="progress"><div id="bryan-bar" style="width:0"></div></div></div>
 <div class="card stat desiree"><div class="kicker">Desiree</div><div class="value" id="desiree-value">0%</div><div class="sub" id="desiree-sub">0 workouts complete</div><div class="progress"><div id="desiree-bar" style="width:0"></div></div></div>
 </div></section>
-<section id="calendar" class="section"><div class="section-top"><div><h2>Training calendar</h2><p>Select a date to mark workouts · blue diagonal = Bryan complete, pink diagonal = Desiree complete, together = X</p></div><div class="controlrow"><button class="btn iconbtn" id="prev-month" aria-label="Previous month">‹</button><strong id="month-title" aria-live="polite"></strong><button class="btn iconbtn" id="next-month" aria-label="Next month">›</button></div></div><div class="calendarwrap"><div class="card calendar"><div class="calhead"><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span></div><div class="calgrid" id="cal-grid"></div></div><div class="card caldetail" id="cal-detail"></div></div></section>
+<section id="calendar" class="section"><div class="section-top"><div><h2>Training calendar</h2><p>Blue = Bryan, pink = Desiree · solid X = required workouts complete · faint X = optional activity completed</p></div><div class="controlrow"><button class="btn iconbtn" id="prev-month" aria-label="Previous month">‹</button><strong id="month-title" aria-live="polite"></strong><button class="btn iconbtn" id="next-month" aria-label="Next month">›</button></div></div><div class="calendarwrap"><div class="card calendar"><div class="calhead"><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span></div><div class="calgrid" id="cal-grid"></div></div><div class="card caldetail" id="cal-detail"></div></div></section>
 <section id="this-week" class="section"><div class="section-top"><div><h2>This week's workouts</h2><p id="week-range">Tuesday–Monday schedule</p></div><div class="controlrow"><button class="btn iconbtn" id="prev-week" aria-label="Previous week">‹</button><button class="btn" id="current-week">Current week</button><button class="btn" id="copy-weekly-summary" type="button">Copy weekly check-in</button><button class="btn iconbtn" id="next-week" aria-label="Next week">›</button></div></div><div id="week-grid" class="weekgrid"></div><p class="muted-note" id="weekly-copy-status" role="status" aria-live="polite">Copy the selected week to share with your Tuesday ChatGPT check-in. Nothing is sent automatically.</p></section>
 <section id="goals" class="section"><div class="section-top"><div><h2>The bigger picture</h2><p>Two milestones, one stronger foundation</p></div><div class="controlrow"><button class="btn" id="export-ics">Add plan to calendar (.ics)</button><button class="btn" id="export-csv">Export checkoffs (.csv)</button></div></div><div class="goalgrid"><article class="card goalcard"><div class="color"></div><div class="goalcontent"><span class="eyebrow">March 21, 2027</span><h3>Shamrock Half Marathon</h3><p>Consistency first: conversational aerobic workouts, long-session endurance, strength, and recovery. Weekly structure comes from the prior tread-first reboot and needs alignment with your current running baseline.</p><ul class="goalsteps"><li>Build time on your feet before adding intensity</li><li>Keep the long session sustainable</li><li>Protect recovery days and modify for pain</li></ul></div></article><article class="card goalcard ice"><div class="color"></div><div class="goalcontent"><span class="eyebrow">Summer 2027 · dates TBD</span><h3>Iceland · Laugavegur Trek</h3><p>After the race, shift emphasis to uphill walking, leg strength, uneven terrain, daypacks, and back-to-back hiking. Exact travel and trekking dates are not yet confirmed.</p><ul class="goalsteps"><li>Practice uneven ground and hills</li><li>Progress toward consecutive long hiking days</li><li>Try daypack, wet-weather gear, and recovery</li></ul></div></article></div></section>
 <footer class="footer"><span>Made for Bryan &amp; Desiree · Training dates use Eastern Time.</span><span>Checkoffs are private to the household when connected. <a href="../index.html">Back to recipes</a> · <a href="https://github.com/bryan-sullivan/recipes/tree/main/training">View site source</a></span></footer>
@@ -117,24 +118,29 @@ function renderWeek(){
  $("prev-week").disabled=from<=tueStart(START);
  $("next-week").disabled=from>=tueStart(END);
 }
+function calendarCompletion(date,person){
+ const sessions=daySessions(date);
+ const required=sessions.filter(s=>!s.optional);
+ if(required.length){
+  return required.every(s=>state.completed.has(keyFor(date,s.key,person)))?"required":"none";
+ }
+ return sessions.some(s=>state.completed.has(keyFor(date,s.key,person)))?"optional":"none";
+}
 function renderCalendar(){
  const first=state.month,offset=dow(first),start=add(first,-offset),month=first.slice(0,7);
  $("month-title").textContent=format(first,{month:"long",year:"numeric"});
  let h="";
  for(let i=0;i<42;i++){
   const d=add(start,i),within=d.slice(0,7)===month,sessions=daySessions(d);
-  let bryanDone=false,desireeDone=false;
-  if(sessions.length){
-   const b=countDate(d,"bryan"),x=countDate(d,"desiree");
-   bryanDone=b.total>0&&b.done===b.total;
-   desireeDone=x.total>0&&x.done===x.total;
-  }
+  const bryanMark=calendarCompletion(d,"bryan"),desireeMark=calendarCompletion(d,"desiree");
+  const optionalDay=sessions.length>0&&sessions.every(s=>s.optional);
   const label=format(d,{weekday:"long",month:"long",day:"numeric",year:"numeric"})+
-   (bryanDone?". Bryan completed all required workouts.":"")+
-   (desireeDone?". Desiree completed all required workouts.":"");
+   (bryanMark==="required"?". Bryan completed all required workouts.":bryanMark==="optional"?". Bryan completed an optional activity.":"")+
+   (desireeMark==="required"?". Desiree completed all required workouts.":desireeMark==="optional"?". Desiree completed an optional activity.":"");
   h+='<button type="button" class="calday'+(within?'':' out')+
    (d===state.selected?' active':'')+(d===today()?' today':'')+
-   (bryanDone?' done-bryan':'')+(desireeDone?' done-desiree':'')+
+   (optionalDay?' optional-day':'')+
+   (bryanMark!=="none"?' done-bryan':'')+(desireeMark!=="none"?' done-desiree':'')+
    '" data-date="'+d+'" aria-label="'+esc(label)+
    '" aria-pressed="'+(d===state.selected)+'"><b>'+Number(d.slice(-2))+'</b></button>';
  }
