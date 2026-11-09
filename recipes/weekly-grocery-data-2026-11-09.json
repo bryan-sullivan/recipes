@@ -1,0 +1,510 @@
+{
+  "week_start": "2026-11-09",
+  "title": "Wegmans Grocery List — November 9–14, 2026",
+  "items": [
+    {
+      "category": "Produce",
+      "name": "ripe mango",
+      "quantity": "1 large (Mon salsa)",
+      "sort_order": 1,
+      "source": "weekly-plan",
+      "seed_key": "Produce:ripe mango"
+    },
+    {
+      "category": "Produce",
+      "name": "limes",
+      "quantity": "2–3 (Mon mango salsa and rice, ~3 tbsp juice)",
+      "sort_order": 2,
+      "source": "weekly-plan",
+      "seed_key": "Produce:limes"
+    },
+    {
+      "category": "Produce",
+      "name": "cilantro",
+      "quantity": "1 small bunch, ~¼ cup (Mon)",
+      "sort_order": 3,
+      "source": "weekly-plan",
+      "seed_key": "Produce:cilantro"
+    },
+    {
+      "category": "Produce",
+      "name": "broccoli florets",
+      "quantity": "2½ lb total (Mon 1½ lb; Wed 1 lb)",
+      "sort_order": 4,
+      "source": "weekly-plan",
+      "seed_key": "Produce:broccoli florets"
+    },
+    {
+      "category": "Produce",
+      "name": "yellow onions",
+      "quantity": "3 medium (Tue ½, Thu 1, Fri 1 small; reserve remainder)",
+      "sort_order": 5,
+      "source": "weekly-plan",
+      "seed_key": "Produce:yellow onions"
+    },
+    {
+      "category": "Produce",
+      "name": "red onion",
+      "quantity": "1 medium (Wed)",
+      "sort_order": 6,
+      "source": "weekly-plan",
+      "seed_key": "Produce:red onion"
+    },
+    {
+      "category": "Produce",
+      "name": "celery",
+      "quantity": "2 stalks (Tue meatballs)",
+      "sort_order": 7,
+      "source": "weekly-plan",
+      "seed_key": "Produce:celery"
+    },
+    {
+      "category": "Produce",
+      "name": "fresh garlic",
+      "quantity": "2 bulbs, at least 13 cloves (Mon/Tue/Thu/Fri/Sat)",
+      "sort_order": 8,
+      "source": "weekly-plan",
+      "seed_key": "Produce:fresh garlic"
+    },
+    {
+      "category": "Produce",
+      "name": "fresh sage",
+      "quantity": "1 bunch (Tue meatballs and gravy; Fri turkey)",
+      "sort_order": 9,
+      "source": "weekly-plan",
+      "seed_key": "Produce:fresh sage"
+    },
+    {
+      "category": "Produce",
+      "name": "fresh thyme",
+      "quantity": "1 small bunch (Tue gravy)",
+      "sort_order": 10,
+      "source": "weekly-plan",
+      "seed_key": "Produce:fresh thyme"
+    },
+    {
+      "category": "Produce",
+      "name": "fresh rosemary",
+      "quantity": "1 small bunch (Fri turkey)",
+      "sort_order": 11,
+      "source": "weekly-plan",
+      "seed_key": "Produce:fresh rosemary"
+    },
+    {
+      "category": "Produce",
+      "name": "fresh parsley",
+      "quantity": "1 small bunch (Tue garnish/Fri optional)",
+      "sort_order": 12,
+      "source": "weekly-plan",
+      "seed_key": "Produce:fresh parsley"
+    },
+    {
+      "category": "Produce",
+      "name": "lemons",
+      "quantity": "4 (Tue roasted carrots, Thu korma, Fri turkey and beans)",
+      "sort_order": 13,
+      "source": "weekly-plan",
+      "seed_key": "Produce:lemons"
+    },
+    {
+      "category": "Produce",
+      "name": "carrots",
+      "quantity": "2 lb total (Tue 1½ lb; Sat 2 medium)",
+      "sort_order": 14,
+      "source": "weekly-plan",
+      "seed_key": "Produce:carrots"
+    },
+    {
+      "category": "Produce",
+      "name": "red bell pepper",
+      "quantity": "1 large (Wed)",
+      "sort_order": 15,
+      "source": "weekly-plan",
+      "seed_key": "Produce:red bell pepper"
+    },
+    {
+      "category": "Produce",
+      "name": "yellow or orange bell pepper",
+      "quantity": "1 large (Wed)",
+      "sort_order": 16,
+      "source": "weekly-plan",
+      "seed_key": "Produce:yellow or orange bell pepper"
+    },
+    {
+      "category": "Produce",
+      "name": "fresh ginger",
+      "quantity": "1 small piece, at least 1 tbsp grated (Thu)",
+      "sort_order": 17,
+      "source": "weekly-plan",
+      "seed_key": "Produce:fresh ginger"
+    },
+    {
+      "category": "Produce",
+      "name": "tomatoes",
+      "quantity": "2 medium (Thu korma)",
+      "sort_order": 18,
+      "source": "weekly-plan",
+      "seed_key": "Produce:tomatoes"
+    },
+    {
+      "category": "Produce",
+      "name": "zucchini",
+      "quantity": "1½ lb (Thu)",
+      "sort_order": 19,
+      "source": "weekly-plan",
+      "seed_key": "Produce:zucchini"
+    },
+    {
+      "category": "Produce",
+      "name": "green beans",
+      "quantity": "1½ lb (Fri provisional side)",
+      "sort_order": 20,
+      "source": "weekly-plan",
+      "seed_key": "Produce:green beans"
+    },
+    {
+      "category": "Produce",
+      "name": "scallions",
+      "quantity": "4 (Sat fried rice)",
+      "sort_order": 21,
+      "source": "weekly-plan",
+      "seed_key": "Produce:scallions"
+    },
+    {
+      "category": "Produce",
+      "name": "sugar snap peas",
+      "quantity": "1 lb (Sat side)",
+      "sort_order": 22,
+      "source": "weekly-plan",
+      "seed_key": "Produce:sugar snap peas"
+    },
+    {
+      "category": "Meat",
+      "name": "pork tenderloin",
+      "quantity": "1¾ lb (Mon)",
+      "sort_order": 23,
+      "source": "weekly-plan",
+      "seed_key": "Meat:pork tenderloin"
+    },
+    {
+      "category": "Meat",
+      "name": "93% lean ground turkey",
+      "quantity": "1½ lb (Tue)",
+      "sort_order": 24,
+      "source": "weekly-plan",
+      "seed_key": "Meat:93% lean ground turkey"
+    },
+    {
+      "category": "Meat",
+      "name": "fully cooked Italian chicken sausage",
+      "quantity": "1½ lb (Wed; not raw)",
+      "sort_order": 25,
+      "source": "weekly-plan",
+      "seed_key": "Meat:fully cooked Italian chicken sausage"
+    },
+    {
+      "category": "Meat",
+      "name": "boneless skinless chicken breast",
+      "quantity": "2 lb (Thu)",
+      "sort_order": 26,
+      "source": "weekly-plan",
+      "seed_key": "Meat:boneless skinless chicken breast"
+    },
+    {
+      "category": "Meat",
+      "name": "whole turkey",
+      "quantity": "1 bird, ~12 lb, fully thawed for Fri (reserve 1½ lb cooked for Sat)",
+      "sort_order": 27,
+      "source": "weekly-plan",
+      "seed_key": "Meat:whole turkey"
+    },
+    {
+      "category": "Dairy",
+      "name": "grated Parmesan",
+      "quantity": "about ⅝ cup (Tue ¼ cup; Wed 2 tbsp; Fri beans ¼ cup)",
+      "sort_order": 28,
+      "source": "weekly-plan",
+      "seed_key": "Dairy:grated Parmesan"
+    },
+    {
+      "category": "Dairy",
+      "name": "unsalted butter",
+      "quantity": "3 tbsp (Tue gravy 1 tbsp; Fri potatoes 2 tbsp)",
+      "sort_order": 29,
+      "source": "weekly-plan",
+      "seed_key": "Dairy:unsalted butter"
+    },
+    {
+      "category": "Dairy",
+      "name": "plain nonfat Greek yogurt",
+      "quantity": "½ cup (Thu korma)",
+      "sort_order": 30,
+      "source": "weekly-plan",
+      "seed_key": "Dairy:plain nonfat Greek yogurt"
+    },
+    {
+      "category": "Dairy",
+      "name": "1% or 2% milk",
+      "quantity": "½ cup (Fri mashed potatoes)",
+      "sort_order": 31,
+      "source": "weekly-plan",
+      "seed_key": "Dairy:1% or 2% milk"
+    },
+    {
+      "category": "Dairy",
+      "name": "large eggs",
+      "quantity": "5 total (Tue meatballs 1; Sat rice 4)",
+      "sort_order": 32,
+      "source": "weekly-plan",
+      "seed_key": "Dairy:large eggs"
+    },
+    {
+      "category": "Bread, pasta and rice",
+      "name": "jasmine rice",
+      "quantity": "2¼ cups dry total (Mon ¾ cup; Sat 1½ cups cooked Friday)",
+      "sort_order": 33,
+      "source": "weekly-plan",
+      "seed_key": "Bread, pasta and rice:jasmine rice"
+    },
+    {
+      "category": "Bread, pasta and rice",
+      "name": "basmati rice",
+      "quantity": "1 cup dry (Thu)",
+      "sort_order": 34,
+      "source": "weekly-plan",
+      "seed_key": "Bread, pasta and rice:basmati rice"
+    },
+    {
+      "category": "Bread, pasta and rice",
+      "name": "egg noodles",
+      "quantity": "8 oz dry (Tue)",
+      "sort_order": 35,
+      "source": "weekly-plan",
+      "seed_key": "Bread, pasta and rice:egg noodles"
+    },
+    {
+      "category": "Bread, pasta and rice",
+      "name": "seasoned dried stuffing mix",
+      "quantity": "1½ cups/~3½ oz (Tue)",
+      "sort_order": 36,
+      "source": "weekly-plan",
+      "seed_key": "Bread, pasta and rice:seasoned dried stuffing mix"
+    },
+    {
+      "category": "Bread, pasta and rice",
+      "name": "baby Yukon Gold potatoes",
+      "quantity": "4 lb total (Wed 1½ lb, Fri 2½ lb)",
+      "sort_order": 37,
+      "source": "weekly-plan",
+      "seed_key": "Bread, pasta and rice:baby Yukon Gold potatoes"
+    },
+    {
+      "category": "Other",
+      "name": "frozen green peas",
+      "quantity": "1 cup (Sat rice)",
+      "sort_order": 38,
+      "source": "weekly-plan",
+      "seed_key": "Frozen:frozen green peas"
+    },
+    {
+      "category": "Canned and jarred",
+      "name": "Thai sweet red chili sauce",
+      "quantity": "3 tbsp (Mon; not hot honey)",
+      "sort_order": 39,
+      "source": "weekly-plan",
+      "seed_key": "Canned and jarred:Thai sweet red chili sauce"
+    },
+    {
+      "category": "Canned and jarred",
+      "name": "raw cashews",
+      "quantity": "¼ cup (Thu; tree nut)",
+      "sort_order": 40,
+      "source": "weekly-plan",
+      "seed_key": "Canned and jarred:raw cashews"
+    },
+    {
+      "category": "Sauces and condiments",
+      "name": "low-sodium turkey or chicken broth",
+      "quantity": "8¼ cups total (Tue 4¾ cups, Thu ½ cup, Fri 3 cups); buy 3 x 32-fl-oz cartons",
+      "sort_order": 41,
+      "source": "weekly-plan",
+      "seed_key": "Sauces and condiments:low-sodium turkey or chicken broth"
+    },
+    {
+      "category": "Sauces and condiments",
+      "name": "reduced-sodium soy sauce",
+      "quantity": "3 tbsp (Sat)",
+      "sort_order": 42,
+      "source": "weekly-plan",
+      "seed_key": "Sauces and condiments:reduced-sodium soy sauce"
+    },
+    {
+      "category": "Sauces and condiments",
+      "name": "rice vinegar",
+      "quantity": "1 tbsp, optional (Sat snap peas)",
+      "sort_order": 43,
+      "source": "weekly-plan",
+      "seed_key": "Sauces and condiments:rice vinegar"
+    },
+    {
+      "category": "Sauces and condiments",
+      "name": "toasted sesame oil",
+      "quantity": "2 tsp (Sat fried rice)",
+      "sort_order": 44,
+      "source": "weekly-plan",
+      "seed_key": "Sauces and condiments:toasted sesame oil"
+    },
+    {
+      "category": "Sauces and condiments",
+      "name": "Sriracha (optional)",
+      "quantity": "½ tsp (Mon)",
+      "sort_order": 45,
+      "source": "weekly-plan",
+      "seed_key": "Sauces and condiments:Sriracha (optional)"
+    },
+    {
+      "category": "Pantry check",
+      "name": "neutral avocado/canola oil",
+      "quantity": "about 3 tbsp total (Fri turkey 2 tbsp, Sat griddle 2 tsp)",
+      "sort_order": 46,
+      "source": "weekly-plan",
+      "seed_key": "Pantry check:neutral avocado/canola oil"
+    },
+    {
+      "category": "Pantry check",
+      "name": "olive oil",
+      "quantity": "about ½ cup across Mon–Sat",
+      "sort_order": 47,
+      "source": "weekly-plan",
+      "seed_key": "Pantry check:olive oil"
+    },
+    {
+      "category": "Pantry check",
+      "name": "all-purpose flour",
+      "quantity": "about ½ cup (Tue ⅓ cup; Fri 2½ tbsp)",
+      "sort_order": 48,
+      "source": "weekly-plan",
+      "seed_key": "Pantry check:all-purpose flour"
+    },
+    {
+      "category": "Pantry check",
+      "name": "kosher salt and black pepper",
+      "quantity": "to taste",
+      "sort_order": 49,
+      "source": "weekly-plan",
+      "seed_key": "Pantry check:kosher salt and black pepper"
+    },
+    {
+      "category": "Pantry check",
+      "name": "garlic powder",
+      "quantity": "about 4 tsp across Mon/Wed/Fri",
+      "sort_order": 50,
+      "source": "weekly-plan",
+      "seed_key": "Pantry check:garlic powder"
+    },
+    {
+      "category": "Pantry check",
+      "name": "ground ginger",
+      "quantity": "½ tsp (Mon)",
+      "sort_order": 51,
+      "source": "weekly-plan",
+      "seed_key": "Pantry check:ground ginger"
+    },
+    {
+      "category": "Pantry check",
+      "name": "Italian seasoning",
+      "quantity": "1½ tsp (Wed)",
+      "sort_order": 52,
+      "source": "weekly-plan",
+      "seed_key": "Pantry check:Italian seasoning"
+    },
+    {
+      "category": "Pantry check",
+      "name": "salt-free poultry seasoning",
+      "quantity": "about 4 tsp (Tue and Fri)",
+      "sort_order": 53,
+      "source": "weekly-plan",
+      "seed_key": "Pantry check:salt-free poultry seasoning"
+    },
+    {
+      "category": "Pantry check",
+      "name": "ground coriander",
+      "quantity": "1 tsp (Thu)",
+      "sort_order": 54,
+      "source": "weekly-plan",
+      "seed_key": "Pantry check:ground coriander"
+    },
+    {
+      "category": "Pantry check",
+      "name": "ground cumin",
+      "quantity": "1½ tsp (Thu korma/zucchini)",
+      "sort_order": 55,
+      "source": "weekly-plan",
+      "seed_key": "Pantry check:ground cumin"
+    },
+    {
+      "category": "Pantry check",
+      "name": "turmeric",
+      "quantity": "½ tsp (Thu)",
+      "sort_order": 56,
+      "source": "weekly-plan",
+      "seed_key": "Pantry check:turmeric"
+    },
+    {
+      "category": "Pantry check",
+      "name": "garam masala",
+      "quantity": "1 tsp (Thu)",
+      "sort_order": 57,
+      "source": "weekly-plan",
+      "seed_key": "Pantry check:garam masala"
+    },
+    {
+      "category": "Pantry check",
+      "name": "ground cardamom, optional",
+      "quantity": "¼ tsp (Thu)",
+      "sort_order": 58,
+      "source": "weekly-plan",
+      "seed_key": "Pantry check:ground cardamom, optional"
+    },
+    {
+      "category": "Pantry check",
+      "name": "cinnamon stick",
+      "quantity": "1 small (Thu)",
+      "sort_order": 59,
+      "source": "weekly-plan",
+      "seed_key": "Pantry check:cinnamon stick"
+    },
+    {
+      "category": "Pantry check",
+      "name": "Kashmiri chili powder, optional",
+      "quantity": "½ tsp (Thu)",
+      "sort_order": 60,
+      "source": "weekly-plan",
+      "seed_key": "Pantry check:Kashmiri chili powder, optional"
+    },
+    {
+      "category": "Pantry check",
+      "name": "sesame seeds",
+      "quantity": "1 tsp (Sat snap peas)",
+      "sort_order": 61,
+      "source": "weekly-plan",
+      "seed_key": "Pantry check:sesame seeds"
+    },
+    {
+      "category": "Other",
+      "name": "butcher's twine + meat thermometer",
+      "quantity": "Fri rotisserie trussing and 165°F safety",
+      "sort_order": 62,
+      "source": "weekly-plan",
+      "seed_key": "Equipment check:butcher's twine + meat thermometer"
+    },
+    {
+      "category": "Other",
+      "name": "Jealous Devil lump charcoal + standard JoeTisserie spit",
+      "quantity": "Fri 12 lb bird; NOT the 10 lb basket accessory",
+      "sort_order": 63,
+      "source": "weekly-plan",
+      "seed_key": "Equipment check:Jealous Devil lump charcoal + standard JoeTisserie spit"
+    }
+  ]
+}
