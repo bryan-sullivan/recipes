@@ -1,0 +1,350 @@
+{
+  "week_start": "2026-11-16",
+  "title": "Wegmans Grocery List — November 16–21, 2026",
+  "items": [
+    {
+      "category": "Produce",
+      "name": "broccoli florets",
+      "quantity": "2 lb total (Mon+Tue, 1 lb per evening)",
+      "sort_order": 1,
+      "source": "weekly-plan",
+      "seed_key": "Produce:broccoli florets"
+    },
+    {
+      "category": "Produce",
+      "name": "yellow onions",
+      "quantity": "3 medium total (1 lasagna + 2 curry)",
+      "sort_order": 2,
+      "source": "weekly-plan",
+      "seed_key": "Produce:yellow onions"
+    },
+    {
+      "category": "Produce",
+      "name": "red onions",
+      "quantity": "2 medium (Wed/Thu taco bowls and pico)",
+      "sort_order": 3,
+      "source": "weekly-plan",
+      "seed_key": "Produce:red onions"
+    },
+    {
+      "category": "Produce",
+      "name": "garlic",
+      "quantity": "2 large bulbs, at least 12 cloves (6 lasagna + 6 curry)",
+      "sort_order": 4,
+      "source": "weekly-plan",
+      "seed_key": "Produce:garlic"
+    },
+    {
+      "category": "Produce",
+      "name": "Roma tomatoes",
+      "quantity": "6 total (2 pico + 4 curry)",
+      "sort_order": 5,
+      "source": "weekly-plan",
+      "seed_key": "Produce:roma tomatoes"
+    },
+    {
+      "category": "Produce",
+      "name": "poblano peppers",
+      "quantity": "2 (Wed/Thu taco bowls)",
+      "sort_order": 6,
+      "source": "weekly-plan",
+      "seed_key": "Produce:poblano peppers"
+    },
+    {
+      "category": "Produce",
+      "name": "cilantro",
+      "quantity": "1 generous bunch, about 1 cup chopped (pico, curry, raita)",
+      "sort_order": 7,
+      "source": "weekly-plan",
+      "seed_key": "Produce:cilantro"
+    },
+    {
+      "category": "Produce",
+      "name": "fresh basil",
+      "quantity": "1 small bunch, at least ½ cup chopped (lasagna)",
+      "sort_order": 8,
+      "source": "weekly-plan",
+      "seed_key": "Produce:fresh basil"
+    },
+    {
+      "category": "Produce",
+      "name": "fresh parsley",
+      "quantity": "1 small bunch, at least ¼ cup chopped (lasagna)",
+      "sort_order": 9,
+      "source": "weekly-plan",
+      "seed_key": "Produce:fresh parsley"
+    },
+    {
+      "category": "Produce",
+      "name": "fresh ginger",
+      "quantity": "1 piece, enough for 2 tbsp freshly grated (curry)",
+      "sort_order": 10,
+      "source": "weekly-plan",
+      "seed_key": "Produce:fresh ginger"
+    },
+    {
+      "category": "Produce",
+      "name": "limes",
+      "quantity": "2 (fresh pico, tacos)",
+      "sort_order": 11,
+      "source": "weekly-plan",
+      "seed_key": "Produce:limes"
+    },
+    {
+      "category": "Produce",
+      "name": "large cucumbers",
+      "quantity": "2 (Friday+Saturday raita)",
+      "sort_order": 12,
+      "source": "weekly-plan",
+      "seed_key": "Produce:large cucumbers"
+    },
+    {
+      "category": "Produce",
+      "name": "lemon",
+      "quantity": "1, optional (curry finish)",
+      "sort_order": 13,
+      "source": "weekly-plan",
+      "seed_key": "Produce:lemon"
+    },
+    {
+      "category": "Meat",
+      "name": "90/10 ground beef",
+      "quantity": "1½ lb (Mon+Tue lasagna)",
+      "sort_order": 14,
+      "source": "weekly-plan",
+      "seed_key": "Meat:90/10 ground beef"
+    },
+    {
+      "category": "Meat",
+      "name": "boneless skinless chicken breast",
+      "quantity": "5½ lb total (2½ lb taco bowls; 3 lb curry)",
+      "sort_order": 15,
+      "source": "weekly-plan",
+      "seed_key": "Meat:boneless skinless chicken breast"
+    },
+    {
+      "category": "Dairy",
+      "name": "part-skim cottage cheese",
+      "quantity": "1½ cups (buy 16-oz tub; lasagna)",
+      "sort_order": 16,
+      "source": "weekly-plan",
+      "seed_key": "Dairy:part-skim cottage cheese"
+    },
+    {
+      "category": "Dairy",
+      "name": "grated Parmesan",
+      "quantity": "½ cup (lasagna)",
+      "sort_order": 17,
+      "source": "weekly-plan",
+      "seed_key": "Dairy:grated parmesan"
+    },
+    {
+      "category": "Dairy",
+      "name": "part-skim shredded mozzarella",
+      "quantity": "1½ cups (about 6 oz; lasagna)",
+      "sort_order": 18,
+      "source": "weekly-plan",
+      "seed_key": "Dairy:part-skim shredded mozzarella"
+    },
+    {
+      "category": "Dairy",
+      "name": "reduced-fat shredded cheddar-jack",
+      "quantity": "½ cup (about 2 oz; taco bowls)",
+      "sort_order": 19,
+      "source": "weekly-plan",
+      "seed_key": "Dairy:reduced-fat shredded cheddar-jack"
+    },
+    {
+      "category": "Dairy",
+      "name": "plain nonfat Greek yogurt",
+      "quantity": "2 cups total (½ cup taco bowls optional + ½ cup curry + 1 cup raita)",
+      "sort_order": 20,
+      "source": "weekly-plan",
+      "seed_key": "Dairy:plain nonfat greek yogurt"
+    },
+    {
+      "category": "Canned and jarred",
+      "name": "crushed tomatoes",
+      "quantity": "5 cups (buy two 28-oz cans; some extra; lasagna)",
+      "sort_order": 21,
+      "source": "weekly-plan",
+      "seed_key": "Canned and jarred:crushed tomatoes"
+    },
+    {
+      "category": "Canned and jarred",
+      "name": "low-sodium chicken bone broth",
+      "quantity": "5 cups (buy two 32-fl-oz cartons; extra; lasagna)",
+      "sort_order": 22,
+      "source": "weekly-plan",
+      "seed_key": "Canned and jarred:low-sodium chicken bone broth"
+    },
+    {
+      "category": "Canned and jarred",
+      "name": "corn kernels",
+      "quantity": "2 cups (frozen bag or canned, drained; taco bowls)",
+      "sort_order": 23,
+      "source": "weekly-plan",
+      "seed_key": "Canned and jarred:corn kernels"
+    },
+    {
+      "category": "Canned and jarred",
+      "name": "black beans",
+      "quantity": "2 x 15-oz cans, optional for Thursday variation",
+      "sort_order": 24,
+      "source": "weekly-plan",
+      "seed_key": "Canned and jarred:black beans"
+    },
+    {
+      "category": "Bread, pasta and rice",
+      "name": "dry short pasta",
+      "quantity": "16 oz (campanelle/bowties/broken lasagna, Mon+Tue)",
+      "sort_order": 25,
+      "source": "weekly-plan",
+      "seed_key": "Bread, pasta and rice:dry short pasta"
+    },
+    {
+      "category": "Bread, pasta and rice",
+      "name": "ready-to-heat brown rice",
+      "quantity": "6 cups cooked total (about three microwave pouches; check yield, or 2 cups dry)",
+      "sort_order": 26,
+      "source": "weekly-plan",
+      "seed_key": "Bread, pasta and rice:ready-to-heat brown rice"
+    },
+    {
+      "category": "Bread, pasta and rice",
+      "name": "dry basmati rice",
+      "quantity": "2 cups (about 6 cups cooked, Fri+Sat)",
+      "sort_order": 27,
+      "source": "weekly-plan",
+      "seed_key": "Bread, pasta and rice:dry basmati rice"
+    },
+    {
+      "category": "Pantry check",
+      "name": "olive or neutral oil",
+      "quantity": "~5 tbsp total + 2 tsp optional broccoli (lasagna, bowls, curry)",
+      "sort_order": 28,
+      "source": "weekly-plan",
+      "seed_key": "Pantry check:olive or neutral oil"
+    },
+    {
+      "category": "Pantry check",
+      "name": "kosher salt",
+      "quantity": "~4 tsp plus to taste (across three dishes)",
+      "sort_order": 29,
+      "source": "weekly-plan",
+      "seed_key": "Pantry check:kosher salt"
+    },
+    {
+      "category": "Pantry check",
+      "name": "black pepper",
+      "quantity": "to taste",
+      "sort_order": 30,
+      "source": "weekly-plan",
+      "seed_key": "Pantry check:black pepper"
+    },
+    {
+      "category": "Pantry check",
+      "name": "garlic powder",
+      "quantity": "2 tsp (taco seasoning)",
+      "sort_order": 31,
+      "source": "weekly-plan",
+      "seed_key": "Pantry check:garlic powder"
+    },
+    {
+      "category": "Pantry check",
+      "name": "ground cumin",
+      "quantity": "2½ tsp (taco seasoning 2 + raita ½)",
+      "sort_order": 32,
+      "source": "weekly-plan",
+      "seed_key": "Pantry check:ground cumin"
+    },
+    {
+      "category": "Pantry check",
+      "name": "chili powder",
+      "quantity": "1 tsp (taco seasoning)",
+      "sort_order": 33,
+      "source": "weekly-plan",
+      "seed_key": "Pantry check:chili powder"
+    },
+    {
+      "category": "Pantry check",
+      "name": "paprika",
+      "quantity": "1 tsp taco seasoning + 1 tsp optional curry substitute",
+      "sort_order": 34,
+      "source": "weekly-plan",
+      "seed_key": "Pantry check:paprika"
+    },
+    {
+      "category": "Pantry check",
+      "name": "dried oregano",
+      "quantity": "1 tsp (taco seasoning)",
+      "sort_order": 35,
+      "source": "weekly-plan",
+      "seed_key": "Pantry check:dried oregano"
+    },
+    {
+      "category": "Pantry check",
+      "name": "ground coriander",
+      "quantity": "2 tsp (curry)",
+      "sort_order": 36,
+      "source": "weekly-plan",
+      "seed_key": "Pantry check:ground coriander"
+    },
+    {
+      "category": "Pantry check",
+      "name": "garam masala",
+      "quantity": "2 tsp (curry)",
+      "sort_order": 37,
+      "source": "weekly-plan",
+      "seed_key": "Pantry check:garam masala"
+    },
+    {
+      "category": "Pantry check",
+      "name": "turmeric",
+      "quantity": "½ tsp (curry)",
+      "sort_order": 38,
+      "source": "weekly-plan",
+      "seed_key": "Pantry check:turmeric"
+    },
+    {
+      "category": "Pantry check",
+      "name": "mild Kashmiri chili powder",
+      "quantity": "1 tsp curry, optional if using sweet paprika",
+      "sort_order": 39,
+      "source": "weekly-plan",
+      "seed_key": "Pantry check:mild kashmiri chili powder"
+    },
+    {
+      "category": "Pantry check",
+      "name": "bay leaves",
+      "quantity": "2 optional (curry)",
+      "sort_order": 40,
+      "source": "weekly-plan",
+      "seed_key": "Pantry check:bay leaves"
+    },
+    {
+      "category": "Pantry check",
+      "name": "cinnamon stick",
+      "quantity": "1 optional, about 2 inches (curry)",
+      "sort_order": 41,
+      "source": "weekly-plan",
+      "seed_key": "Pantry check:cinnamon stick"
+    },
+    {
+      "category": "Pantry check",
+      "name": "green cardamom pods",
+      "quantity": "4 optional (curry)",
+      "sort_order": 42,
+      "source": "weekly-plan",
+      "seed_key": "Pantry check:green cardamom pods"
+    },
+    {
+      "category": "Pantry check",
+      "name": "whole cloves",
+      "quantity": "4 optional (curry)",
+      "sort_order": 43,
+      "source": "weekly-plan",
+      "seed_key": "Pantry check:whole cloves"
+    }
+  ]
+}
